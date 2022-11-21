@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "364546070609",
+    "firebase_url": "https://einfachtierisch-cdef2-default-rtdb.firebaseio.com",
+    "project_id": "einfachtierisch-cdef2",
+    "storage_bucket": "einfachtierisch-cdef2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364546070609:android:711efbb33ecc53cbdd4070",
+        "android_client_info": {
+          "package_name": "com.modul3.einfachtierisch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364546070609-fhr4p17lu4mlfc3m1tt4ggk4efh5vkoq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.modul3.einfachtierisch",
+            "certificate_hash": "be5c1f5646d40e772132dffbbde8df47a6351c9d"
+          }
+        },
+        {
+          "client_id": "364546070609-tudvrjp90kfqqd4ss2us0un5kbipnati.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd33B9vu4IuEv5k_mIdUhiakL6r62DtBk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364546070609-tudvrjp90kfqqd4ss2us0un5kbipnati.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

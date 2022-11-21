@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="186dp"
+            android:layout_marginBottom="545dp"
+            android:background="@drawable/bg_gradation"
+            app:cardBackgroundColor="#E4E1E1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.495">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/bg_gradation" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/poststext"
+                    app:layout_constraintEnd_toEndOf="@+id/poststext"
+                    app:layout_constraintStart_toStartOf="@+id/poststext" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/followingtext"
+                    app:layout_constraintEnd_toEndOf="@+id/followingtext"
+                    app:layout_constraintStart_toEndOf="@+id/followertext" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/followertext"
+                    app:layout_constraintEnd_toEndOf="@+id/followertext"
+                    app:layout_constraintStart_toEndOf="@+id/poststext" />
+
+                <TextView
+                    android:id="@+id/poststext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Posts"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/edit_button"
+                    app:layout_constraintStart_toStartOf="@+id/edit_button" />
+
+                <TextView
+                    android:id="@+id/followertext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Followers"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/edit_button"
+                    app:layout_constraintStart_toEndOf="@+id/poststext" />
+
+                <TextView
+                    android:id="@+id/followingtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="8dp"
+                    android:text="Following"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/edit_button"
+                    app:layout_constraintStart_toEndOf="@+id/followertext" />
+
+                <ImageView
+                    android:id="@+id/edit_image"
+                    android:layout_width="98dp"
+                    android:layout_height="83dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/profile" />
+
+                <Button
+                    android:id="@+id/edit_button"
+                    android:layout_width="183dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="90dp"
+                    android:background="@drawable/buttons_background"
+                    android:text="Edit Profile"
+                    app:layout_constraintBottom_toBottomOf="@+id/edit_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/edit_image" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/fullnametext"
+            android:layout_width="0dp"
+            android:layout_height="22dp"
+            android:background="#E4E1E1"
+            android:paddingStart="25dp"
+            android:text="Full Name"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+        <TextView
+            android:id="@+id/gallerietext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#A8A8A8"
+            android:paddingStart="25dp"
+            android:text="Gallerie"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/fullnametext"
+            app:layout_constraintStart_toStartOf="@+id/fullnametext"
+            app:layout_constraintTop_toBottomOf="@+id/fullnametext" />
+
+        <TextView
+            android:id="@+id/textProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Here can you edit your Profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gallerietext" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/gallerie_recycler"
+            android:layout_width="409dp"
+            android:layout_height="379dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textProfile"
+            app:spanCount="2"
+            tools:itemCount="8"
+            tools:listitem="@layout/gallerie_item" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/optionsBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/options" />
+
+    <TextView
+        android:id="@+id/profile_fragment_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Username"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/optionsBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/optionsBtn"
+        app:layout_constraintVertical_bias="0.517" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

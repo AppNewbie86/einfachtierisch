@@ -1,0 +1,119 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
+    id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'  // Google Play services Gradle plugin
+
+}
+
+
+android {
+    namespace 'com.modul3.einfachtierisch'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.modul3.einfachtierisch"
+        minSdk 28
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    // Coil für dynamischen Bilderdownload
+    implementation "io.coil-kt:coil:$coil_version"
+
+    //FireBaseAuth
+    implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
+
+
+
+    // Preferences
+    implementation "androidx.preference:preference:$preferences"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+
+
+    // Navigation Graph
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_graph"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_graph"
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
+    implementation 'com.google.firebase:firebase-firestore:24.4.1'
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+    implementation 'com.google.firebase:firebase-database-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
+    // Firebase UI
+    implementation 'com.firebaseui:firebase-ui-auth:8.0.1'
+    implementation 'com.firebaseui:firebase-ui-database:8.0.1'
+
+
+    // Google
+    implementation 'com.google.android.gms:play-services-auth:20.4.0'
+
+
+    // Moshi
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.14.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+
+    // UI
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+
+    //GSON
+    implementation 'com.google.code.gson:gson:2.9.0'
+
+
+}

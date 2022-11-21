@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/detail_image"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/american" />
+
+        <TextView
+            android:id="@+id/detail_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/detail_image"
+            app:layout_constraintTop_toBottomOf="@+id/detail_image"
+            tools:text="Kommt tatsächlich eine Fortsetzung?!" />
+
+        <TextView
+            android:id="@+id/detail_datum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/detail_title"
+            app:layout_constraintTop_toBottomOf="@+id/detail_title"
+            tools:text="01.08.2022" />
+
+        <View
+            android:id="@+id/detail_line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_datum" />
+
+        <TextView
+            android:id="@+id/detail_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:justificationMode="inter_word"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_line"
+            tools:text="Gracie wurde 2019 vom Manhattan ACC rekrutiert und macht seitdem in Brooklyn ein Nickerchen. Sie ist zu 75 % Staffy und zu 25 % American Bulldog und verbringt 75 % ihrer Zeit mit Schlafen und 25 % damit, sich den Bauch massieren zu lassen." />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</layout>
