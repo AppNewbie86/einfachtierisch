@@ -1,4 +1,4 @@
-package de.syntaxinstitut.dogCround.data.datamodels
+package com.modul3.einfachtierisch.data.models
 
 
 data class Dog(

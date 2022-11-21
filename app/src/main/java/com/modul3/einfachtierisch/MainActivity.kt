@@ -11,6 +11,10 @@ import com.modul3.einfachtierisch.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    /**
+     * Später initialisierte Variable wo wir das ActivityMainBinding aktivieren und das mit der DataBinding Methode
+     */
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,8 +26,12 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
+        /**
+         * Übergeben jeder Menü-ID als Satz von IDs, da jede
+         * Menü sollten als Top-Level-Ziele betrachtet werden.
+         */
+
         val appBarConfiguration = AppBarConfiguration(setOf(
             R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications,R.id.navigation_profile))
         setupActionBarWithNavController(navController, appBarConfiguration)

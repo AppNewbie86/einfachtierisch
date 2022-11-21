@@ -2,11 +2,14 @@ package com.modul3.einfachtierisch.remote
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import de.syntaxinstitut.dogCround.data.datamodels.ApiResponse
+import com.modul3.einfachtierisch.data.models.ApiResponse
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
+/**
+ * DOG API wo die HundeBilder zur Verfügung stellt
+ */
 const val BASE_URL = "https://dog.ceo/api/breed/hound/"
 //https://dog.ceo/dog-api/
 private val moshi = Moshi.Builder()
