@@ -6,7 +6,17 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/backgroundimage_gradient_bio"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg_gradation" />
+
+    <ImageView
+        android:id="@+id/imageplaceholder"
         android:layout_width="0dp"
         android:layout_height="122dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,34 +36,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/saveBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/imageplaceholder"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/save_large_icon" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/closeButton"
         android:layout_width="38dp"
         android:layout_height="38dp"
         android:layout_marginStart="16dp"
         android:foregroundGravity="center_vertical"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/imageplaceholder"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/materialToolbar"
         app:layout_constraintVertical_bias="0.222"
         app:srcCompat="@drawable/ic_baseline_close_24" />
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="386dp"
-        android:layout_height="81dp"
+        android:id="@+id/title_bio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:gravity="center"
         android:text="Vervollständigen Sie hier ihre Daten in ihrem Profil damit Sie schneller die Hilfe bekommen die sie auch benötigen "
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.481"
@@ -65,30 +76,47 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Chance Image"
+        android:text="@string/chance_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageplaceholder" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/nameTextLine"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="@string/vor_und_nachname"
         android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/title_bio"
+        app:layout_constraintStart_toStartOf="@+id/title_bio"
+        app:layout_constraintTop_toBottomOf="@+id/title_bio" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine2"
+        android:id="@+id/dogNameEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="@string/wie_hei_t_ihr_hund"
         android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextMultiLine"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextMultiLine"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/nameTextLine"
+        app:layout_constraintStart_toStartOf="@+id/nameTextLine"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextLine" />
+
+    <EditText
+        android:id="@+id/timeTextLine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/welchen_tgl_zeitraum_w_rden_sie_ben_tigen"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dogNameEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
