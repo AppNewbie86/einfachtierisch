@@ -10,7 +10,6 @@ import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.data.models.NewsArticle
 import com.modul3.einfachtierisch.databinding.FragmentDashboarddetailBinding
 
-
 class DashBoardDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentDashboarddetailBinding
@@ -36,9 +35,9 @@ class DashBoardDetailFragment : Fragment() {
         val newsArticle = newsList?.find { it.id == newsId }
 
         if (newsArticle != null) {
-            binding.newsImage.setImageResource(newsArticle.imageResourceId)
-            binding.newsTitleText.text = newsArticle.title
-            binding.newsDateText.text = newsArticle.date
+            binding.detailImage.setImageResource(newsArticle.imageResourceId)
+            binding.detailTitle.text = newsArticle.title
+            binding.detailDatum.text = newsArticle.date
             binding.detailText.text = newsArticle.article
         }
     }

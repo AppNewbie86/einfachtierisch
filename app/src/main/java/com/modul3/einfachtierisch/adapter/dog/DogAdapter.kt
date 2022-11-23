@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.modul3.einfachtierisch.R
+import com.modul3.einfachtierisch.data.models.NewsArticle
 
 class DogAdapter() : RecyclerView.Adapter<DogAdapter.ItemViewHolder>() {
 

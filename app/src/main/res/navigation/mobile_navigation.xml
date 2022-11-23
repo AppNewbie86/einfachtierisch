@@ -9,11 +9,18 @@
         android:id="@+id/navigation_home"
         android:name="com.modul3.einfachtierisch.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.modul3.einfachtierisch.ui.dashboard.DashboardFragment"
+        android:name="com.modul3.einfachtierisch.ui.dashboard.DashBoardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard">
         <action
@@ -35,22 +42,29 @@
         android:id="@+id/dashBoardDetailFragment"
         android:name="com.modul3.einfachtierisch.ui.dashboard.DashBoardDetailFragment"
         android:label="DashBoardDetailFragment"
-        tools:layout="@layout/fragment_dashboarddetail" />
+        tools:layout="@layout/fragment_dashboarddetail" >
+        <argument
+            android:name="newsId"
+            app:argType="integer" />
+    </fragment>
     <argument
         android:name="newsId"
         app:argType="integer" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.modul3.einfachtierisch.LoginFragment"
+        android:name="com.modul3.einfachtierisch.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.modul3.einfachtierisch.SignUpFragment"
+        android:name="com.modul3.einfachtierisch.ui.signUp.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" />
 

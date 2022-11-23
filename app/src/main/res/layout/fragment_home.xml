@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/backgroundimage_gradient"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
@@ -39,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="104dp"
         android:clickable="true"
+        android:contentDescription="startBtn zum registerFragment"
         android:elevation="18dp"
         android:src="@drawable/frame_110"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,7 +57,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/applogoimage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/logo_vector"
@@ -64,4 +65,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/logininfotext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Hier gelangen Sie zum Login"
+        android:textColor="#FAF8F8"
+        app:layout_constraintBottom_toTopOf="@+id/getStartedBtn"
+        app:layout_constraintEnd_toEndOf="@+id/getStartedBtn"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/getStartedBtn" />
+
+    <TextView
+        android:id="@+id/registerInfoText"
+        android:layout_width="77dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="64dp"
+        android:text="direkt zum "
+        android:textColor="#F8F5F5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getStartedBtn" />
+
+    <TextView
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:minHeight="48dp"
+        android:text="Register"
+        android:textColor="#2196F3"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/registerInfoText"
+        app:layout_constraintTop_toTopOf="@+id/registerInfoText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

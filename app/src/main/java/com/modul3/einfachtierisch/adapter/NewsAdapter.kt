@@ -4,20 +4,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.core.net.toUri
+import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import coil.transform.RoundedCornersTransformation
 import com.modul3.einfachtierisch.R
 import com.modul3.einfachtierisch.data.models.NewsArticle
+import com.modul3.einfachtierisch.ui.dashboard.DashBoardFragmentDirections
 
 class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.ItemViewHolder>() {
 
-    private var dataset = listOf<String>()
+    private var dataset = listOf<NewsArticle>()
 
-    // der ViewHolder weiß welche Teile des Layouts beim Recycling angepasst werden
-    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        val imgView = view.findViewById<ImageView>(R.id.news_image)
+    class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val title: TextView = view.findViewById(R.id.news_title_text)
+        val location: TextView = view.findViewById(R.id.news_location_text)
+        val date: TextView = view.findViewById(R.id.news_date_text)
+        val image: ImageView = view.findViewById(R.id.news_image)
+        val card: CardView = view.findViewById(R.id.news_card)
     }
 
     fun submitList(list: List<NewsArticle>) {
@@ -25,34 +29,27 @@ class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.ItemViewHolder>() {
         notifyDataSetChanged()
     }
 
-    // hier werden neue ViewHolder erstellt
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        // das itemLayout wird gebaut
-        val adapterLayout = LayoutInflater.from(parent.context)
+        val itemLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.news_item, parent, false)
-//hallo
-        // und in einem ViewHolder zurückgegeben
-        return ItemViewHolder(adapterLayout)
+
+        return ItemViewHolder(itemLayout)
     }
 
-    // hier findet der Recyclingprozess statt
-    // die vom ViewHolder bereitgestellten Parameter werden verändert
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val item: String = dataset[position]
+        val item: NewsArticle = dataset[position]
 
-        val imgUri = item.toUri().buildUpon().scheme("https").build()
+        holder.title.text = item.title
+        holder.location.text = item.location
+        holder.date.text = item.date
+        holder.image.setImageResource(item.imageResourceId)
 
-        // coil
-        holder.imgView.load(imgUri) {
-            //transformations(CircleCropTransformation())
-            transformations(RoundedCornersTransformation(10f))
-            error(R.drawable.ic_baseline_broken_image_24)
-            placeholder(R.drawable.ic_launcher_foreground)
-            crossfade(true)
+        holder.card.setOnClickListener {
+            holder.itemView.findNavController()
+                .navigate(DashBoardFragmentDirections.actionNavigationDashboardToDashBoardDetailFragment(item.id))
         }
     }
 
-    // damit der LayoutManager weiß wie lang die Liste ist
     override fun getItemCount(): Int {
         return dataset.size
     }
