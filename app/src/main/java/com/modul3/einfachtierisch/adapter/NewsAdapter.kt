@@ -30,7 +30,7 @@ class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.ItemViewHolder>() {
         // das itemLayout wird gebaut
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.news_item, parent, false)
-
+//hallo
         // und in einem ViewHolder zurückgegeben
         return ItemViewHolder(adapterLayout)
     }
