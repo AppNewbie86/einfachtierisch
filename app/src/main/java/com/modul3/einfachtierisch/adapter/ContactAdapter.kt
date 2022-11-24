@@ -4,14 +4,15 @@ package com.modul3.einfachtierisch.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.modul3.einfachtierisch.R
-import com.modul3.einfachtierisch.RequestFragmentDirections
 import com.modul3.einfachtierisch.data.models.Contact
+import com.modul3.einfachtierisch.ui.dashboard.DashBoardDetailFragmentDirections
 
 
 /**
@@ -33,6 +34,7 @@ class ContactAdapter() : RecyclerView.Adapter<ContactAdapter.ItemViewHolder>() {
         val ivPicture: ImageView = itemView.findViewById(R.id.ivContactPicture)
         val tvName: TextView = itemView.findViewById(R.id.tvContactName)
         val tvLastMessage: TextView = itemView.findViewById(R.id.tvContactLastMessage)
+        val helpBtn: Button = itemView.findViewById(R.id.helpMeBtn)
         val clContact: ConstraintLayout = itemView.findViewById(R.id.clContact)
     }
 
@@ -64,10 +66,10 @@ class ContactAdapter() : RecyclerView.Adapter<ContactAdapter.ItemViewHolder>() {
         }
 
         // Das komplette ConstraintLayout bekommt einen Click Listener, in dem zum ChatFragment navigiert wird
-        holder.clContact.setOnClickListener {
+        holder.helpBtn.setOnClickListener {
             holder.itemView.findNavController().navigate(
-                RequestFragmentDirections.actionRequestFragmentToNavigationDashboard()
-            )
+                DashBoardDetailFragmentDirections.actionDashBoardDetailFragmentToRequestFragment(itemCount))
+
         }
     }
 

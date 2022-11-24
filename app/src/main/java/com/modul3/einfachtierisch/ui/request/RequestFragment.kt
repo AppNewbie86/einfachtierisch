@@ -1,4 +1,4 @@
-package com.modul3.einfachtierisch
+package com.modul3.einfachtierisch.ui.request
 
 
 import android.content.Context
@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.adapter.MessageAdapter
 import com.modul3.einfachtierisch.databinding.FragmentRequestBinding
 

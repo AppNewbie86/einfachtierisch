@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.data.models.NewsArticle
 import com.modul3.einfachtierisch.databinding.FragmentDashboarddetailBinding
@@ -13,6 +15,10 @@ import com.modul3.einfachtierisch.databinding.FragmentDashboarddetailBinding
 class DashBoardDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentDashboarddetailBinding
+    private lateinit var helpButton: Button
+
+
+
     private val viewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -39,6 +45,11 @@ class DashBoardDetailFragment : Fragment() {
             binding.detailTitle.text = newsArticle.title
             binding.detailDatum.text = newsArticle.date
             binding.detailText.text = newsArticle.article
+        }
+
+        binding.helpMeBtn.setOnClickListener {
+            findNavController()
+                .navigate(DashBoardDetailFragmentDirections.actionDashBoardDetailFragmentToRequestFragment(newsId))
         }
     }
 }
