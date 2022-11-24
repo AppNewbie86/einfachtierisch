@@ -10,8 +10,7 @@ import retrofit2.http.GET
 /**
  * DOG API wo die HundeBilder zur Verfügung stellt
  */
-const val BASE_URL = "https://dog.ceo/api/breed/hound/"
-//https://dog.ceo/dog-api/
+const val BASE_URL = "https://public.syntax-institut.de/apps/batch2/AndreLuft/data.json"
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
@@ -22,7 +21,7 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface DogApiService {
-    @GET("images")
+    @GET("Image")
     suspend fun getImages(): ApiResponse
 }
 

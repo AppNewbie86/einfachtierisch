@@ -1,4 +1,4 @@
-package com.modul3.einfachtierisch.adapter
+package com.modul3.einfachtierisch.adapter.news
 
 import android.view.LayoutInflater
 import android.view.View

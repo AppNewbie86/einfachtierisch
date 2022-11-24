@@ -8,18 +8,20 @@
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="100dp"
-        app:cardBackgroundColor="#CCCBCB"
+        app:cardBackgroundColor="#F1F0F0"
+        app:cardCornerRadius="25dp"
         app:cardElevation="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clContact"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/ivContactPicture"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -28,14 +30,27 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tvContactName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:text="Name"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ivContactPicture"
+                app:layout_constraintStart_toEndOf="@+id/ivContactPicture"
+                app:layout_constraintTop_toTopOf="@+id/ivContactPicture" />
+
+            <TextView
+                android:id="@+id/tvContactLastMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="132dp"
                 android:layout_marginTop="40dp"
                 android:text="Sam has write you"
-                app:layout_constraintStart_toEndOf="@+id/imageView4"
-                app:layout_constraintTop_toTopOf="@+id/imageView4" />
+                app:layout_constraintStart_toEndOf="@+id/ivContactPicture"
+                app:layout_constraintTop_toTopOf="@+id/ivContactPicture" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

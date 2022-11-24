@@ -2,9 +2,12 @@ package com.modul3.einfachtierisch.ui.signUp
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.text.TextUtils
+import android.text.TextUtils.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -40,13 +43,14 @@ class SignUpFragment : Fragment() {
 
         binding.signupSignupButton.setOnClickListener {
             signUp()
+          //  CreateAccount()
         }
 
         viewModel.toast.observe(
             viewLifecycleOwner,
             Observer {
                 if (it != null) {
-//                    Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+                   Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
                     AlertDialog.Builder(requireContext())
                         .setMessage(it)
                         .create()
@@ -77,4 +81,20 @@ class SignUpFragment : Fragment() {
             viewModel.signUp(email, password, newMember)
         }
     }
+/*
+    private fun CreateAccount() {
+        val emailtext = binding.signupMail.text.toString()
+        val password = binding.signupPassword.text.toString()
+        val name = binding.signupNickname.text.toString()
+
+        when {
+            isEmpty(binding.signupMail.toString()) -> Toast.makeText(requireContext(), Toast.LENGTH_SHORT).show()
+            isEmpty(binding.signupPassword.toString()) -> Toast.makeText(this, "The Email is required!")
+            isEmpty(binding.signupNickname.toString()) -> Toast.makeText(this, "The Email is required!")
+
+        }
+
+    }
+
+ */
 }

@@ -3,6 +3,7 @@ package com.modul3.einfachtierisch.data
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.modul3.einfachtierisch.R
+import com.modul3.einfachtierisch.data.models.Contact
 import com.modul3.einfachtierisch.data.models.GallerieImage
 import com.modul3.einfachtierisch.data.models.NewsArticle
 import com.modul3.einfachtierisch.data.models.Request
@@ -13,6 +14,12 @@ const val TAG = "Repository"
 
 // API kommt in den Konstruktor weil es später angehnehmer ist zu testen
 class Repository(private val api: DogApi) {
+
+
+    // Die Variable contactList ruft einmal die Funktion loadContacts() auf und speichert das Ergebnis
+    private val _contactList = MutableLiveData<List<Contact>>(loadContacts())
+    val contactList: LiveData<List<Contact>>
+        get() = _contactList
 
 
     private val _imageList = MutableLiveData<List<String>>()
@@ -28,6 +35,23 @@ class Repository(private val api: DogApi) {
         delay(2000)
         _imageList.value = api.retrofitService.getImages().images
     }
+
+    /**
+     * Diese Funktion gibt eine Liste aus Contact Objekten zurück.
+     * Jedes Contact Objekt enthält die Informationen für den Namen und
+     * die Bild Ressource und eine leere veränderliche Liste
+     */
+    private fun loadContacts(): List<Contact> {
+        return listOf(
+            Contact("Brad", R.drawable.baxter, mutableListOf()),
+            Contact("Emma", R.drawable.american, mutableListOf()),
+            Contact("Jennifer", R.drawable.sales, mutableListOf()),
+            Contact("Johnny", R.drawable.sourcer, mutableListOf()),
+            Contact("Keanu", R.drawable.square, mutableListOf()),
+
+        )
+    }
+
 
     fun loadNews(): List<NewsArticle> {
 

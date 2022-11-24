@@ -19,19 +19,20 @@
             android:text="Username"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/optionsBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/LogoutButton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/optionsBtn" />
+            app:layout_constraintTop_toTopOf="@+id/LogoutButton" />
 
         <ImageView
-            android:id="@+id/optionsBtn"
+            android:id="@+id/LogoutButton"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:clickable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/options" />
+            app:srcCompat="@drawable/ic_baseline_logout_24" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
@@ -43,7 +44,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/optionsBtn">
+            app:layout_constraintTop_toBottomOf="@+id/LogoutButton">
 
             <ImageView
                 android:id="@+id/imageView2"

@@ -9,7 +9,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.modul3.einfachtierisch.data.Repository
+import com.modul3.einfachtierisch.data.models.Contact
 import com.modul3.einfachtierisch.data.models.Member
+import com.modul3.einfachtierisch.data.models.Message
 import com.modul3.einfachtierisch.data.models.NewsArticle
 import com.modul3.einfachtierisch.remote.DogApi
 
@@ -40,6 +42,46 @@ import com.modul3.einfachtierisch.remote.DogApi
 const val TAG = "MainViewModel"
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
+
+    private final var Repository = Repository(DogApi)
+
+    // Die Liste aus Kontakten wird in einer verschachtelten Variable gespeichert
+    val contactList: LiveData<List<Contact>> = Repository.contactList
+
+    // Der aktuell ausgewählte Kontakt wird in einer verschachtelten Variable gespeichert
+    private lateinit var _currentContact: Contact
+    val currentContact: Contact
+        get() = _currentContact
+
+    private val _chat = MutableLiveData<MutableList<Message>>(mutableListOf())
+    val chat: LiveData<MutableList<Message>>
+        get() = _chat
+
+    /**
+     * Diese Funktion initialisiert den Chat und setzt die Variablen dementsprechend
+     */
+    fun initializeChat(contactIndex: Int) {
+        if (contactList.value != null) {
+            _currentContact = contactList.value!![contactIndex]
+            _chat.value = _currentContact.chatHistory
+        }
+    }
+
+    /**
+     * Diese Funktion "schickt die Draft Message ab",
+     * indem die Variablen dementsprechend gesetzt werden
+     */
+    fun sendMessage(text: String) {
+        val newMessage = Message(text, false)
+        _chat.value?.add(0, newMessage)
+        _chat.value = chat.value
+    }
+
+
+
+
+
+//**********************************
 
 
     private val repository = Repository(DogApi)
