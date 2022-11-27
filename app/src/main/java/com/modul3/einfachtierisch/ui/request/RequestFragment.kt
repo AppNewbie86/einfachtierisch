@@ -17,8 +17,7 @@ import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.adapter.MessageAdapter
 import com.modul3.einfachtierisch.databinding.FragmentRequestBinding
 
-
-class RequestFragment : Fragment() {
+class ChatFragment : Fragment() {
 
     // Hier wird das ViewModel, in dem die Logik stattfindet, geholt
     private val viewModel: MainViewModel by activityViewModels()
@@ -63,7 +62,7 @@ class RequestFragment : Fragment() {
         viewModel.chat.observe(
             viewLifecycleOwner,
             Observer {
-                Log.d("RequestFragment", "Observer BANG")
+                Log.d("ChatFragment", "Observer BANG")
                 messageAdapter.submitList(it)
             }
         )

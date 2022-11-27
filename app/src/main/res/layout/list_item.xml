@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="380dp"
+    android:layout_height="480dp"
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="#FFF1F1"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="93dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/list_image"
+            android:layout_width="347dp"
+            android:layout_height="277dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            app:layout_constraintStart_toStartOf="@+id/list_image"
+            app:layout_constraintTop_toBottomOf="@+id/list_image" />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/tv1"
+            app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/tv4"
+            app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+        <TextView
+            android:id="@+id/tv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/tv5"
+            app:layout_constraintTop_toBottomOf="@+id/tv5" />
+
+        <TextView
+            android:id="@+id/tv8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/tv7"
+            app:layout_constraintTop_toBottomOf="@+id/tv7" />
+
+        <TextView
+            android:id="@+id/tv7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/tv6"
+            app:layout_constraintTop_toBottomOf="@+id/tv6" />
+
+        <Button
+            android:id="@+id/contactMeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Contact Me"
+            app:layout_constraintBottom_toBottomOf="@+id/list_image"
+            app:layout_constraintEnd_toEndOf="@+id/list_image" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/tv8"
+            app:layout_constraintTop_toBottomOf="@+id/tv8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

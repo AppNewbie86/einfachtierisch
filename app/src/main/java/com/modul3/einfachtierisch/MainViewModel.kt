@@ -5,15 +5,15 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.modul3.einfachtierisch.data.Repository
-import com.modul3.einfachtierisch.data.models.Contact
-import com.modul3.einfachtierisch.data.models.Member
-import com.modul3.einfachtierisch.data.models.Message
-import com.modul3.einfachtierisch.data.models.NewsArticle
+import com.modul3.einfachtierisch.data.models.*
 import com.modul3.einfachtierisch.remote.DogApi
+import kotlinx.coroutines.launch
+import java.lang.Exception
 
 
 /** Aufgaben meines MainViewModels
@@ -41,12 +41,51 @@ import com.modul3.einfachtierisch.remote.DogApi
 
 const val TAG = "MainViewModel"
 
+enum class ApiStatus { LOADING, ERROR, DONE }
+
 class MainViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val repository = Repository(DogApi)
+
+    private val _loading = MutableLiveData<ApiStatus>()
+    val loading: LiveData<ApiStatus>
+        get() = _loading
+
+    val dogs = repository.dogs
+
+    init {
+        loadData()
+    }
+
+    private fun loadData() {
+        viewModelScope.launch {
+
+            println("WTF value of dogs: ${dogs.value}")
+
+            _loading.value = ApiStatus.LOADING
+            try {
+                repository.getDogs()
+                _loading.value = ApiStatus.DONE
+            } catch (e: Exception) {
+
+                Log.e(TAG, "Error loading Data $e")
+
+                println("WTF value of dogs: ${dogs.value}")
+
+                if (dogs.value.isNullOrEmpty()) {
+                    _loading.value = ApiStatus.ERROR
+                } else {
+                    _loading.value = ApiStatus.DONE
+                }
+            }
+        }
+    }
+
 
     private final var Repository = Repository(DogApi)
 
     // Die Liste aus Kontakten wird in einer verschachtelten Variable gespeichert
-    val contactList: LiveData<List<Contact>> = Repository.contactList
+    val contactList: LiveData<List<Contact>> = repository.contactList
 
     // Der aktuell ausgewählte Kontakt wird in einer verschachtelten Variable gespeichert
     private lateinit var _currentContact: Contact
@@ -84,14 +123,13 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 //**********************************
 
 
-    private val repository = Repository(DogApi)
 
-    private val _news = MutableLiveData<List<NewsArticle>>()
-    val news: LiveData<List<NewsArticle>>
+    private val _news = MutableLiveData<List<Dogs>>()
+    val news: LiveData<List<Dogs>>
         get() = _news
 
     init {
-        _news.value = repository.loadNews()
+        _news.value = dogs.value
     }
 
 

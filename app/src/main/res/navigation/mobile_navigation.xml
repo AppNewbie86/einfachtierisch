@@ -19,32 +19,10 @@
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.modul3.einfachtierisch.ui.dashboard.DashBoardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard">
-        <action
-            android:id="@+id/action_navigation_dashboard_to_dashBoardDetailFragment"
-            app:destination="@id/dashBoardDetailFragment" />
-    </fragment>
-
-    <fragment
         android:id="@+id/navigation_profile"
         android:name="com.modul3.einfachtierisch.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/dashBoardDetailFragment"
-        android:name="com.modul3.einfachtierisch.ui.dashboard.DashBoardDetailFragment"
-        android:label="DashBoardDetailFragment"
-        tools:layout="@layout/fragment_dashboarddetail" >
-        <argument
-            android:name="newsId"
-            app:argType="integer" />
-        <action
-            android:id="@+id/action_dashBoardDetailFragment_to_requestFragment"
-            app:destination="@id/requestFragment" />
-    </fragment>
     <argument
         android:name="newsId"
         app:argType="integer" />
@@ -56,9 +34,6 @@
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_navigation_dashboard"
-            app:destination="@id/navigation_dashboard" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -73,9 +48,24 @@
         <argument
             android:name="contactIndex"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.modul3.einfachtierisch.ui.dashboard.DashBoardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dash_board" >
         <action
-            android:id="@+id/action_requestFragment_to_navigation_dashboard"
-            app:destination="@id/navigation_dashboard" />
+            android:id="@+id/action_navigation_dashboard_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.modul3.einfachtierisch.ui.contact.ContactFragment"
+        android:label="fragment_contact"
+        tools:layout="@layout/fragment_contact" >
+        <action
+            android:id="@+id/action_contactFragment_to_requestFragment"
+            app:destination="@id/requestFragment" />
     </fragment>
 
 </navigation>

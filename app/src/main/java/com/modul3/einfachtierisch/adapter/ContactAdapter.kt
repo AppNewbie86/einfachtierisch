@@ -1,10 +1,8 @@
 package com.modul3.einfachtierisch.adapter
 
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -12,7 +10,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.modul3.einfachtierisch.R
 import com.modul3.einfachtierisch.data.models.Contact
-import com.modul3.einfachtierisch.ui.dashboard.DashBoardDetailFragmentDirections
+import com.modul3.einfachtierisch.ui.dashboard.DashBoardFragmentDirections
 
 
 /**
@@ -20,9 +18,9 @@ import com.modul3.einfachtierisch.ui.dashboard.DashBoardDetailFragmentDirections
  */
 class ContactAdapter() : RecyclerView.Adapter<ContactAdapter.ItemViewHolder>() {
 
-    private var dataset: MutableList<Contact> = mutableListOf()
+    private var dataset: List<Contact> = listOf()
 
-    fun submitList(list: MutableList<Contact>) {
+    fun submitList(list: List<Contact>) {
         dataset = list
         notifyDataSetChanged()
     }
@@ -34,7 +32,6 @@ class ContactAdapter() : RecyclerView.Adapter<ContactAdapter.ItemViewHolder>() {
         val ivPicture: ImageView = itemView.findViewById(R.id.ivContactPicture)
         val tvName: TextView = itemView.findViewById(R.id.tvContactName)
         val tvLastMessage: TextView = itemView.findViewById(R.id.tvContactLastMessage)
-        val helpBtn: Button = itemView.findViewById(R.id.helpMeBtn)
         val clContact: ConstraintLayout = itemView.findViewById(R.id.clContact)
     }
 
@@ -43,7 +40,7 @@ class ContactAdapter() : RecyclerView.Adapter<ContactAdapter.ItemViewHolder>() {
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val itemLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item_message, parent, false)
+            .inflate(R.layout.list_item_contact, parent, false)
 
         return ItemViewHolder(itemLayout)
     }
@@ -66,10 +63,10 @@ class ContactAdapter() : RecyclerView.Adapter<ContactAdapter.ItemViewHolder>() {
         }
 
         // Das komplette ConstraintLayout bekommt einen Click Listener, in dem zum ChatFragment navigiert wird
-        holder.helpBtn.setOnClickListener {
+        holder.clContact.setOnClickListener {
             holder.itemView.findNavController().navigate(
-                DashBoardDetailFragmentDirections.actionDashBoardDetailFragmentToRequestFragment(itemCount))
-
+                DashBoardFragmentDirections.actionNavigationDashboardToContactFragment()
+            )
         }
     }
 
