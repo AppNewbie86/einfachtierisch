@@ -67,7 +67,7 @@ class DogAdapter(emptyList: List<Any>) : RecyclerView.Adapter<DogAdapter.ItemVie
         holder.textView4.text = "Haarlänge: " + item.coat_lenght
         holder.textView5.text = "Fellfarbe: " + item.coat_color
         holder.textView6.text = "Höhe: " + item.height
-        holder.textView8.text = "detail_text: " + item.detail_text
+        holder.textView8.text = "Beschreibung: " + item.detail_text
 
         val imgUri = item.image.toUri().buildUpon().scheme("https").build()
 
