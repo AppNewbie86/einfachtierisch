@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradation"
+    tools:context="SummaryFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4">
+
+            <ImageView
+                android:id="@+id/coverImageView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+
+            <ImageView
+                android:id="@+id/profileImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nameTextView"
+                android:layout_width="104dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lastNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_weight="5">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="190dp"
+                android:layout_height="50dp"
+                android:text="Age"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="190dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="70dp"
+                android:text="Favourite Color"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="190dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="140dp"
+                android:text="Hobby"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="190dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="210dp"
+                android:text="Favourite Sport"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/ageTextView"
+                android:layout_width="190dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="200dp"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/colorTextView"
+                android:layout_width="190dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="70dp"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hobbyTextView"
+                android:layout_width="190dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="140dp"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sportTextView"
+                android:layout_width="190dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="210dp"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+
+        </FrameLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.core.widget.NestedScrollView>

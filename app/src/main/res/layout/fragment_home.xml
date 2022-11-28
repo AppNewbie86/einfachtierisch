@@ -39,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Welcome to DogCrounding"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/applogoimage" />
@@ -60,8 +61,7 @@
         android:layout_marginTop="44dp"
         android:text="Hier gelangen Sie zum Login"
         android:textColor="#FAF8F8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/getStartedBtn"
         app:layout_constraintTop_toBottomOf="@+id/text_dashboard" />
 
     <TextView
@@ -69,7 +69,8 @@
         android:layout_width="292dp"
         android:layout_height="22dp"
         android:layout_marginTop="16dp"
-        android:text="oder falls Sie noch keinen Account besitzen "
+        android:foregroundGravity="center|center_horizontal"
+        android:text="or Create"
         android:textColor="#F8F5F5"
         app:layout_constraintEnd_toEndOf="@+id/getStartedBtn"
         app:layout_constraintStart_toStartOf="@+id/getStartedBtn"
@@ -77,20 +78,24 @@
 
     <Button
         android:id="@+id/getStartedBtn"
+        style="@android:style/Widget.Holo.Button"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="zum Login"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logininfotext" />
 
     <Button
         android:id="@+id/registerButton"
+        style="@style/FirebaseUI.Button.AccountChooser.AnonymousButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Create a New Account"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="@+id/registerInfoText"
         app:layout_constraintStart_toStartOf="@+id/registerInfoText"
         app:layout_constraintTop_toBottomOf="@+id/registerInfoText" />

@@ -1,5 +1,6 @@
 package com.modul3.einfachtierisch.ui.home
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,23 +8,43 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.modul3.einfachtierisch.MainActivity
 import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.databinding.FragmentHomeBinding
 
 /**
  * Dieses Fragment verwaltet die Anzeige der Lesezeichen
  */
+
 class HomeFragment : Fragment() {
-    // hier wird die binding Variable deklariert
+
+
+    /**
+     * hier wird die binding Variable deklariert
+     */
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var gatStartBtn: Button
     private lateinit var registerButton: Button
 
-
-    // Hier wird das ViewModel geholt
+    /**
+     * Hier holt man sich das ViewModel
+     */
     private val viewModel: MainViewModel by activityViewModels()
+
+
+    /**
+     * Diese Funktion versteckt die NavBar auf dem Fragment
+     */
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        activity?.lifecycleScope?.launchWhenCreated {
+            (activity as MainActivity).hideNavBar()
+        }
+    }
 
     /**
      * Lifecycle Funktion onCreateView

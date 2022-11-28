@@ -26,6 +26,7 @@ import com.modul3.einfachtierisch.databinding.FragmentSignUpBinding
 class SignUpFragment : Fragment() {
 
     var simpleVideoView: VideoView? = null
+
     // declaring a null variable for MediaController
     var mediaControls: MediaController? = null
 
@@ -67,8 +68,11 @@ class SignUpFragment : Fragment() {
         simpleVideoView!!.setMediaController(mediaControls)
         // set the absolute path of the video file which is going to be played
         simpleVideoView!!.setVideoURI(
-            Uri.parse("android.resource://"
-                + requireContext().packageName + "/" + R.raw.signup_animation))
+            Uri.parse(
+                "android.resource://"
+                        + requireContext().packageName + "/" + R.raw.signup_animation
+            )
+        )
         simpleVideoView!!.requestFocus()
         // starting the video
         // TODO VideoStart in einen ClickOnLISTENER SETZEN
@@ -76,28 +80,32 @@ class SignUpFragment : Fragment() {
         // display a toast message
         // after the video is completed
         simpleVideoView!!.setOnCompletionListener {
-            Toast.makeText(requireContext(), "Video completed",
-                Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                requireContext(), "Video completed",
+                Toast.LENGTH_LONG
+            ).show()
         }
         // display a toast message if any
         // error occurs while playing the video
         simpleVideoView!!.setOnErrorListener { mp, what, extra ->
-            Toast.makeText(requireContext(), "An Error Occurred " +
-                    "While Playing Video !!!", Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                requireContext(), "An Error Occurred " +
+                        "While Playing Video !!!", Toast.LENGTH_LONG
+            ).show()
             false
         }
 
 
         binding.signupButton.setOnClickListener {
             signUp()
-          //  CreateAccount()
+            //  CreateAccount()
         }
 
         viewModel.toast.observe(
             viewLifecycleOwner,
             Observer {
                 if (it != null) {
-                   Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
                     AlertDialog.Builder(requireContext())
                         .setMessage(it)
                         .create()
@@ -117,16 +125,19 @@ class SignUpFragment : Fragment() {
     }
 
     private fun signUp() {
+        val nameLast = binding.lastName.text.toString()
         val email = binding.emailId.text.toString()
-        val password = binding.password1.text.toString()
+        val passwordOne = binding.password1.text.toString()
+        val passwordConfirm = binding.passwordConfirm.text.toString()
 
         val name = binding.nickName.text.toString()
 
-        if (!email.isNullOrEmpty() && !password.isNullOrEmpty()) {
+        if (!email.isNullOrEmpty() && !passwordOne.isNullOrEmpty() && !passwordConfirm.isNullOrEmpty() && !name.isNullOrEmpty() && !nameLast.isNullOrEmpty()) {
             val newMember = Member(
                 name = name,
+
             )
-            viewModel.signUp(email, password, newMember)
+            viewModel.signUp(email,  name, newMember)
         }
     }
 /*

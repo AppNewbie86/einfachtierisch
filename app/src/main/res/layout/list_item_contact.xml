@@ -17,7 +17,7 @@
             android:id="@+id/clContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@drawable/bg_gradation"
             android:padding="8dp">
 
             <de.hdodenhof.circleimageview.CircleImageView

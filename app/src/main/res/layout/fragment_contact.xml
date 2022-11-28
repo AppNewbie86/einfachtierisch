@@ -15,7 +15,7 @@
             android:id="@+id/home_toolbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/cardview_light_background"
+            android:background="#E8E7E7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

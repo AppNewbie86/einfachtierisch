@@ -156,7 +156,7 @@
             android:paddingStart="5dp"
             android:text="Full Name"
             android:textSize="16sp"
-            android:textStyle="bold"
+            android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
@@ -167,31 +167,22 @@
             android:layout_height="wrap_content"
             android:background="#A8A8A8"
             android:paddingStart="5dp"
-            android:text="Gallerie"
+            android:text="My Hobbys"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/fullnametext"
             app:layout_constraintStart_toStartOf="@+id/fullnametext"
             app:layout_constraintTop_toBottomOf="@+id/fullnametext" />
 
-        <TextView
-            android:id="@+id/textProfile"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Here can you edit your Profile"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gallerietext" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/gallerie_recycler"
             android:layout_width="409dp"
-            android:layout_height="379dp"
+            android:layout_height="410dp"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textProfile"
+            app:layout_constraintTop_toBottomOf="@+id/gallerietext"
             app:spanCount="2"
             tools:itemCount="8"
             tools:listitem="@layout/gallerie_item" />

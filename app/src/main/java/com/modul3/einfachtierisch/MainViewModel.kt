@@ -237,4 +237,20 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             .update("level", newLevel)
             .addOnSuccessListener { getMemberData() }
     }
+
+    /**
+     * Schreibt den first und lastname in Firestore
+     * und speichert ihn dort
+     *
+     */
+
+    private fun setFirstAndLastName(member: Member) {
+        db.collection("user").document(currentUser.value!!.uid)
+            .set(member)
+            .addOnFailureListener {
+                Log.w(TAG, "Error writing document: $it")
+                _toast.value = "error creating member\n${it.localizedMessage}"
+                _toast.value = null
+            }
+    }
 }

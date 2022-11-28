@@ -1,5 +1,6 @@
 package com.modul3.einfachtierisch.ui.dashboard
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,9 +8,11 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintSet.Layout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.modul3.einfachtierisch.ApiStatus
+import com.modul3.einfachtierisch.MainActivity
 import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.adapter.dog.DogAdapter
 import com.modul3.einfachtierisch.databinding.FragmentDashBoardBinding
@@ -20,8 +23,20 @@ class DashBoardFragment : Fragment() {
     // Hier wird das ViewModel geholt
     private val viewModel: MainViewModel by activityViewModels()
 
+
+
+
     private lateinit var binding: FragmentDashBoardBinding
     private lateinit var chatBtn: FloatingActionButton
+
+
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        activity?.lifecycleScope?.launchWhenCreated {
+            (activity as MainActivity).showNavBar()
+        }
+    }
 
 
     override fun onCreateView(

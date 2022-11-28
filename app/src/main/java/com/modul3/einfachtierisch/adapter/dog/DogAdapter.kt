@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.net.toUri
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -26,6 +27,8 @@ class DogAdapter(emptyList: List<Any>) : RecyclerView.Adapter<DogAdapter.ItemVie
     // der ViewHolder weiß welche Teile des Layouts beim Recycling angepasst werden
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val imageView = view.findViewById<ImageView>(R.id.list_image)
+
+        val card: ConstraintLayout = view.findViewById(R.id.card)
 
 
         val textView1: TextView = view.findViewById(R.id.tv1)
@@ -59,6 +62,11 @@ class DogAdapter(emptyList: List<Any>) : RecyclerView.Adapter<DogAdapter.ItemVie
     // die vom ViewHolder bereitgestellten Parameter werden verändert
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item: Dogs = dataset[position]
+
+        holder.card.setOnClickListener {
+            holder.itemView.findNavController()
+                .navigate(DashBoardFragmentDirections.actionNavigationDashboardToDetailFragment(item.id))
+        }
 
 
 
