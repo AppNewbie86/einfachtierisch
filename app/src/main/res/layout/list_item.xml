@@ -2,9 +2,11 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="380dp"
-    android:layout_height="480dp"
+    android:id="@+id/cardImage"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_margin="16dp"
+    android:clickable="true"
     app:cardBackgroundColor="#FFF1F1"
     app:cardCornerRadius="10dp"
     app:cardElevation="5dp"
@@ -36,6 +38,7 @@
             android:id="@+id/tv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:text="Name"
             app:layout_constraintStart_toStartOf="@+id/list_image"
             app:layout_constraintTop_toBottomOf="@+id/list_image" />
@@ -44,6 +47,7 @@
             android:id="@+id/tv4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="TextView"
             app:layout_constraintStart_toStartOf="@+id/tv1"
             app:layout_constraintTop_toBottomOf="@+id/tv1" />
@@ -52,51 +56,45 @@
             android:id="@+id/tv5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/tv4"
-            app:layout_constraintTop_toBottomOf="@+id/tv4" />
+            app:layout_constraintBottom_toBottomOf="@+id/tv6"
+            app:layout_constraintStart_toEndOf="@+id/tv6" />
 
         <TextView
             android:id="@+id/tv6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/tv5"
-            app:layout_constraintTop_toBottomOf="@+id/tv5" />
+            app:layout_constraintStart_toStartOf="@+id/tv4"
+            app:layout_constraintTop_toBottomOf="@+id/tv4" />
 
         <TextView
             android:id="@+id/tv8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/tv7"
-            app:layout_constraintTop_toBottomOf="@+id/tv7" />
+            app:layout_constraintStart_toStartOf="@+id/tv6"
+            app:layout_constraintTop_toBottomOf="@+id/tv6" />
 
         <TextView
             android:id="@+id/tv7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/tv6"
-            app:layout_constraintTop_toBottomOf="@+id/tv6" />
+            app:layout_constraintStart_toStartOf="@+id/list_image"
+            app:layout_constraintTop_toBottomOf="@+id/list_image" />
 
-        <Button
-            android:id="@+id/contactMeButton"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/chatBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="Contact Me"
+            android:clickable="true"
             app:layout_constraintBottom_toBottomOf="@+id/list_image"
-            app:layout_constraintEnd_toEndOf="@+id/list_image" />
-
-        <TextView
-            android:id="@+id/tv3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/tv8"
-            app:layout_constraintTop_toBottomOf="@+id/tv8" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_baseline_expand_more_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

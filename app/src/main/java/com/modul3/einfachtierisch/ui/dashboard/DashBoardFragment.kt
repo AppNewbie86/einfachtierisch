@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.constraintlayout.widget.ConstraintSet.Layout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.modul3.einfachtierisch.ApiStatus
 import com.modul3.einfachtierisch.MainViewModel
-import com.modul3.einfachtierisch.adapter.ContactAdapter
 import com.modul3.einfachtierisch.adapter.dog.DogAdapter
 import com.modul3.einfachtierisch.databinding.FragmentDashBoardBinding
 
@@ -21,7 +21,7 @@ class DashBoardFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels()
 
     private lateinit var binding: FragmentDashBoardBinding
-    private lateinit var contactButton: Button
+    private lateinit var chatBtn: FloatingActionButton
 
 
     override fun onCreateView(
@@ -36,7 +36,6 @@ class DashBoardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
 
         val imageList = binding.imageList
@@ -69,6 +68,12 @@ class DashBoardFragment : Fragment() {
             imageListAdapter.submitList(it)
         }
 
+
+
+
     }
+
+
+
 
 }

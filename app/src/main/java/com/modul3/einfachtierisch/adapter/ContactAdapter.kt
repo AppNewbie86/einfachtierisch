@@ -62,12 +62,6 @@ class ContactAdapter() : RecyclerView.Adapter<ContactAdapter.ItemViewHolder>() {
             holder.tvLastMessage.text = contact.chatHistory[0].message
         }
 
-        // Das komplette ConstraintLayout bekommt einen Click Listener, in dem zum ChatFragment navigiert wird
-        holder.clContact.setOnClickListener {
-            holder.itemView.findNavController().navigate(
-                DashBoardFragmentDirections.actionNavigationDashboardToContactFragment()
-            )
-        }
     }
 
     /**

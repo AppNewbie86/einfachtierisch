@@ -45,10 +45,7 @@ class ContactFragment : Fragment() {
         val contactAdapter = ContactAdapter()
         binding.rvContacts.adapter = contactAdapter
 
-        contactButton.setOnClickListener {
-            findNavController()
-                .navigate(ContactFragmentDirections.actionContactFragmentToRequestFragment(id))
-        }
+
 
         // Die RecyclerView bekommt den ContactAdapter zugewiesen
         viewModel.contactList.observe(
@@ -57,6 +54,8 @@ class ContactFragment : Fragment() {
                 contactAdapter.submitList(it)
             }
         )
+
+
 
 
     }

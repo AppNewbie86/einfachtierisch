@@ -37,26 +37,17 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.modul3.einfachtierisch.ui.signUp.SignUpFragment"
+        android:name="com.modul3.einfachtierisch.ui.signup.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" />
-    <fragment
-        android:id="@+id/requestFragment"
-        android:name="com.modul3.einfachtierisch.ui.request.RequestFragment"
-        android:label="fragment_request2"
-        tools:layout="@layout/fragment_request" >
-        <argument
-            android:name="contactIndex"
-            app:argType="integer" />
-    </fragment>
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.modul3.einfachtierisch.ui.dashboard.DashBoardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dash_board" >
         <action
-            android:id="@+id/action_navigation_dashboard_to_contactFragment"
-            app:destination="@id/contactFragment" />
+            android:id="@+id/action_navigation_dashboard_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/contactFragment"
@@ -64,8 +55,29 @@
         android:label="fragment_contact"
         tools:layout="@layout/fragment_contact" >
         <action
-            android:id="@+id/action_contactFragment_to_requestFragment"
-            app:destination="@id/requestFragment" />
+            android:id="@+id/action_contactFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.modul3.einfachtierisch.ui.dashboard.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="newsId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_detailFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.modul3.einfachtierisch.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
+        <argument
+            android:name="contactIndex"
+            app:argType="integer" />
     </fragment>
 
 </navigation>

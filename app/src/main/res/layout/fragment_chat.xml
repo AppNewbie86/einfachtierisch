@@ -18,7 +18,7 @@
             android:id="@+id/chat_toolbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="#03A9F4"
+            android:background="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -44,8 +44,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:boxStrokeColor="@color/black"
-            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/common_google_signin_btn_text_light"
+            app:hintTextColor="@color/common_google_signin_btn_text_dark_pressed"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnSend"
             app:layout_constraintStart_toStartOf="parent">
@@ -63,20 +63,19 @@
             style="@style/Widget.AppCompat.ImageButton"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
+            app:tint="?attr/colorOnSecondary"
             android:layout_marginEnd="8dp"
             android:adjustViewBounds="true"
             android:scaleType="centerInside"
             android:src="@drawable/ic_baseline_send_24"
             app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:tint="@color/purple_200" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMessages"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/logo_vector"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
             app:layout_constraintEnd_toEndOf="parent"

@@ -19,4 +19,8 @@
     <string name="welchen_tgl_zeitraum_w_rden_sie_ben_tigen">Welchen tgl. Zeitraum würden Sie benötigen?</string>
     <string name="message">message</string>
     <string name="requestText">requestText</string>
+    <string name="first_name">first_name</string>
+    <string name="last_name">last_name</string>
+    <string name="enter_your_password">enter_your_password</string>
+    <string name="email_phone_no">email_phone_no</string>
 </resources>

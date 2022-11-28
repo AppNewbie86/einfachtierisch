@@ -1,6 +1,5 @@
 package com.modul3.einfachtierisch.ui.request
 
-
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
@@ -15,7 +14,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.adapter.MessageAdapter
-import com.modul3.einfachtierisch.databinding.FragmentRequestBinding
+import com.modul3.einfachtierisch.databinding.FragmentChatBinding
+
 
 class ChatFragment : Fragment() {
 
@@ -23,7 +23,7 @@ class ChatFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels()
 
     // Das binding für das QuizFragment wird deklariert
-    private lateinit var binding: FragmentRequestBinding
+    private lateinit var binding: FragmentChatBinding
 
     /**
      * Lifecycle Funktion onCreateView
@@ -34,7 +34,7 @@ class ChatFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentRequestBinding.inflate(inflater, container, false)
+        binding = FragmentChatBinding.inflate(inflater, container, false)
         return binding.root
     }
 

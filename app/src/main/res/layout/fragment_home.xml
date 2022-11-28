@@ -33,28 +33,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/getStartedBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="104dp"
-        android:clickable="true"
-        android:contentDescription="startBtn zum registerFragment"
-        android:elevation="18dp"
-        android:src="@drawable/frame_110"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/greetingtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="204dp"
+        android:layout_marginTop="24dp"
         android:text="Welcome to DogCrounding"
-        app:layout_constraintBottom_toTopOf="@+id/getStartedBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/applogoimage" />
 
     <ImageView
         android:id="@+id/applogoimage"
@@ -70,34 +57,41 @@
         android:id="@+id/logininfotext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="44dp"
         android:text="Hier gelangen Sie zum Login"
         android:textColor="#FAF8F8"
-        app:layout_constraintBottom_toTopOf="@+id/getStartedBtn"
-        app:layout_constraintEnd_toEndOf="@+id/getStartedBtn"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="@+id/getStartedBtn" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_dashboard" />
 
     <TextView
         android:id="@+id/registerInfoText"
-        android:layout_width="77dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="64dp"
-        android:text="direkt zum "
+        android:layout_width="292dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="16dp"
+        android:text="oder falls Sie noch keinen Account besitzen "
         android:textColor="#F8F5F5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/getStartedBtn"
+        app:layout_constraintStart_toStartOf="@+id/getStartedBtn"
         app:layout_constraintTop_toBottomOf="@+id/getStartedBtn" />
 
-    <TextView
-        android:id="@+id/registerButton"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/getStartedBtn"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:minHeight="48dp"
-        android:text="Register"
-        android:textColor="#2196F3"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/registerInfoText"
-        app:layout_constraintTop_toTopOf="@+id/registerInfoText" />
+        android:layout_marginTop="16dp"
+        android:text="zum Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logininfotext" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Create a New Account"
+        app:layout_constraintEnd_toEndOf="@+id/registerInfoText"
+        app:layout_constraintStart_toStartOf="@+id/registerInfoText"
+        app:layout_constraintTop_toBottomOf="@+id/registerInfoText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

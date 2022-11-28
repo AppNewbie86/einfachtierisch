@@ -2,18 +2,22 @@ package com.modul3.einfachtierisch.adapter.dog
 
 import android.annotation.SuppressLint
 import android.net.Uri
+import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.net.toUri
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.request.ImageRequest
 import coil.transform.RoundedCornersTransformation
 import com.modul3.einfachtierisch.R
 import com.modul3.einfachtierisch.data.models.Dogs
+import com.modul3.einfachtierisch.ui.dashboard.DashBoardFragmentDirections
 
 class DogAdapter(emptyList: List<Any>) : RecyclerView.Adapter<DogAdapter.ItemViewHolder>() {
 
@@ -29,7 +33,6 @@ class DogAdapter(emptyList: List<Any>) : RecyclerView.Adapter<DogAdapter.ItemVie
         val textView5: TextView = view.findViewById(R.id.tv5)
         val textView6: TextView = view.findViewById(R.id.tv6)
         val textView7: TextView = view.findViewById(R.id.tv7)
-        val textView3: TextView = view.findViewById(R.id.tv3)
 
         val textView8: TextView = view.findViewById(R.id.tv8)
 
@@ -58,12 +61,12 @@ class DogAdapter(emptyList: List<Any>) : RecyclerView.Adapter<DogAdapter.ItemVie
         val item: Dogs = dataset[position]
 
 
+
+        holder.textView7.text = "Nummer: " + item.id
         holder.textView1.text = "Name : " + item.name
-        holder.textView3.text = "image: " + item.image
-        holder.textView4.text = "coat_lenght: " + item.coat_lenght
-        holder.textView5.text = "coat_color: " + item.coat_color
-        holder.textView6.text = "height: " + item.height
-        holder.textView7.text = "id: " + item.id
+        holder.textView4.text = "Haarlänge: " + item.coat_lenght
+        holder.textView5.text = "Fellfarbe: " + item.coat_color
+        holder.textView6.text = "Höhe: " + item.height
         holder.textView8.text = "detail_text: " + item.detail_text
 
         val imgUri = item.image.toUri().buildUpon().scheme("https").build()
@@ -80,8 +83,4 @@ class DogAdapter(emptyList: List<Any>) : RecyclerView.Adapter<DogAdapter.ItemVie
     override fun getItemCount(): Int {
         return dataset.size
     }
-}
-
-private fun View.load(data: Uri?, builder: ImageRequest.Builder.() -> Unit) {
-
 }
