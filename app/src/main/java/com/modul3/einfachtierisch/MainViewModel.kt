@@ -69,23 +69,38 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    /**
+     *  Kommunikationspunkt mit der Firestore Datenbank
+     */
 
-    // Kommunikationspunkt mit der Firestore Datenbank
     private val db = FirebaseFirestore.getInstance()
 
-    // Kommunikationspunkt mit der FirebaseAuth
+    /**
+     *  Kommunikationspunkt mit der FirebaseAuth
+     */
+
     private val firebaseAuth = FirebaseAuth.getInstance()
 
-    // Kommunikationspunkt mit Firebase Storage
+    /**
+     *  Kommunikationspunkt mit Firebase Storage
+     */
+
     private val storage = FirebaseStorage.getInstance()
     private val storageRef = storage.reference
 
-    // currentuser ist null wenn niemand eingeloggt ist
+    /**
+     *   currentuser ist null wenn niemand eingeloggt ist
+     */
+
     private val _currentUser = MutableLiveData<FirebaseUser?>(firebaseAuth.currentUser)
     val currentUser: LiveData<FirebaseUser?>
         get() = _currentUser
 
-    // Member enthält alle relevanten Daten aus dem Firestore
+
+    /**
+     *  Member enthält alle relevanten Daten aus dem Firestore
+     */
+
     private val _member = MutableLiveData<Member>()
     val member: LiveData<Member>
         get() = _member
@@ -129,9 +144,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-//**********************************
-
-
     private val _news = MutableLiveData<List<Dogs>>()
     val news: LiveData<List<Dogs>>
         get() = _news
@@ -140,9 +152,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _news.value = dogs.value
     }
 
+    /**
+     * hier wird versucht einen User zu erstellen um diesen anschließend auch gleich
+     * einzuloggen
+     */
 
-    // hier wird versucht einen User zu erstellen um diesen anschließend auch gleich
-    // einzuloggen
     fun signUp(email: String, password: String, member: Member) {
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
             if (it.isSuccessful) {
@@ -166,7 +180,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    // hier wird userid, nickname und level in die Firestore Datenbank gespeichert
+    /**
+     * hier wird userid, nickname und level in die Firestore Datenbank gespeichert
+     *
+     */
+
     private fun setNameAndLevel(member: Member) {
         db.collection("user").document(currentUser.value!!.uid)
             .set(member)
@@ -176,6 +194,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 _toast.value = null
             }
     }
+
+    /**
+     * Funktion zum einloggen in die App
+     * Übergeben ihm email und password und wenn beides erfolgreich geprüft wurde werden wir eingeloggt
+     */
 
     fun login(email: String, password: String) {
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
@@ -190,6 +213,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
     }
+
+    /**
+     * Funktion zum uploaden eines Images in den Speicher
+     */
 
     fun uploadImage(uri: Uri) {
         val imageRef = storageRef.child("images/${currentUser.value?.uid}/profilePic")
@@ -212,6 +239,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+
+    /**
+     * Funktion zum setzen des Bildes in den GallerieSpeicher
+     */
+
     private fun setImage(uri: Uri) {
         db.collection("user").document(currentUser.value!!.uid)
             .update("image", uri.toString())
@@ -226,12 +258,19 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
+    /**
+     * Funktion für den Logout aus der App
+     */
+
     fun logout() {
         firebaseAuth.signOut()
         _currentUser.value = firebaseAuth.currentUser
     }
 
-    // hier werden Spielerdaten mittles userid aus dem Firestore geladen
+    /**
+     *  hier werden Spielerdaten mittles userid aus dem Firestore geladen
+     */
+
     fun getMemberData() {
         db.collection("user").document(currentUser.value!!.uid)
             .get().addOnSuccessListener {
@@ -242,11 +281,5 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
     }
 
-    // hier wird das level des Spielers erhöht und in den FireStore geschrieben
-    fun levelUp() {
-        val newLevel = member.value!!.level + 1
-        db.collection("user").document(currentUser.value!!.uid)
-            .update("level", newLevel)
-            .addOnSuccessListener { getMemberData() }
-    }
+
 }

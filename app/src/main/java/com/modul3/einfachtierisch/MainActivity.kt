@@ -6,8 +6,6 @@ import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.modul3.einfachtierisch.databinding.ActivityMainBinding
@@ -33,7 +31,18 @@ class MainActivity : AppCompatActivity() {
 
         val navView: BottomNavigationView = binding.navView
 
+
+        /**
+         *         navController wird dem NavHostFragment zugeordnet
+
+         */
+
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
+
+
+        /**
+         * für ActionBar zum Ausblenden
+         */
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.setDecorFitsSystemWindows(false)
@@ -50,15 +59,8 @@ class MainActivity : AppCompatActivity() {
          * Menü sollten als Top-Level-Ziele betrachtet werden.
          */
 
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home,
-                R.id.navigation_dashboard,
-                R.id.navigation_notifications,
-                R.id.navigation_profile
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+
+        // setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
 

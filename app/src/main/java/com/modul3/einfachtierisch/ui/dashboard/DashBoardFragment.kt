@@ -22,6 +22,9 @@ import com.modul3.einfachtierisch.databinding.FragmentDashBoardBinding
  */
 class DashBoardFragment : Fragment() {
 
+
+    //später initialisierte Variable wo das binding aktiviert wird
+
     private lateinit var binding: FragmentDashBoardBinding
 
     private val viewModel: MainViewModel by activityViewModels()
@@ -68,6 +71,10 @@ class DashBoardFragment : Fragment() {
             }
         )
 
+        /**
+         * viewmodel überwacht den toast
+         */
+
         viewModel.toast.observe(
             viewLifecycleOwner,
             Observer {
@@ -77,15 +84,26 @@ class DashBoardFragment : Fragment() {
             }
         )
 
+        /**
+         * update Picture
+         */
+
         binding.levelUpImage.setOnClickListener {
             getContent.launch("image/*")
         }
+
+        /**
+         * NewsButton
+         */
 
         binding.newsBtn.setOnClickListener {
             findNavController()
                 .navigate(DashBoardFragmentDirections.actionNavigationDashboardToNewsFragment())
         }
 
+        /**
+         * LogoutButton
+         */
 
         binding.LogoutButton.setOnClickListener {
             viewModel.logout()

@@ -91,12 +91,15 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.modul3.einfachtierisch.DetailFragment"
+        android:name="com.modul3.einfachtierisch.ui.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
         <action
             android:id="@+id/action_detailFragment_to_contactFragment"
             app:destination="@id/contactFragment" />
+        <argument
+            android:name="dogId"
+            app:argType="integer" />
     </fragment>
 
 </navigation>

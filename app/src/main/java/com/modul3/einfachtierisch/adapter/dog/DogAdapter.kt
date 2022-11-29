@@ -61,7 +61,7 @@ class DogAdapter(emptyList: List<Any>) : RecyclerView.Adapter<DogAdapter.ItemVie
 
         holder.card.setOnClickListener {
             holder.itemView.findNavController()
-                .navigate(NewsFragmentDirections.actionNewsFragmentToDetailFragment2())
+                .navigate(NewsFragmentDirections.actionNewsFragmentToDetailFragment2(item.id))
         }
 
 
@@ -87,7 +87,6 @@ class DogAdapter(emptyList: List<Any>) : RecyclerView.Adapter<DogAdapter.ItemVie
         return dataset.size
     }
 
-    private fun navigateFun(){}
 
 
 }
