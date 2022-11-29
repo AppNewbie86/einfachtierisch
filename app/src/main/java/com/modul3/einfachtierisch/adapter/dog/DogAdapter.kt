@@ -1,12 +1,9 @@
 package com.modul3.einfachtierisch.adapter.dog
 
 import android.annotation.SuppressLint
-import android.net.Uri
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -14,11 +11,10 @@ import androidx.core.net.toUri
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import coil.request.ImageRequest
 import coil.transform.RoundedCornersTransformation
 import com.modul3.einfachtierisch.R
 import com.modul3.einfachtierisch.data.models.Dogs
-import com.modul3.einfachtierisch.ui.dashboard.DashBoardFragmentDirections
+import com.modul3.einfachtierisch.ui.news.NewsFragmentDirections
 
 class DogAdapter(emptyList: List<Any>) : RecyclerView.Adapter<DogAdapter.ItemViewHolder>() {
 
@@ -42,7 +38,6 @@ class DogAdapter(emptyList: List<Any>) : RecyclerView.Adapter<DogAdapter.ItemVie
 
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     fun submitList(list: List<Dogs>) {
         dataset = list
         notifyDataSetChanged()
@@ -60,14 +55,14 @@ class DogAdapter(emptyList: List<Any>) : RecyclerView.Adapter<DogAdapter.ItemVie
 
     // hier findet der Recyclingprozess statt
     // die vom ViewHolder bereitgestellten Parameter werden verändert
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item: Dogs = dataset[position]
 
         holder.card.setOnClickListener {
             holder.itemView.findNavController()
-                .navigate(DashBoardFragmentDirections.actionNavigationDashboardToDetailFragment(item.id))
+                .navigate(NewsFragmentDirections.actionNewsFragmentToDetailFragment2())
         }
-
 
 
         holder.textView7.text = "Nummer: " + item.id
@@ -91,4 +86,8 @@ class DogAdapter(emptyList: List<Any>) : RecyclerView.Adapter<DogAdapter.ItemVie
     override fun getItemCount(): Int {
         return dataset.size
     }
+
+    private fun navigateFun(){}
+
+
 }

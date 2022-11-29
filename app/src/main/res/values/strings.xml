@@ -23,4 +23,5 @@
     <string name="last_name">last_name</string>
     <string name="enter_your_password">enter_your_password</string>
     <string name="email_phone_no">email_phone_no</string>
+    <string name="News">News</string>
 </resources>

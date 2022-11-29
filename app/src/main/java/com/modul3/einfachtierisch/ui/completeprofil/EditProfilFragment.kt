@@ -1,4 +1,4 @@
-package com.modul3.einfachtierisch
+package com.modul3.einfachtierisch.ui.completeprofil
 
 import android.content.Context
 import android.content.Intent

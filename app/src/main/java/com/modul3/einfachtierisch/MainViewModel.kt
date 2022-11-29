@@ -1,6 +1,7 @@
 package com.modul3.einfachtierisch
 
 import android.app.Application
+import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -9,40 +10,27 @@ import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import com.modul3.einfachtierisch.data.Repository
-import com.modul3.einfachtierisch.data.models.*
+import com.modul3.einfachtierisch.data.models.Contact
+import com.modul3.einfachtierisch.data.models.Dogs
+import com.modul3.einfachtierisch.data.models.Member
+import com.modul3.einfachtierisch.data.models.Message
 import com.modul3.einfachtierisch.remote.DogApi
 import kotlinx.coroutines.launch
-import java.lang.Exception
 
-
-/** Aufgaben meines MainViewModels
- *  Das MainViewModel kümmert sich um die Kommunikation mit der Firebase Authentication
- *  SpeicherOrt der Daten was von FireBase Auth oder Storage kommen
- *  Ansonsten teilen sich nur das Login und SignUp Fragment ein MainViewModel
- *  Alle anderen haben ein eigenes ViewModel zum Speichern ihrer Daten
- *  Steuert das Verhalten wenn Nutzer ausgeloggt ist
- *  Steuert das Verhalten wenn Nutzer sich falsch anmeldet oder Registriert und wirft dann einen ToastText
- **********************************************************************************************************
- *  SHA Code generieren
- *  Diesen Code zum Erhalten des SHACodes einfach in den Terminal folgenden Code einfügen
- *
- *  >>keytool -alias androiddebugkey -keystore ~/.android/debug.keystore -list -v -storepass android<<
- * **********************************************************************************************************
-   **********************************************************************************************************
-
- *  ACHTUNG: in der Firestore Datenbank folgende Regel festlegen
- *
- *  >> allow read, write: if request.auth != null; <<
- *
- *   **********************************************************************************************************
-
- */
-
-const val TAG = "MainViewModel"
 
 enum class ApiStatus { LOADING, ERROR, DONE }
 
+const val TAG = "MainViewModel"
+
+/**
+ * Das MainViewModel kümmert sich um die Kommunikation mit der Firebase Authentication
+ * um einen SHA-1 Key zu generieren einfach folgene Zeilen ins Terminal kopieren
+ * >>keytool -alias androiddebugkey -keystore ~/.android/debug.keystore -list -v -storepass android<<
+ *  * ACHTUNG: in der Firestore Datenbank folgende Regel festlegen
+ * >> allow read, write: if request.auth != null; <<
+ */
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = Repository(DogApi)
@@ -82,7 +70,30 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-    private final var Repository = Repository(DogApi)
+    // Kommunikationspunkt mit der Firestore Datenbank
+    private val db = FirebaseFirestore.getInstance()
+
+    // Kommunikationspunkt mit der FirebaseAuth
+    private val firebaseAuth = FirebaseAuth.getInstance()
+
+    // Kommunikationspunkt mit Firebase Storage
+    private val storage = FirebaseStorage.getInstance()
+    private val storageRef = storage.reference
+
+    // currentuser ist null wenn niemand eingeloggt ist
+    private val _currentUser = MutableLiveData<FirebaseUser?>(firebaseAuth.currentUser)
+    val currentUser: LiveData<FirebaseUser?>
+        get() = _currentUser
+
+    // Member enthält alle relevanten Daten aus dem Firestore
+    private val _member = MutableLiveData<Member>()
+    val member: LiveData<Member>
+        get() = _member
+
+    private val _toast = MutableLiveData<String?>()
+    val toast: LiveData<String?>
+        get() = _toast
+
 
     // Die Liste aus Kontakten wird in einer verschachtelten Variable gespeichert
     val contactList: LiveData<List<Contact>> = repository.contactList
@@ -95,6 +106,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _chat = MutableLiveData<MutableList<Message>>(mutableListOf())
     val chat: LiveData<MutableList<Message>>
         get() = _chat
+
 
     /**
      * Diese Funktion initialisiert den Chat und setzt die Variablen dementsprechend
@@ -117,11 +129,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-
-
-
 //**********************************
-
 
 
     private val _news = MutableLiveData<List<Dogs>>()
@@ -132,26 +140,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _news.value = dogs.value
     }
 
-
-// Kommunikationspunkt mit der Firestore Datenbank
-    private val db = FirebaseFirestore.getInstance()
-
-    // Kommunikationspunkt mit der FirebaseAuth
-    private val firebaseAuth = FirebaseAuth.getInstance()
-
-    // currentuser ist null wenn niemand eingeloggt ist
-    private val _currentUser = MutableLiveData<FirebaseUser?>(firebaseAuth.currentUser)
-    val currentUser: LiveData<FirebaseUser?>
-        get() = _currentUser
-
-    // Member enthält alle relevanten Daten aus dem Firestore
-    private val _member = MutableLiveData<Member>()
-    val member: LiveData<Member>
-        get() = _member
-
-    private val _toast = MutableLiveData<String?>()
-    val toast: LiveData<String?>
-        get() = _toast
 
     // hier wird versucht einen User zu erstellen um diesen anschließend auch gleich
     // einzuloggen
@@ -178,10 +166,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    /**
-     *  hier wird der Member, nickname und Level in die Firestore Datenbank gespeichert
-     */
-
+    // hier wird userid, nickname und level in die Firestore Datenbank gespeichert
     private fun setNameAndLevel(member: Member) {
         db.collection("user").document(currentUser.value!!.uid)
             .set(member)
@@ -191,9 +176,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 _toast.value = null
             }
     }
-    /**
-     *  Funktion für den Login
-     */
+
     fun login(email: String, password: String) {
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
             if (it.isSuccessful) {
@@ -208,13 +191,47 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun uploadImage(uri: Uri) {
+        val imageRef = storageRef.child("images/${currentUser.value?.uid}/profilePic")
+        val uploadTask = imageRef.putFile(uri)
+
+        uploadTask.addOnFailureListener {
+            Log.e("MainViewModel", "upload failed: $it")
+        }
+
+        uploadTask.addOnSuccessListener {
+            Log.e("MainViewModel", "upload worked")
+        }
+
+        uploadTask.addOnCompleteListener {
+            imageRef.downloadUrl.addOnCompleteListener {
+                if (it.isSuccessful) {
+                    setImage(it.result)
+                }
+            }
+        }
+    }
+
+    private fun setImage(uri: Uri) {
+        db.collection("user").document(currentUser.value!!.uid)
+            .update("image", uri.toString())
+            .addOnFailureListener {
+                Log.w(TAG, "Error writing document: $it")
+                _toast.value = "error creating player\n${it.localizedMessage}"
+                _toast.value = null
+            }
+            .addOnCompleteListener {
+                getMemberData()
+            }
+    }
+
+
     fun logout() {
         firebaseAuth.signOut()
         _currentUser.value = firebaseAuth.currentUser
     }
-    /**
-     *  hier werden Spielerdaten mittles userid aus dem Firestore geladen (Daten werden geholt)
-     */
+
+    // hier werden Spielerdaten mittles userid aus dem Firestore geladen
     fun getMemberData() {
         db.collection("user").document(currentUser.value!!.uid)
             .get().addOnSuccessListener {
@@ -223,34 +240,13 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             .addOnFailureListener {
                 Log.e(TAG, "Error reading document: $it")
             }
-//            .addSnapshotListener { value, error ->
-//                if (value != null && value.exists()) {
-//                    _member.value = value.toObject(Member::class.java)
-//                }
-//            }
     }
 
     // hier wird das level des Spielers erhöht und in den FireStore geschrieben
     fun levelUp() {
-        val newLevel = member.value!!
+        val newLevel = member.value!!.level + 1
         db.collection("user").document(currentUser.value!!.uid)
             .update("level", newLevel)
             .addOnSuccessListener { getMemberData() }
-    }
-
-    /**
-     * Schreibt den first und lastname in Firestore
-     * und speichert ihn dort
-     *
-     */
-
-    private fun setFirstAndLastName(member: Member) {
-        db.collection("user").document(currentUser.value!!.uid)
-            .set(member)
-            .addOnFailureListener {
-                Log.w(TAG, "Error writing document: $it")
-                _toast.value = "error creating member\n${it.localizedMessage}"
-                _toast.value = null
-            }
     }
 }

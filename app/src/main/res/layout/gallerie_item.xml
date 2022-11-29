@@ -7,17 +7,17 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="200dp"
-        android:layout_height="306dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         app:cardBackgroundColor="#E6E3E3"
         app:cardCornerRadius="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/hobbyImage"
@@ -28,38 +28,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/backgrounddogvector" />
+                app:srcCompat="@drawable/imageone" />
 
-            <TextView
-                android:id="@+id/activity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:text="KunstAustellung 2021"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hobbyImage" />
-
-            <TextView
-                android:id="@+id/rangtext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2. Platz "
-                app:layout_constraintEnd_toEndOf="@+id/activity"
-                app:layout_constraintStart_toStartOf="@+id/activity"
-                app:layout_constraintTop_toBottomOf="@+id/activity" />
-
-            <TextView
-                android:id="@+id/titletext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Thema Kunst"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hobbyImage" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

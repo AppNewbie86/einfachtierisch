@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/background3"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="1000dp"
+            android:layout_height="1000dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.12"
@@ -42,7 +42,6 @@
             android:ems="10"
             android:hint="email"
             android:inputType="textEmailAddress"
-            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="@+id/title_text"
             app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="@+id/title_text"
@@ -56,7 +55,6 @@
             android:ems="10"
             android:hint="password"
             android:inputType="textPassword"
-            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="@+id/login_email_edit"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/login_email_edit"

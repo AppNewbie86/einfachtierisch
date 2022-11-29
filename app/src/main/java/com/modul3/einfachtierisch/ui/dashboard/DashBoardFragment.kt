@@ -1,50 +1,42 @@
 package com.modul3.einfachtierisch.ui.dashboard
 
-import android.content.Context
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.constraintlayout.widget.ConstraintSet.Layout
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.modul3.einfachtierisch.ApiStatus
-import com.modul3.einfachtierisch.MainActivity
+import coil.load
 import com.modul3.einfachtierisch.MainViewModel
-import com.modul3.einfachtierisch.adapter.dog.DogAdapter
+import com.modul3.einfachtierisch.R
 import com.modul3.einfachtierisch.databinding.FragmentDashBoardBinding
 
+/**
+ * Das MainFragment ist der Begrüßungsscreen unserer App
+ * sollte kein User eingeloggt sein wird man automatisch zum Login weitergeleitet
+ */
 class DashBoardFragment : Fragment() {
 
+    private lateinit var binding: FragmentDashBoardBinding
 
-    // Hier wird das ViewModel geholt
     private val viewModel: MainViewModel by activityViewModels()
 
-
-
-
-    private lateinit var binding: FragmentDashBoardBinding
-    private lateinit var chatBtn: FloatingActionButton
-
-
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        activity?.lifecycleScope?.launchWhenCreated {
-            (activity as MainActivity).showNavBar()
+    private val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+        if (uri != null) {
+            viewModel.uploadImage(uri)
         }
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         binding = FragmentDashBoardBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -52,43 +44,51 @@ class DashBoardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        val imageList = binding.imageList
-
-        val imageListAdapter = DogAdapter(emptyList())
-
-        imageList.adapter = imageListAdapter
-
-
-        viewModel.loading.observe(
-            viewLifecycleOwner
-        ) {
-            when (it) {
-                ApiStatus.LOADING -> binding.progressBar.visibility = View.VISIBLE
-                ApiStatus.ERROR -> {
-                    binding.progressBar.visibility = View.GONE
-                    binding.errorImage.visibility = View.VISIBLE
-                }
-                else -> {
-                    binding.progressBar.visibility = View.GONE
-                    binding.errorImage.visibility = View.GONE
+        viewModel.currentUser.observe(
+            viewLifecycleOwner,
+            Observer {
+                if (it == null) {
+                    findNavController().navigate(R.id.loginFragment)
+                } else {
+                    viewModel.getMemberData()
                 }
             }
+        )
+
+        viewModel.member.observe(
+            viewLifecycleOwner,
+            Observer {
+                if (it != null) {
+                    binding.playerNameText.text = it.name
+
+                    binding.playerImage.load(it.image) {
+                        error(resources.getDrawable(R.drawable.american))
+                    }
+                }
+            }
+        )
+
+        viewModel.toast.observe(
+            viewLifecycleOwner,
+            Observer {
+                if (it != null) {
+                    Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+                }
+            }
+        )
+
+        binding.levelUpImage.setOnClickListener {
+            getContent.launch("image/*")
         }
 
-        viewModel.dogs.observe(
-            viewLifecycleOwner
-        ) {
-            println("WTF value of drinks by observer: $it")
-            imageListAdapter.submitList(it)
+        binding.newsBtn.setOnClickListener {
+            findNavController()
+                .navigate(DashBoardFragmentDirections.actionNavigationDashboardToNewsFragment())
         }
 
 
-
-
+        binding.LogoutButton.setOnClickListener {
+            viewModel.logout()
+        }
     }
-
-
-
-
 }

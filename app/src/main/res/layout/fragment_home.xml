@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Welcome to DogCrounding"
+        android:text="Welcome "
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:text="Hier gelangen Sie zum Login"
-        android:textColor="#FAF8F8"
+        android:textColor="#040303"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/getStartedBtn"
         app:layout_constraintTop_toBottomOf="@+id/text_dashboard" />
 
@@ -71,7 +72,8 @@
         android:layout_marginTop="16dp"
         android:foregroundGravity="center|center_horizontal"
         android:text="or Create"
-        android:textColor="#F8F5F5"
+        android:textColor="#0E0C0C"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/getStartedBtn"
         app:layout_constraintStart_toStartOf="@+id/getStartedBtn"
         app:layout_constraintTop_toBottomOf="@+id/getStartedBtn" />
@@ -90,7 +92,7 @@
 
     <Button
         android:id="@+id/registerButton"
-        style="@style/FirebaseUI.Button.AccountChooser.AnonymousButton"
+        style="@android:style/Widget.DeviceDefault.Button.Inset"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"

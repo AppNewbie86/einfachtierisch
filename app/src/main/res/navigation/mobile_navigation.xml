@@ -18,15 +18,6 @@
             app:destination="@id/signUpFragment" />
     </fragment>
 
-    <fragment
-        android:id="@+id/navigation_profile"
-        android:name="com.modul3.einfachtierisch.ui.profile.ProfileFragment"
-        android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" >
-        <action
-            android:id="@+id/action_navigation_profile_to_editProfilFragment"
-            app:destination="@id/editProfilFragment" />
-    </fragment>
     <argument
         android:name="newsId"
         app:argType="integer" />
@@ -50,8 +41,8 @@
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dash_board" >
         <action
-            android:id="@+id/action_navigation_dashboard_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            android:id="@+id/action_navigation_dashboard_to_newsFragment"
+            app:destination="@id/navigation_news" />
     </fragment>
     <fragment
         android:id="@+id/contactFragment"
@@ -63,20 +54,8 @@
             app:destination="@id/chatFragment" />
     </fragment>
     <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.modul3.einfachtierisch.ui.dashboard.DetailFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
-        <action
-            android:id="@+id/action_detailFragment_to_contactFragment"
-            app:destination="@id/contactFragment" />
-        <argument
-            android:name="dogsId"
-            app:argType="integer" />
-    </fragment>
-    <fragment
         android:id="@+id/chatFragment"
-        android:name="com.modul3.einfachtierisch.ui.request.ChatFragment"
+        android:name="com.modul3.einfachtierisch.ui.chat.ChatFragment"
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" >
         <argument
@@ -85,13 +64,39 @@
     </fragment>
     <fragment
         android:id="@+id/editProfilFragment"
-        android:name="com.modul3.einfachtierisch.EditProfilFragment"
+        android:name="com.modul3.einfachtierisch.ui.completeprofil.EditProfilFragment"
         android:label="fragment_edit_profil"
-        tools:layout="@layout/fragment_edit_profil" />
+        tools:layout="@layout/fragment_edit_profil" >
+        <action
+            android:id="@+id/action_editProfilFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/summaryFragment"
-        android:name="com.modul3.einfachtierisch.SummaryFragment"
+        android:name="com.modul3.einfachtierisch.ui.completeprofil.SummaryFragment"
         android:label="fragment_summary"
-        tools:layout="@layout/fragment_summary" />
+        tools:layout="@layout/fragment_summary" >
+        <action
+            android:id="@+id/action_summaryFragment_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_news"
+        android:name="com.modul3.einfachtierisch.ui.news.NewsFragment"
+        android:label="@string/News"
+        tools:layout="@layout/fragment_news">
+        <action
+            android:id="@+id/action_newsFragment_to_detailFragment2"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.modul3.einfachtierisch.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
 
 </navigation>

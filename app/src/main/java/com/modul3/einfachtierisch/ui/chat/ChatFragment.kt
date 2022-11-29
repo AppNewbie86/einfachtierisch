@@ -1,4 +1,4 @@
-package com.modul3.einfachtierisch.ui.request
+package com.modul3.einfachtierisch.ui.chat
 
 import android.content.Context
 import android.os.Bundle
