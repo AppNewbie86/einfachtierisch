@@ -1,14 +1,12 @@
 package com.modul3.einfachtierisch.data
 
 import android.content.ContentValues
-import android.graphics.Picture
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.modul3.einfachtierisch.R
 import com.modul3.einfachtierisch.data.models.*
 import com.modul3.einfachtierisch.remote.DogApi
-import kotlinx.coroutines.delay
 
 class Repository(private val api: DogApi) {
 
@@ -48,23 +46,59 @@ class Repository(private val api: DogApi) {
             )
     }
 
-    private fun loadHotStuff(): List<HotStuff> {
-        return listOf(
-            HotStuff("Brad", R.drawable.imageone),
-            HotStuff("Emma", R.drawable.imagetwo),
-            HotStuff("Jennifer", R.drawable.imagethree),
-            HotStuff("Johnny", R.drawable.imagefour),
-            HotStuff("Keanu", R.drawable.imagefive),
-            HotStuff("Keanu", R.drawable.imagesix),
-            HotStuff("Keanu", R.drawable.imageeight),
-            HotStuff("Keanu", R.drawable.imagenine),
-
-
-            )
-    }
-
 
 }
+
+fun loadHotStuff(): List<HotStuff> {
+
+    return listOf(
+        HotStuff(
+            1,
+            "Die Top Social Media Party des Jahres !!!",
+            R.drawable.imageone,
+            "Deutschland",
+            "23.12.2022",
+            "auchtung achtung!\nNur begrenzte Plätze buchbar," +
+                    "jetzt schnell Plätze sichern solange der Vorrat reicht"
+        ),
+        HotStuff(
+            1,
+            "Eine kleine und doch jedes jahr mehr Achtung geschenkt wird ist unsere DogSpezialChristmasParty",
+            R.drawable.imagetwo,
+            "Deutschland",
+            "19.12.2022",
+            "extra mit KinderProgramm\nund vielem mehr"
+        ),
+
+        HotStuff(
+            1,
+            "Die Top 10 gefährlichsten Tiere Deutschlands!",
+            R.drawable.imagethree,
+            "Deutschland",
+            "23.06.2022",
+            "auchtung achtung!\nDie fressen dich"
+        ),
+        HotStuff(
+            1,
+            "Die Top 10 gefährlichsten Tiere Deutschlands!",
+            R.drawable.imagefour,
+            "Deutschland",
+            "23.06.2022",
+            "auchtung achtung!\nDie fressen dich"
+        ),
+        HotStuff(
+            1,
+            "Die Top 10 gefährlichsten Tiere Deutschlands!",
+            R.drawable.imagefive,
+            "Deutschland",
+            "23.06.2022",
+            "auchtung achtung!\nDie fressen dich"
+        ),
+    )
+}
+
+
+
 
 
 

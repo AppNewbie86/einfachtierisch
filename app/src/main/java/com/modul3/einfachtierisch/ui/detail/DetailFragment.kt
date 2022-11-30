@@ -1,7 +1,9 @@
 package com.modul3.einfachtierisch.ui.detail
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,11 +12,14 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.modul3.einfachtierisch.MainActivity
 import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.data.models.Dogs
 import com.modul3.einfachtierisch.databinding.FragmentDetailBinding
+import com.modul3.einfachtierisch.remote.DogApi
 
 class DetailFragment : Fragment() {
 
@@ -30,8 +35,18 @@ class DetailFragment : Fragment() {
     private lateinit var nameOfDogs: TextView
     private lateinit var descriptionText: TextView
 
+    // MainViewModel wird verknüpft
 
     private val viewModel: MainViewModel by activityViewModels()
+
+    // Navbar wird ausgeblendet
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        activity?.lifecycleScope?.launchWhenCreated {
+            (activity as MainActivity).hideNavBar()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,7 +62,7 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         /**
-         *         //später initialierte Variable currentDog
+         *  später initialierte Variable currentDog
          */
 
         lateinit var currentDog: Dogs
@@ -58,8 +73,8 @@ class DetailFragment : Fragment() {
         nameOfDogs = binding.nameOfDogs
         numberOfDogs = binding.numberOfDogs
         dayWithDogBtn = binding.daywithdogBtn
-        detailImage = binding.detailImage
         descriptionText = binding.descriptionText
+        descriptionText.movementMethod = ScrollingMovementMethod()
 
 
         /**
@@ -82,11 +97,20 @@ class DetailFragment : Fragment() {
                  */
                 currentDog = it.find { it.id == dogId }!!
 
-                binding.numberOfDogs.text
-                binding.nameOfDogs.text
-                binding.descriptionText.text
+
+
+                binding.numberOfDogs.text = currentDog.id.toString()
+                binding.nameOfDogs.text = "Name:" + currentDog.name.toString()
+                binding.descriptionText.text = "Beschreibung:" + currentDog.detail_text.toString()
+
             }
         )
+
+
+        binding.daywithdogBtn.setOnClickListener {
+            findNavController()
+                .navigate(DetailFragmentDirections.actionDetailFragmentToContactFragment())
+        }
 
 
     }

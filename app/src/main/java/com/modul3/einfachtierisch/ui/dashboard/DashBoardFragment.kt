@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import coil.load
 import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.R
+import com.modul3.einfachtierisch.adapter.news.NewsAdapter
 import com.modul3.einfachtierisch.databinding.FragmentDashBoardBinding
 
 /**
@@ -46,6 +47,20 @@ class DashBoardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+/*
+        val newsAdapter = NewsAdapter()
+        binding.gallerieRecycler.adapter = newsAdapter
+
+        viewModel.news.observe(
+            viewLifecycleOwner,
+            Observer {
+                // immer wenn neue news kommen recyclerview updaten
+                newsAdapter.submitList(it)
+            }
+        )
+
+ */
 
         viewModel.currentUser.observe(
             viewLifecycleOwner,

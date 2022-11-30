@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.profile.ProfileFragment">
+    android:layout_height="match_parent">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -176,16 +175,15 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/gallerie_recycler"
-            android:layout_width="409dp"
-            android:layout_height="410dp"
-            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/gallerietext"
-            app:spanCount="2"
-            tools:itemCount="8"
-            tools:listitem="@layout/gallerie_item" />
+            tools:itemCount="3"
+            tools:listitem="@layout/news_item" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
