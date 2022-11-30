@@ -48,6 +48,11 @@ class DetailFragment : Fragment() {
         }
     }
 
+
+    /**
+     * Layout wird zum aufblasen vorbereitet
+     */
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -93,11 +98,13 @@ class DetailFragment : Fragment() {
                 /**
                  *  wir erzwingen den comnpiler die DogId zufinden
                  *  und da wir das gewährleisten können das er sie findet ... erzwingen wir ihn
-
                  */
                 currentDog = it.find { it.id == dogId }!!
 
-
+                /**
+                 *  ich binde die Objekte auf das DetailFragment
+                 *  und kann sie da aufrufen und anzeigen
+                 */
 
                 binding.numberOfDogs.text = currentDog.id.toString()
                 binding.nameOfDogs.text = "Name:" + currentDog.name.toString()
@@ -106,6 +113,9 @@ class DetailFragment : Fragment() {
             }
         )
 
+        /**
+         *  navigation zum ContactFragment
+         */
 
         binding.daywithdogBtn.setOnClickListener {
             findNavController()

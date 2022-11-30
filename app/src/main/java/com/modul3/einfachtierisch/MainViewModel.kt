@@ -12,10 +12,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.modul3.einfachtierisch.data.Repository
-import com.modul3.einfachtierisch.data.models.Contact
-import com.modul3.einfachtierisch.data.models.Dogs
-import com.modul3.einfachtierisch.data.models.Member
-import com.modul3.einfachtierisch.data.models.Message
+import com.modul3.einfachtierisch.data.models.*
 import com.modul3.einfachtierisch.remote.DogApi
 import kotlinx.coroutines.launch
 
@@ -113,6 +110,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     // Die Liste aus Kontakten wird in einer verschachtelten Variable gespeichert
     val contactList: LiveData<List<Contact>> = repository.contactList
 
+
     // Der aktuell ausgewählte Kontakt wird in einer verschachtelten Variable gespeichert
     private lateinit var _currentContact: Contact
     val currentContact: Contact
@@ -121,6 +119,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _chat = MutableLiveData<MutableList<Message>>(mutableListOf())
     val chat: LiveData<MutableList<Message>>
         get() = _chat
+
+    // tip des tages
+    private val _tip = MutableLiveData<TipDesTages>()
+    val tip: LiveData<TipDesTages>
+        get() = _tip
 
 
     /**
@@ -132,6 +135,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             _chat.value = _currentContact.chatHistory
         }
     }
+
 
     /**
      * Diese Funktion "schickt die Draft Message ab",
@@ -278,6 +282,28 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
             .addOnFailureListener {
                 Log.e(TAG, "Error reading document: $it")
+            }
+    }
+
+
+    fun getTipDesTages() {
+        db.collection("tipDesTages")//holt sich aus DB die Collection
+            .get()
+            .addOnSuccessListener { collection ->
+                val list = mutableListOf<TipDesTages>()
+                for (document in collection!!) {
+                    val tip = TipDesTages(
+                        document.id,
+                        document.data["tip"].toString()   // hier holt er sich bei erfolgreichem Zugriff aus der DB das passende Dokument heraus mit ID, und Tip
+                    )
+                    list.add(tip)
+                    Log.d(TAG, "${document.id} => ${document.data}")
+                }
+                _tip.value = list.random()  // hier sagen wir das die _tip value ist = das ein Tip random an verschiedenen Wochentagen ausgeworfen wird
+            }
+            // bei nicht erfolgreichem Zugriff wirft er eine Exeption
+            .addOnFailureListener { e ->
+                Log.w(TAG, "Tip failed.", e)
             }
     }
 

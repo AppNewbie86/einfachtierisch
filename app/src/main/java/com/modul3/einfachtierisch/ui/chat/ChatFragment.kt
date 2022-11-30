@@ -16,7 +16,6 @@ import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.adapter.MessageAdapter
 import com.modul3.einfachtierisch.databinding.FragmentChatBinding
 
-
 class ChatFragment : Fragment() {
 
     // Hier wird das ViewModel, in dem die Logik stattfindet, geholt

@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clContact"
+            android:id="@+id/contactCard"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 

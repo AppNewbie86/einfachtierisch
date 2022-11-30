@@ -10,11 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.modul3.einfachtierisch.R
 import com.modul3.einfachtierisch.data.models.Message
 
+
 class MessageAdapter() : RecyclerView.Adapter<MessageAdapter.ItemViewHolder>() {
 
     private var dataset = listOf<Message>()
 
-    fun submitList(list: MutableList<Message>) {
+    fun submitList(list: List<Message>) {
         Log.d("MessageAdapter", "Adapter BANG")
         dataset = list
         notifyItemInserted(0)

@@ -1,7 +1,7 @@
 package com.modul3.einfachtierisch.data.models
 
 /**
- * Diese Data Klasse steht für einen einzelnen Kontakt im ContactFragment
+ * Diese Data Klasse steht für einen einzelnen Kontakt im HomeFragment
  * @param name der Name des Kontakts
  * @param imageResId die resource ID des Bildes des Kontakts
  * @param chatHistory eine Liste aus Message Objekten, in der der Chat Verlauf gespeichert ist
@@ -9,5 +9,5 @@ package com.modul3.einfachtierisch.data.models
 data class Contact(
     val name: String,
     val imageResId: Int,
-    val chatHistory: MutableList<Message> // Liste aus Message Objekten
+    val chatHistory: MutableList<Message>
 )

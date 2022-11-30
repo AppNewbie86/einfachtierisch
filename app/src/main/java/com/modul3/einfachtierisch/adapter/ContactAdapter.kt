@@ -1,5 +1,8 @@
 package com.modul3.einfachtierisch.adapter
 
+
+
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +13,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.modul3.einfachtierisch.R
 import com.modul3.einfachtierisch.data.models.Contact
-import com.modul3.einfachtierisch.ui.dashboard.DashBoardFragmentDirections
+import com.modul3.einfachtierisch.ui.contact.ContactFragmentDirections
 
 
 /**
@@ -20,6 +23,7 @@ class ContactAdapter() : RecyclerView.Adapter<ContactAdapter.ItemViewHolder>() {
 
     private var dataset: List<Contact> = listOf()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun submitList(list: List<Contact>) {
         dataset = list
         notifyDataSetChanged()
@@ -62,6 +66,12 @@ class ContactAdapter() : RecyclerView.Adapter<ContactAdapter.ItemViewHolder>() {
             holder.tvLastMessage.text = contact.chatHistory[0].message
         }
 
+        // Das komplette ConstraintLayout bekommt einen Click Listener, in dem zum ChatFragment navigiert wird
+        holder.clContact.setOnClickListener {
+            holder.itemView.findNavController().navigate(
+                ContactFragmentDirections.actionContactFragmentToChatFragment(position)
+            )
+        }
     }
 
     /**

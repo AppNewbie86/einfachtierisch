@@ -15,13 +15,13 @@
             android:id="@+id/home_toolbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="#E8E7E7"
+            android:background="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:title="ChatWithMe"
             app:titleCentered="true"
-            app:titleTextColor="@color/cardview_light_background" />
+            app:titleTextColor="@color/black" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvContacts"

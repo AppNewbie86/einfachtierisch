@@ -11,7 +11,7 @@ import com.modul3.einfachtierisch.remote.DogApi
 class Repository(private val api: DogApi) {
 
     // Die Variable contactList ruft einmal die Funktion loadContacts() auf und speichert das Ergebnis
-    private val _contactList = MutableLiveData<List<Contact>>(loadContacts())
+    private val _contactList = MutableLiveData<List<Contact>>(loadContacts() as List<Contact>?)
     val contactList: LiveData<List<Contact>>
         get() = _contactList
 
@@ -35,19 +35,20 @@ class Repository(private val api: DogApi) {
      * Jedes Contact Objekt enthält die Informationen für den Namen und
      * die Bild Ressource und eine leere veränderliche Liste
      */
+
     private fun loadContacts(): List<Contact> {
         return listOf(
-            Contact("Brad", R.drawable.baxter, mutableListOf()),
-            Contact("Emma", R.drawable.american, mutableListOf()),
-            Contact("Jennifer", R.drawable.sales, mutableListOf()),
-            Contact("Johnny", R.drawable.sourcer, mutableListOf()),
-            Contact("Keanu", R.drawable.square, mutableListOf()),
+            Contact("Brad", R.drawable.sourcer, mutableListOf()),
+            Contact("Emma", R.drawable.sales, mutableListOf()),
+            Contact("Jennifer", R.drawable.square, mutableListOf()),
+            Contact("Johnny", R.drawable.american, mutableListOf()),
 
-            )
+        )
     }
 
 
-}
+
+
 
 fun loadHotStuff(): List<HotStuff> {
 
@@ -95,7 +96,7 @@ fun loadHotStuff(): List<HotStuff> {
             "auchtung achtung!\nDie fressen dich"
         ),
     )
-}
+}}
 
 
 
