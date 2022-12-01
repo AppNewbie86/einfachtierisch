@@ -43,6 +43,9 @@
         <action
             android:id="@+id/action_navigation_dashboard_to_newsFragment"
             app:destination="@id/navigation_news" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_editProfilFragment"
+            app:destination="@id/editProfilFragment" />
     </fragment>
     <fragment
         android:id="@+id/contactFragment"

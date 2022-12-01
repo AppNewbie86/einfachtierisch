@@ -43,6 +43,11 @@ class SummaryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.ageTextView.text
+        binding.expirienceTextView.text
+        binding.colorTextView.text
+        binding.genTextView.text
+
 
     }
 }

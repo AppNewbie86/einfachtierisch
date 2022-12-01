@@ -26,22 +26,35 @@
             android:id="@+id/sign_up_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="92dp"
+            android:layout_marginTop="32dp"
             android:text="Register"
             android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/simpleVideoView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <VideoView
+            android:id="@+id/simpleVideoView"
+            android:layout_width="412dp"
+            android:layout_height="0180dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.54"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_title"
+            tools:ignore="UnknownId" />
+
         <EditText
             android:id="@+id/signup_mail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="250dp"
             android:ems="10"
             android:hint="email"
             android:inputType="textEmailAddress"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="@+id/sign_up_title"
             app:layout_constraintStart_toStartOf="@+id/sign_up_title"
             app:layout_constraintTop_toBottomOf="@+id/sign_up_title" />
@@ -54,6 +67,7 @@
             android:ems="10"
             android:hint="password"
             android:inputType="textPassword"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="@+id/signup_mail"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/signup_mail"
@@ -63,7 +77,7 @@
             android:id="@+id/signup_signup_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="16dp"
             android:text="signup"
             app:layout_constraintEnd_toEndOf="@+id/signup_password"
             app:layout_constraintTop_toBottomOf="@+id/signup_level" />
@@ -85,6 +99,7 @@
             android:ems="10"
             android:hint="nickname"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="@+id/signup_password"
             app:layout_constraintStart_toStartOf="@+id/signup_password"
             app:layout_constraintTop_toBottomOf="@+id/signup_password" />
@@ -93,10 +108,11 @@
             android:id="@+id/signup_level"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:ems="10"
             android:hint="level"
             android:inputType="number"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="@+id/signup_nickname"
             app:layout_constraintStart_toStartOf="@+id/signup_nickname"
             app:layout_constraintTop_toBottomOf="@+id/signup_nickname" />

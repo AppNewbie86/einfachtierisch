@@ -199,6 +199,19 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
     }
 
+
+    private fun setAgeAndExpirienceAndFavoriteColorAndGen(member: Member){
+        db.collection("member").document(currentUser.value!!.uid)
+            .set(member)
+            .addOnFailureListener {
+                Log.w(TAG, "Error writing document: $it")
+                _toast.value = "error creating member\n${it.localizedMessage}"
+                _toast.value = null
+            }
+
+
+    }
+
     /**
      * Funktion zum einloggen in die App
      * Übergeben ihm email und password und wenn beides erfolgreich geprüft wurde werden wir eingeloggt

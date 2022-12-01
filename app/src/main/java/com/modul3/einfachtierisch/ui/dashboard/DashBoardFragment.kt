@@ -116,8 +116,18 @@ class DashBoardFragment : Fragment() {
                 .navigate(DashBoardFragmentDirections.actionNavigationDashboardToNewsFragment())
         }
 
+
         /**
-         * LogoutButton
+         * EditProfilButton navigiert zum EditProfilFragment
+         */
+
+        binding.editButton.setOnClickListener {
+            findNavController()
+                .navigate(DashBoardFragmentDirections.actionNavigationDashboardToEditProfilFragment())
+        }
+
+        /**
+        * LogoutButton
          */
 
         binding.LogoutButton.setOnClickListener {

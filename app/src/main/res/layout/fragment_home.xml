@@ -37,22 +37,13 @@
         android:id="@+id/greetingtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="60dp"
         android:text="Welcome "
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/applogoimage" />
-
-    <ImageView
-        android:id="@+id/applogoimage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo_vector"
-        app:layout_constraintBottom_toTopOf="@+id/text_dashboard"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/backgroundimage_gradient" />
 
     <TextView
         android:id="@+id/logininfotext"
@@ -60,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:text="Hier gelangen Sie zum Login"
-        android:textColor="#040303"
+        android:textColor="#F8F5F5"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/getStartedBtn"
         app:layout_constraintTop_toBottomOf="@+id/text_dashboard" />
@@ -71,8 +62,9 @@
         android:layout_height="22dp"
         android:layout_marginTop="16dp"
         android:foregroundGravity="center|center_horizontal"
+        android:gravity="center"
         android:text="or Create"
-        android:textColor="#0E0C0C"
+        android:textColor="#FBF9F9"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/getStartedBtn"
         app:layout_constraintStart_toStartOf="@+id/getStartedBtn"
@@ -80,7 +72,7 @@
 
     <Button
         android:id="@+id/getStartedBtn"
-        style="@android:style/Widget.Holo.Button"
+        style="@android:style/Widget.DeviceDefault.Button.Inset"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -95,10 +87,20 @@
         style="@android:style/Widget.DeviceDefault.Button.Inset"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:text="Create a New Account"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="@+id/registerInfoText"
         app:layout_constraintStart_toStartOf="@+id/registerInfoText"
         app:layout_constraintTop_toBottomOf="@+id/registerInfoText" />
+
+    <ImageView
+        android:id="@+id/applogoimage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/bluedog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/greetingtext" />
 </androidx.constraintlayout.widget.ConstraintLayout>

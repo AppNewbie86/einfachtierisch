@@ -32,31 +32,6 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/nameTextView"
-                android:layout_width="104dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="20sp" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/lastNameTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="25dp"
-                android:textColor="#000000"
-                android:textSize="20sp" />
-
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
             android:layout_height="500dp"
             android:layout_weight="5">
 
@@ -73,7 +48,7 @@
                 android:layout_width="190dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="70dp"
-                android:text="Favourite Color"
+                android:text="Expirience"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -82,7 +57,7 @@
                 android:layout_width="190dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="140dp"
-                android:text="Hobby"
+                android:text="FavoriteColor"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -92,7 +67,7 @@
                 android:layout_width="190dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="210dp"
-                android:text="Favourite Sport"
+                android:text="Gen"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -107,7 +82,7 @@
                 android:textSize="20sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/colorTextView"
+                android:id="@+id/expirienceTextView"
                 android:layout_width="190dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="200dp"
@@ -117,7 +92,7 @@
                 android:textSize="20sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/hobbyTextView"
+                android:id="@+id/colorTextView"
                 android:layout_width="190dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="200dp"
@@ -127,7 +102,7 @@
                 android:textSize="20sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/sportTextView"
+                android:id="@+id/genTextView"
                 android:layout_width="190dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="200dp"
