@@ -104,5 +104,10 @@
             android:name="dogId"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/helpDeskFragment"
+        android:name="com.modul3.einfachtierisch.HelpDeskFragment"
+        android:label="fragment_help_desk"
+        tools:layout="@layout/fragment_help_desk" />
 
 </navigation>

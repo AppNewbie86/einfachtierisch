@@ -28,4 +28,6 @@
     <string name="facebooklink">facebooklink</string>
     <string name="instagramlink">instagramlink</string>
     <string name="githublink">githublink</string>
+    <string name="ask_your_question">ask_your_question</string>
+    <string name="help_desk">help_desk</string>
 </resources>
