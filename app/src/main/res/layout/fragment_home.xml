@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.dashboard.DashboardFragment">
+    tools:context=".ui.home.HomeFragment">
 
     <TextView
         android:id="@+id/text_dashboard"
@@ -33,74 +33,105 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/greetingtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/almendra"
         android:text="Welcome "
-        android:textSize="24sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/backgroundimage_gradient" />
 
-    <TextView
-        android:id="@+id/logininfotext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Hier gelangen Sie zum Login"
-        android:textColor="#F8F5F5"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/getStartedBtn"
-        app:layout_constraintTop_toBottomOf="@+id/text_dashboard" />
-
-    <TextView
-        android:id="@+id/registerInfoText"
-        android:layout_width="292dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="16dp"
-        android:foregroundGravity="center|center_horizontal"
-        android:gravity="center"
-        android:text="or Create"
-        android:textColor="#FBF9F9"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/getStartedBtn"
-        app:layout_constraintStart_toStartOf="@+id/getStartedBtn"
-        app:layout_constraintTop_toBottomOf="@+id/getStartedBtn" />
-
     <Button
         android:id="@+id/getStartedBtn"
-        style="@android:style/Widget.DeviceDefault.Button.Inset"
-        android:layout_width="300dp"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="zum Login"
-        app:cornerRadius="10dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#673AB7"
+        android:text="Login"
+        app:layout_constraintBottom_toTopOf="@+id/registerButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logininfotext" />
+        app:layout_constraintTop_toBottomOf="@+id/text_dashboard"
+        app:strokeColor="#050404"
+        tools:ignore="UnknownIdInLayout" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/registerButton"
-        style="@android:style/Widget.DeviceDefault.Button.Inset"
-        android:layout_width="0dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Create a New Account"
-        app:cornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/registerInfoText"
-        app:layout_constraintStart_toStartOf="@+id/registerInfoText"
-        app:layout_constraintTop_toBottomOf="@+id/registerInfoText" />
+        android:text="sign up"
+        android:textColor="#F8F4F4"
+        app:layout_constraintBottom_toTopOf="@+id/giticon"
+        app:layout_constraintEnd_toEndOf="@+id/getStartedBtn"
+        app:layout_constraintStart_toStartOf="@+id/getStartedBtn"
+        app:layout_constraintTop_toBottomOf="@+id/text_dashboard"
+        app:strokeColor="#0C0C0C"
+        tools:ignore="UnknownIdInLayout" />
 
     <ImageView
-        android:id="@+id/applogoimage"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/bluedog"
+        android:id="@+id/facebookicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        android:contentDescription="@string/facebooklink"
+        android:src="@drawable/facebookicon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/giticon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F8F5F5"
+        android:backgroundTint="#F6F3F3"
+        android:clickable="true"
+        android:contentDescription="@string/githublink"
+        android:src="@drawable/giticon"
+        app:layout_constraintBottom_toBottomOf="@+id/facebookicon"
+        app:layout_constraintEnd_toStartOf="@+id/instagramicon"
+        app:layout_constraintStart_toEndOf="@+id/facebookicon"
+        app:layout_constraintTop_toTopOf="@+id/facebookicon" />
+
+    <ImageView
+        android:id="@+id/instagramicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:clickable="true"
+        android:contentDescription="@string/instagramlink"
+        android:src="@drawable/instagramicon"
+        app:layout_constraintBottom_toBottomOf="@+id/giticon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/giticon" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="300dp"
+        android:layout_height="3dp"
+        android:background="#BFBDBD"
+        app:layout_constraintBottom_toTopOf="@+id/giticon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/greetingtext" />
+        app:layout_constraintTop_toBottomOf="@+id/registerButton" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:src="@drawable/startlogo"
+        app:layout_constraintBottom_toTopOf="@+id/getStartedBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/greetingtext"
+        app:layout_constraintVertical_bias="0.235" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

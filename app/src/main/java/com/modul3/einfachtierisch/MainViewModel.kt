@@ -120,10 +120,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val chat: LiveData<MutableList<Message>>
         get() = _chat
 
-    // tip des tages
-    private val _tip = MutableLiveData<TipDesTages>()
-    val tip: LiveData<TipDesTages>
-        get() = _tip
 
 
     /**
@@ -298,27 +294,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
     }
 
-
-    fun getTipDesTages() {
-        db.collection("tipDesTages")//holt sich aus DB die Collection
-            .get()
-            .addOnSuccessListener { collection ->
-                val list = mutableListOf<TipDesTages>()
-                for (document in collection!!) {
-                    val tip = TipDesTages(
-                        document.id,
-                        document.data["tip"].toString()   // hier holt er sich bei erfolgreichem Zugriff aus der DB das passende Dokument heraus mit ID, und Tip
-                    )
-                    list.add(tip)
-                    Log.d(TAG, "${document.id} => ${document.data}")
-                }
-                _tip.value = list.random()  // hier sagen wir das die _tip value ist = das ein Tip random an verschiedenen Wochentagen ausgeworfen wird
-            }
-            // bei nicht erfolgreichem Zugriff wirft er eine Exeption
-            .addOnFailureListener { e ->
-                Log.w(TAG, "Tip failed.", e)
-            }
-    }
 
 
 }

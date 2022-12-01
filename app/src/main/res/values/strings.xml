@@ -25,4 +25,7 @@
     <string name="email_phone_no">email_phone_no</string>
     <string name="News">News</string>
     <string name="send">send</string>
+    <string name="facebooklink">facebooklink</string>
+    <string name="instagramlink">instagramlink</string>
+    <string name="githublink">githublink</string>
 </resources>

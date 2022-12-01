@@ -1,6 +1,8 @@
 package com.modul3.einfachtierisch.ui.home
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -84,6 +86,39 @@ class HomeFragment : Fragment() {
             findNavController()
                 .navigate(HomeFragmentDirections.actionNavigationHomeToSignUpFragment())
         }
+
+
+        //Indent auf FaceBook
+
+        binding.facebookicon.setOnClickListener {
+            val url = "https://www.facebook.com/"
+            val f = Intent(Intent.ACTION_VIEW)
+            f.data = Uri.parse(url)
+            startActivity(f)
+        }
+
+        //Indent auf Instagram
+
+
+        binding.instagramicon.setOnClickListener {
+            val url = "https://www.instagram.com/"
+            val i = Intent(Intent.ACTION_VIEW)
+            i.data = Uri.parse(url)
+            startActivity(i)
+        }
+
+
+
+        //Indent auf GitHub
+
+
+        binding.giticon.setOnClickListener {
+            val url = "https://www.github.com/"
+            val g = Intent(Intent.ACTION_VIEW)
+            g.data = Uri.parse(url)
+            startActivity(g)
+        }
+
 
     }
 }
