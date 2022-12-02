@@ -8,15 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
 import com.modul3.einfachtierisch.MainViewModel
-import com.modul3.einfachtierisch.adapter.memberinformationen.MemberInformationenAdapter
+import com.modul3.einfachtierisch.data.models.Member
 import com.modul3.einfachtierisch.databinding.FragmentSummaryBinding
 
 class SummaryFragment : Fragment() {
 
     private lateinit var binding: FragmentSummaryBinding
-    private lateinit var recyclerView: RecyclerView
     private val viewModel: MainViewModel by activityViewModels()
 
 
@@ -26,7 +24,6 @@ class SummaryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentSummaryBinding.inflate(inflater, container, false)
-
 
 
         // damit LiveData automatisch observed wird vom layout
@@ -44,17 +41,52 @@ class SummaryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val recyclerView = binding.profilrecyclerList
+        /**
+         * überwachung durch viewmodel ob currentUser eingeloggt ist
+         */
 
-        viewModel.memberInformationenList.observe(
+
+        viewModel.member.observe(
             viewLifecycleOwner,
             Observer {
-                recyclerView.adapter = MemberInformationenAdapter(it)
+                if (true) {
+                    binding.textLineSummaryName.setText(it.name)
+                    binding.textLineSummaryAge.setText(it.myAge)
+                    binding.editDogName.setText(it.myDogName)
+                    binding.textLineSummaryLp.setText(it.livingPerson)
+                    binding.textLineSummaryTimeDate.setText(it.timeDate)
+                    binding.textLineSummaryPos.setText(it.personalityPosition)
+                    binding.textinputline.setText(it.expirience)
+                    binding.textinputlinejob.setText(it.job)
+                }
             }
         )
 
+
+
         binding.itsAllRightBtn.setOnClickListener {
             findNavController().navigate(SummaryFragmentDirections.actionSummaryFragmentToNavigationDashboard())
+
+
         }
+    }
+
+    private fun updateMember() {
+        val name = binding.textLineSummaryName.text.toString()
+        val age = binding.textLineSummaryAge.text.toString().toInt()
+        val nameDog = binding.editDogName.text.toString()
+        val livingPer = binding.textLineSummaryLp.text.toString().toInt()
+        val timeDate = binding.textLineSummaryTimeDate.text.toString()
+        val dogPos = binding.textLineSummaryPos.text.toString()
+        val myExpirience = binding.textinputline.text.toString()
+        val myJob = binding.textinputlinejob.text.toString()
+
+        val member = Member(
+            name = name, myAge = age, myDogName = nameDog,
+            livingPerson = livingPer, timeDate = timeDate, personalityPosition = dogPos,
+            expirience = myExpirience, job = myJob
+        )
+        viewModel.updateMember(member)
+
     }
 }

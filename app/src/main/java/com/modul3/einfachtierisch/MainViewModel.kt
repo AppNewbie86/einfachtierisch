@@ -12,7 +12,6 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.modul3.einfachtierisch.data.Repository
-import com.modul3.einfachtierisch.data.local.getDatabase
 import com.modul3.einfachtierisch.data.models.*
 import com.modul3.einfachtierisch.remote.DogApi
 import kotlinx.coroutines.Dispatchers
@@ -32,19 +31,7 @@ const val TAG = "MainViewModel"
  */
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val database = getDatabase(application)
-
-
-    private val repository = Repository(DogApi,database)
-
-    val memberInformationenList = repository.memberInformationenList
-
-    val currentMemberInfo = repository.currentMemberInfo
-
-
-    private val _completeState = MutableLiveData<Boolean>()
-    val completeState: LiveData<Boolean>
-        get() = _completeState
+    private val repository = Repository(DogApi)
 
 
     private val _loading = MutableLiveData<ApiStatus>()
@@ -136,7 +123,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         get() = _chat
 
 
-
     /**
      * Diese Funktion initialisiert den Chat und setzt die Variablen dementsprechend
      */
@@ -211,7 +197,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-    private fun setAgeAndExpirienceAndFavoriteColorAndGen(member: Member){
+    private fun setAgeAndExpirienceAndFavoriteColorAndGen(member: Member) {
         db.collection("member").document(currentUser.value!!.uid)
             .set(member)
             .addOnFailureListener {
@@ -292,62 +278,28 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     /**
      * ********************************************************************************************
-     * Hier kommen die Funktionen für die RoomDataBase
+     * Hier kommt die Funktion wo alle MemberDaten in FireBase updatet
      */
 
+    fun updateMember(member: Member) {
 
+        db.collection("user")
+            .document(currentUser.value!!.uid) // Zugriff auf db Collection --> User dokument und dort in currentUser
 
-    fun insertMemberInformationen(memberInformationen: MemberInformationen) {
-        viewModelScope.launch {
-            repository.insert(memberInformationen)
-            _completeState.value = true
-        }
+            .update(
+                "name", member.name,
+                "level", member.level,
+                "myAge", member.myAge,
+                "myDogName", member.myDogName,
+                "livingPerson", member.livingPerson,
+                "timeDate", member.timeDate,
+                "personalityPosition", member.personalityPosition,
+                "expirience", member.expirience,
+                "job", member.job
+            )
+            .addOnSuccessListener { getMemberData() }
+
     }
-
-    fun getMemberInformationen(id: Int) {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.getMemberInformationen(id)
-        }
-    }
-
-    fun updateMemberInformationen(memberInformationen: MemberInformationen) {
-        viewModelScope.launch {
-            repository.updateMemberInformationen(updateMemberInformationen(memberInformationen))
-            _completeState.value = true
-        }
-    }
-
-    fun deleteMemberInformationen(id: Int) {
-        viewModelScope.launch {
-            repository.deleteMemberInformationen(id)
-            _completeState.value = true
-        }
-    }
-
-    // wird nach Beendigung der Navigation wieder auf false zurückgesetzt
-    fun unsetComplete() {
-        _completeState.value = false
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /**
-     *     ********************************************************************************************
-     *     ******************************************** Ende
-     */
-
-
 
 
     /**
@@ -372,7 +324,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 Log.e(TAG, "Error reading document: $it")
             }
     }
-
 
 
 }

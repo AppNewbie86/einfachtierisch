@@ -30,7 +30,7 @@ private val retrofit = Retrofit.Builder()
 interface ApiService {
 
     @GET("data.json")
-    suspend fun getDogs(@Query("limit") amount: Int): List<Dogs>
+    suspend fun getDogs(): List<Dogs>
 
 
 }

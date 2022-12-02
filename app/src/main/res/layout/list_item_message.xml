@@ -16,7 +16,7 @@
         android:clickable="true"
         android:focusable="true"
         android:minHeight="48dp"
-        app:cardBackgroundColor="?attr/colorSecondary"
+        app:cardBackgroundColor="#FF5722"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
         app:contentPadding="8dp">
@@ -25,7 +25,7 @@
             android:id="@+id/tvMessageText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="?attr/colorOnSecondary"
+            android:textColor="@color/white"
             android:textSize="16sp"
             tools:text="Hello World" />
     </com.google.android.material.card.MaterialCardView>

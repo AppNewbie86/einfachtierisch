@@ -4,17 +4,27 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.modul3.einfachtierisch.MainViewModel
-import com.modul3.einfachtierisch.data.models.MemberInformationen
+import com.modul3.einfachtierisch.data.models.Member
 import com.modul3.einfachtierisch.databinding.FragmentEditProfilBinding
+import kotlinx.coroutines.Job
 
 class EditProfilFragment : Fragment() {
 
     private lateinit var binding: FragmentEditProfilBinding
+
+    private lateinit var nametext: EditText
+    private lateinit var nameDog: EditText
+    private lateinit var job: EditText
+    private lateinit var erfahrung: EditText
+
+
+
     private val viewModel: MainViewModel by activityViewModels()
 
 
@@ -36,44 +46,30 @@ class EditProfilFragment : Fragment() {
 
 
 
+
+
         binding.profildatasaveBtn.setOnClickListener {
             getValuesAndSave()
+
         }
 
         binding.profildatacancelBtn.setOnClickListener {
             findNavController().navigate(EditProfilFragmentDirections.actionEditProfilFragmentToNavigationDashboard())
         }
 
-        viewModel.completeState.observe(
-            viewLifecycleOwner,
-            Observer {
-                if (it == true) {
-                    findNavController().navigate(EditProfilFragmentDirections.actionEditProfilFragmentToSummaryFragment())
-                    viewModel.unsetComplete()
-                }
-            }
-        )
     }
 
     private fun getValuesAndSave() {
-        val myName = binding.nameTextLine.text.toString()
-        val myAge = binding.nameTextLine.text.toString()
-        val myDogName = binding.nameTextLine.text.toString()
-        val livingPers = binding.nameTextLine.text.toString()
-        val timeDate = binding.nameTextLine.text.toString()
-        val personalityPosition = binding.nameTextLine.text.toString()
-        val expirience = binding.nameTextLine.text.toString()
-        val job = binding.nameTextLine.text.toString()
-        val newMemberProfil = MemberInformationen(
-                myName = myName,
-                myAge = myAge,
-                myDogName = myDogName,
-                livingPers = livingPers,
-                timeDate = timeDate,
-                personalityPosition = personalityPosition,
-                expirience = expirience,
-                job = job
-            )
-        viewModel.insertMemberInformationen(newMemberProfil)
+        val myName = binding.textLineSummaryName.text.toString()
+        val myExpirience = binding.expertisetext.text.toString()
+        val job = binding.yourJobText.text.toString()
+        val newMember = Member(
+
+            name = nametext.toString(),
+            myDogName = nameDog.toString(),
+            expirience = erfahrung.toString(),
+            job = job
+        )
+        viewModel.updateMember()
     }
 }

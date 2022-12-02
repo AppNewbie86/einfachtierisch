@@ -36,7 +36,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/nameTextLine"
+            android:id="@+id/textLineSummaryName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -60,9 +60,9 @@
             android:hint="@string/wie_hei_t_ihr_hund"
             android:inputType="textMultiLine"
             android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="@+id/nameTextLine"
-            app:layout_constraintStart_toStartOf="@+id/nameTextLine"
-            app:layout_constraintTop_toBottomOf="@+id/nameTextLine" />
+            app:layout_constraintEnd_toEndOf="@+id/textLineSummaryName"
+            app:layout_constraintStart_toStartOf="@+id/textLineSummaryName"
+            app:layout_constraintTop_toBottomOf="@+id/textLineSummaryName" />
 
         <EditText
             android:id="@+id/timeTextLine"
