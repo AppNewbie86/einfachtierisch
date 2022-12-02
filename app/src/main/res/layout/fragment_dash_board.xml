@@ -144,8 +144,8 @@
 
                         <ImageView
                             android:id="@+id/level_up_image"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:background="#F6F3F3"
                             app:srcCompat="@drawable/ic_baseline_expand_less_24" />
                     </androidx.cardview.widget.CardView>
@@ -188,7 +188,7 @@
                     android:id="@+id/LogoutButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="24dp"
                     android:text="Logout"
                     android:textColor="#F8F3F3"
                     android:textSize="20sp"
@@ -249,6 +249,18 @@
             app:spanCount="2"
             tools:itemCount="8"
             tools:listitem="@layout/gallerie_item" />
+
+        <ImageView
+            android:id="@+id/helpdeskbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:elevation="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_help_outline_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

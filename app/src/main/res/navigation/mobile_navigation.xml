@@ -46,6 +46,9 @@
         <action
             android:id="@+id/action_navigation_dashboard_to_editProfilFragment"
             app:destination="@id/editProfilFragment" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_helpDeskFragment"
+            app:destination="@id/helpDeskFragment" />
     </fragment>
     <fragment
         android:id="@+id/contactFragment"
@@ -73,6 +76,9 @@
         <action
             android:id="@+id/action_editProfilFragment_to_summaryFragment"
             app:destination="@id/summaryFragment" />
+        <action
+            android:id="@+id/action_editProfilFragment_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
     </fragment>
     <fragment
         android:id="@+id/summaryFragment"
@@ -106,7 +112,7 @@
     </fragment>
     <fragment
         android:id="@+id/helpDeskFragment"
-        android:name="com.modul3.einfachtierisch.HelpDeskFragment"
+        android:name="com.modul3.einfachtierisch.ui.helpDesk.HelpDeskFragment"
         android:label="fragment_help_desk"
         tools:layout="@layout/fragment_help_desk" />
 

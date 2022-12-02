@@ -12,8 +12,10 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.modul3.einfachtierisch.data.Repository
+import com.modul3.einfachtierisch.data.local.getDatabase
 import com.modul3.einfachtierisch.data.models.*
 import com.modul3.einfachtierisch.remote.DogApi
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
@@ -30,7 +32,20 @@ const val TAG = "MainViewModel"
  */
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val repository = Repository(DogApi)
+    private val database = getDatabase(application)
+
+
+    private val repository = Repository(DogApi,database)
+
+    val memberInformationenList = repository.memberInformationenList
+
+    val currentMemberInfo = repository.currentMemberInfo
+
+
+    private val _completeState = MutableLiveData<Boolean>()
+    val completeState: LiveData<Boolean>
+        get() = _completeState
+
 
     private val _loading = MutableLiveData<ApiStatus>()
     val loading: LiveData<ApiStatus>
@@ -228,6 +243,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     /**
+     * ********************************************************************************************
      * Funktion zum uploaden eines Images in den Speicher
      */
 
@@ -269,6 +285,69 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 getMemberData()
             }
     }
+    /**
+     *     ********************************************************************************************
+     *     ******************************************** Ende
+     */
+
+    /**
+     * ********************************************************************************************
+     * Hier kommen die Funktionen für die RoomDataBase
+     */
+
+
+
+    fun insertMemberInformationen(memberInformationen: MemberInformationen) {
+        viewModelScope.launch {
+            repository.insert(memberInformationen)
+            _completeState.value = true
+        }
+    }
+
+    fun getMemberInformationen(id: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.getMemberInformationen(id)
+        }
+    }
+
+    fun updateMemberInformationen(memberInformationen: MemberInformationen) {
+        viewModelScope.launch {
+            repository.updateMemberInformationen(updateMemberInformationen(memberInformationen))
+            _completeState.value = true
+        }
+    }
+
+    fun deleteMemberInformationen(id: Int) {
+        viewModelScope.launch {
+            repository.deleteMemberInformationen(id)
+            _completeState.value = true
+        }
+    }
+
+    // wird nach Beendigung der Navigation wieder auf false zurückgesetzt
+    fun unsetComplete() {
+        _completeState.value = false
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     *     ********************************************************************************************
+     *     ******************************************** Ende
+     */
+
+
 
 
     /**

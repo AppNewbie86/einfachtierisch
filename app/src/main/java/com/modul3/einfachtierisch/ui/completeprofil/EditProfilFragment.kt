@@ -4,36 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.modul3.einfachtierisch.MainViewModel
-import com.modul3.einfachtierisch.data.models.Member
+import com.modul3.einfachtierisch.data.models.MemberInformationen
 import com.modul3.einfachtierisch.databinding.FragmentEditProfilBinding
 
-/**
- * Dieses Fragment verwaltet die Anzeige der Lesezeichen
- */
 class EditProfilFragment : Fragment() {
 
-    private lateinit var age: EditText
-    private lateinit var expirience: EditText
-    private lateinit var favoriteColor: EditText
-    private lateinit var job: EditText
-    private lateinit var gen: EditText
-
-    // hier wird die binding Variable deklariert
-
     private lateinit var binding: FragmentEditProfilBinding
-
-    // Hier wird das ViewModel geholt
     private val viewModel: MainViewModel by activityViewModels()
 
 
-    /**
-     * Lifecycle Funktion onCreateView
-     * Hier wird das binding initialisiert und das Layout gebaut
-     */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,32 +33,47 @@ class EditProfilFragment : Fragment() {
      */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.saveInformationsBtn.setOnClickListener {
-            setpersonalInformation()
 
+
+
+        binding.profildatasaveBtn.setOnClickListener {
+            getValuesAndSave()
         }
 
-
-    }
-
-
-    private fun setpersonalInformation() {
-        binding.edittextfieldone.text.toString().toInt()
-        binding.edittextfieldtwo.text.toString()
-        binding.edittextfieldthree.text.toString()
-        binding.edittextfieldfour.text.toString()
-        binding.edittextfieldfive.text.toString()
-
-        if (age.toString().isNotEmpty() && expirience.toString()
-                .isNotEmpty() && favoriteColor.toString().isNotEmpty() &&
-            job.toString().isNotEmpty() && gen.toString().isNotEmpty()
-        ) {
-
-
-        } else {
-            // Toast.makeText(age, "Please fill all fields!", Toast.LENGTH_SHORT).show()
+        binding.profildatacancelBtn.setOnClickListener {
+            findNavController().navigate(EditProfilFragmentDirections.actionEditProfilFragmentToNavigationDashboard())
         }
+
+        viewModel.completeState.observe(
+            viewLifecycleOwner,
+            Observer {
+                if (it == true) {
+                    findNavController().navigate(EditProfilFragmentDirections.actionEditProfilFragmentToSummaryFragment())
+                    viewModel.unsetComplete()
+                }
+            }
+        )
     }
 
-
+    private fun getValuesAndSave() {
+        val myName = binding.nameTextLine.text.toString()
+        val myAge = binding.nameTextLine.text.toString()
+        val myDogName = binding.nameTextLine.text.toString()
+        val livingPers = binding.nameTextLine.text.toString()
+        val timeDate = binding.nameTextLine.text.toString()
+        val personalityPosition = binding.nameTextLine.text.toString()
+        val expirience = binding.nameTextLine.text.toString()
+        val job = binding.nameTextLine.text.toString()
+        val newMemberProfil = MemberInformationen(
+                myName = myName,
+                myAge = myAge,
+                myDogName = myDogName,
+                livingPers = livingPers,
+                timeDate = timeDate,
+                personalityPosition = personalityPosition,
+                expirience = expirience,
+                job = job
+            )
+        viewModel.insertMemberInformationen(newMemberProfil)
+    }
 }

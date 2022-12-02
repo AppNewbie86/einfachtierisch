@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.modul3.einfachtierisch.MainViewModel
-import com.modul3.einfachtierisch.adapter.ContactAdapter
+import com.modul3.einfachtierisch.adapter.contact.ContactAdapter
 import com.modul3.einfachtierisch.databinding.FragmentContactBinding
 
 

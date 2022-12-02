@@ -7,134 +7,168 @@
 
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.completeprofil.EditProfilFragment">
+        android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/bg_gradation" />
+            android:id="@+id/backgroundimage_gradient_bio"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bg_gradation" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/title_bio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Vervollständigen Sie hier ihre Daten in ihrem Profil damit Sie schneller die Hilfe bekommen die sie auch benötigen "
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/information_title"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="76dp"
-                android:layout_marginEnd="32dp"
-                android:fontFamily="@font/almendra"
-                android:text="Bitte fülle alle Felder aus um dein Profil zu vervollständigen "
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/nameTextLine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/vor_und_nachname"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/title_bio"
+            app:layout_constraintStart_toStartOf="@+id/title_bio"
+            app:layout_constraintTop_toBottomOf="@+id/title_bio" />
 
-            <EditText
-                android:id="@+id/edittextfieldone"
-                android:layout_width="348dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="32dp"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="Wie alt bist du ?"
-                android:inputType="textMultiLine"
-                app:layout_constraintEnd_toEndOf="@+id/information_title"
-                app:layout_constraintStart_toStartOf="@+id/information_title"
-                app:layout_constraintTop_toBottomOf="@+id/information_title" />
+        <EditText
+            android:id="@+id/dogNameEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/wie_hei_t_ihr_hund"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/nameTextLine"
+            app:layout_constraintStart_toStartOf="@+id/nameTextLine"
+            app:layout_constraintTop_toBottomOf="@+id/nameTextLine" />
 
-            <EditText
-                android:id="@+id/edittextfieldtwo"
-                android:layout_width="0dp"
-                android:layout_height="84dp"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="Wieviel Erfahrung in Jahre hast du allgemein mit Tieren"
-                android:inputType="textMultiLine"
-                app:layout_constraintEnd_toEndOf="@+id/edittextfieldone"
-                app:layout_constraintStart_toStartOf="@+id/edittextfieldone"
-                app:layout_constraintTop_toBottomOf="@+id/edittextfieldone" />
+        <EditText
+            android:id="@+id/timeTextLine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/welchen_tgl_zeitraum_w_rden_sie_ben_tigen"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine3" />
 
-            <EditText
-                android:id="@+id/edittextfieldthree"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="Was ist deine Lieblingsfarbe?"
-                android:inputType="textMultiLine"
-                android:minHeight="48dp"
-                app:layout_constraintEnd_toEndOf="@+id/edittextfieldtwo"
-                app:layout_constraintStart_toStartOf="@+id/edittextfieldtwo"
-                app:layout_constraintTop_toBottomOf="@+id/edittextfieldtwo" />
+        <EditText
+            android:id="@+id/dogattitute"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Sind sie Hundehalter oder Hundefreund?"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/timeTextLine"
+            app:layout_constraintStart_toStartOf="@+id/timeTextLine"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextLine" />
 
-            <EditText
-                android:id="@+id/edittextfieldfour"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="Was machst du Beruflich ?"
-                android:inputType="textMultiLine"
-                android:minHeight="48dp"
-                app:layout_constraintEnd_toEndOf="@+id/edittextfieldthree"
-                app:layout_constraintStart_toStartOf="@+id/edittextfieldthree"
-                app:layout_constraintTop_toBottomOf="@+id/edittextfieldthree" />
+        <EditText
+            android:id="@+id/expertisetext"
+            android:layout_width="346dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Ihre Erfahrung ?"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="@+id/dogattitute"
+            app:layout_constraintStart_toStartOf="@+id/dogattitute"
+            app:layout_constraintTop_toBottomOf="@+id/dogattitute" />
 
-            <EditText
-                android:id="@+id/edittextfieldfive"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="Bist du Männlich oder Weiblich ?"
-                android:inputType="textMultiLine"
-                android:minHeight="48dp"
-                app:layout_constraintEnd_toEndOf="@+id/edittextfieldfour"
-                app:layout_constraintStart_toStartOf="@+id/edittextfieldfour"
-                app:layout_constraintTop_toBottomOf="@+id/edittextfieldfour" />
+        <EditText
+            android:id="@+id/yourJobText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Welchen Job üben Sie aus?"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/expertisetext"
+            app:layout_constraintStart_toStartOf="@+id/expertisetext"
+            app:layout_constraintTop_toBottomOf="@+id/expertisetext" />
 
-            <Button
-                android:id="@+id/save_informationsBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:layout_marginEnd="32dp"
-                android:text="Save"
-                app:layout_constraintEnd_toEndOf="@+id/edittextfieldfive"
-                app:layout_constraintTop_toBottomOf="@+id/edittextfieldfive" />
+        <EditText
+            android:id="@+id/editTextTextMultiLine2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Wie alt sind Sie ?"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/dogNameEditText"
+            app:layout_constraintStart_toStartOf="@+id/dogNameEditText"
+            app:layout_constraintTop_toBottomOf="@+id/dogNameEditText" />
 
-            <Button
-                android:id="@+id/delete_informationsBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="80dp"
-                android:text="Delete"
-                app:layout_constraintStart_toStartOf="@+id/edittextfieldfive"
-                app:layout_constraintTop_toBottomOf="@+id/edittextfieldfive" />
+        <EditText
+            android:id="@+id/editTextTextMultiLine3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Wieviele Personen leben im Haushalt?"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/editTextTextMultiLine2"
+            app:layout_constraintStart_toStartOf="@+id/editTextTextMultiLine2"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2" />
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="380dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Sie können jederzeit ihre persönlichen Daten editieren oder löschen "
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/save_informationsBtn" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </FrameLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/profildatasaveBtn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="Daten speichern"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/yourJobText"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/profildatacancelBtn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profildatasaveBtn"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

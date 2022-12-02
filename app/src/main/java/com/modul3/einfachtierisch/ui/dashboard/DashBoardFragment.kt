@@ -127,6 +127,15 @@ class DashBoardFragment : Fragment() {
         }
 
         /**
+         * navigation zum HelpDeskFragment
+         */
+
+        binding.helpdeskbutton.setOnClickListener {
+            findNavController()
+                .navigate(DashBoardFragmentDirections.actionNavigationDashboardToHelpDeskFragment())
+        }
+
+        /**
         * LogoutButton
          */
 
