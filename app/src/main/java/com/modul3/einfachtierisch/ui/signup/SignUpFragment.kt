@@ -1,5 +1,6 @@
 package com.modul3.einfachtierisch.ui.signup
 
+import com.modul3.einfachtierisch.MainViewModel
 import android.app.AlertDialog
 import android.net.Uri
 import android.os.Bundle
@@ -14,7 +15,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.R
 import com.modul3.einfachtierisch.data.models.Member
 import com.modul3.einfachtierisch.databinding.FragmentSignUpBinding
@@ -82,11 +82,11 @@ class SignUpFragment : Fragment() {
             false
         }
 
-        binding.signupCancelButton.setOnClickListener {
+        binding.backtohomeBtn.setOnClickListener {
             findNavController().navigateUp()
         }
 
-        binding.signupSignupButton.setOnClickListener {
+        binding.signupBtn.setOnClickListener {
             signUp()
         }
 
@@ -117,12 +117,11 @@ class SignUpFragment : Fragment() {
         val email = binding.signupMail.text.toString()
         val password = binding.signupPassword.text.toString()
         val name = binding.signupNickname.text.toString()
-        val level = binding.signupLevel.text.toString().toLong()
 
         if (!email.isNullOrEmpty() && !password.isNullOrEmpty()) {
             val newMember = Member(
                 name = name,
-                level = level
+
             )
             viewModel.signUp(email, password, newMember)
         }

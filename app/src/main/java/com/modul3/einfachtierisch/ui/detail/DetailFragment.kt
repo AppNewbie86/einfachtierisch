@@ -1,5 +1,6 @@
 package com.modul3.einfachtierisch.ui.detail
 
+import com.modul3.einfachtierisch.MainViewModel
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
@@ -16,10 +17,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.modul3.einfachtierisch.MainActivity
-import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.data.models.Dogs
 import com.modul3.einfachtierisch.databinding.FragmentDetailBinding
-import com.modul3.einfachtierisch.remote.DogApi
 
 class DetailFragment : Fragment() {
 
@@ -35,7 +34,7 @@ class DetailFragment : Fragment() {
     private lateinit var nameOfDogs: TextView
     private lateinit var descriptionText: TextView
 
-    // MainViewModel wird verknüpft
+    // com.modul3.einfachtierisch.MainViewModel wird verknüpft
 
     private val viewModel: MainViewModel by activityViewModels()
 

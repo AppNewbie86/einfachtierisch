@@ -41,10 +41,10 @@ class Repository(private val api: DogApi) {
 
     private fun loadContacts(): List<Contact> {
         return listOf(
-            Contact("Brad", R.drawable.sourcer, mutableListOf()),
-            Contact("Emma", R.drawable.sales, mutableListOf()),
-            Contact("Jennifer", R.drawable.square, mutableListOf()),
-            Contact("Johnny", R.drawable.american, mutableListOf()),
+            Contact("Petty", R.drawable.sourcer, mutableListOf()),
+            Contact("Olaf_DogTrainer", R.drawable.sales, mutableListOf()),
+            Contact("Administrator", R.drawable.square, mutableListOf()),
+            Contact("alterHase89", R.drawable.american, mutableListOf()),
 
         )
     }

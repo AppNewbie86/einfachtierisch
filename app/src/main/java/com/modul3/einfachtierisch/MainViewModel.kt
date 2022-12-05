@@ -197,17 +197,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-    private fun setAgeAndExpirienceAndFavoriteColorAndGen(member: Member) {
-        db.collection("member").document(currentUser.value!!.uid)
-            .set(member)
-            .addOnFailureListener {
-                Log.w(TAG, "Error writing document: $it")
-                _toast.value = "error creating member\n${it.localizedMessage}"
-                _toast.value = null
-            }
-
-
-    }
 
     /**
      * Funktion zum einloggen in die App
@@ -271,36 +260,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 getMemberData()
             }
     }
-    /**
-     *     ********************************************************************************************
-     *     ******************************************** Ende
-     */
-
-    /**
-     * ********************************************************************************************
-     * Hier kommt die Funktion wo alle MemberDaten in FireBase updatet
-     */
-
-    fun updateMember(member: Member) {
-
-        db.collection("user")
-            .document(currentUser.value!!.uid) // Zugriff auf db Collection --> User dokument und dort in currentUser
-
-            .update(
-                "name", member.name,
-                "level", member.level,
-                "myAge", member.myAge,
-                "myDogName", member.myDogName,
-                "livingPerson", member.livingPerson,
-                "timeDate", member.timeDate,
-                "personalityPosition", member.personalityPosition,
-                "expirience", member.expirience,
-                "job", member.job
-            )
-            .addOnSuccessListener { getMemberData() }
-
-    }
-
 
     /**
      * Funktion für den Logout aus der App
@@ -324,6 +283,21 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 Log.e(TAG, "Error reading document: $it")
             }
     }
+
+    fun updateMember() {
+
+        db.collection("user")
+            .document(currentUser.value!!.uid) // Zugriff auf db Collection --> User dokument und dort in currentUser
+
+            .update(
+                "name", member,
+                "level", member,
+
+                "myDogName", member.toString(),
+
+                "job", member
+            )
+            .addOnSuccessListener { getMemberData() }    }
 
 
 }

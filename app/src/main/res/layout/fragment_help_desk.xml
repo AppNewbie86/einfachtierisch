@@ -5,20 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_gradation"
-    tools:context=".fragments.HelpFragment">
+   >
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_gradation"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/line1"
+            android:id="@+id/helpdesktitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/allerta_stencil"
             android:text="HelpDesk"
             android:textColor="@color/purple_200"
@@ -34,14 +38,15 @@
             android:src="@drawable/help_desk"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/line1" />
+            app:layout_constraintTop_toBottomOf="@id/helpdesktitle" />
 
         <TextView
-            android:id="@+id/line2"
+            android:id="@+id/helpdesktitlesubtext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/ask_your_question"
+            android:layout_marginTop="24dp"
+            android:text="schreibe uns hier deine Nachricht"
             android:textColor="@color/purple_500"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -56,11 +61,12 @@
             android:layout_marginEnd="16dp"
             android:alpha=".5"
             android:theme="@style/Theme.MaterialComponents.Light"
-            app:cardBackgroundColor="#FF9800"
+            app:cardBackgroundColor="#9CFF9800"
             app:cardCornerRadius="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/line2">
+            app:layout_constraintTop_toBottomOf="@id/helpdesktitlesubtext">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -82,11 +88,13 @@
                         android:src="@drawable/email_icon" />
 
                     <EditText
+                        android:id="@+id/eTemail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
                         android:hint="Your email"
-                        android:textColor="#EAE8E8" />
+                        android:textColor="#EAE8E8"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -104,11 +112,13 @@
                         android:src="@drawable/message_icon" />
 
                     <EditText
+                        android:id="@+id/eTpostmessagetitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
                         android:hint="Subject"
-                        android:textColor="#F6F5F5" />
+                        android:textColor="#F6F5F5"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -126,10 +136,12 @@
                         android:src="@drawable/ic_send" />
 
                     <EditText
+                        android:id="@+id/eTMessage"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
-                        android:hint="Message/Question" />
+                        android:hint="Message/Question"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
                 <ImageButton
@@ -139,15 +151,16 @@
                     android:layout_marginLeft="100dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/round_button"
-                    android:backgroundTint="#FF5722"
+                    android:backgroundTint="#FB4208"
                     android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
                     android:textColor="@color/black"
-                    android:tint="#F3F1F1" />
+                    app:tint="#F3F1F1"
+                    tools:ignore="SpeakableTextPresentCheck" />
             </LinearLayout>
 
 
         </com.google.android.material.card.MaterialCardView>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

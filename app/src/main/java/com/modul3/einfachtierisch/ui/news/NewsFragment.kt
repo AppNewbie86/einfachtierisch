@@ -1,5 +1,7 @@
 package com.modul3.einfachtierisch.ui.news
 
+import com.modul3.einfachtierisch.ApiStatus
+import com.modul3.einfachtierisch.MainViewModel
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,9 +12,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.modul3.einfachtierisch.ApiStatus
 import com.modul3.einfachtierisch.MainActivity
-import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.adapter.dog.DogAdapter
 import com.modul3.einfachtierisch.databinding.FragmentNewsBinding
 

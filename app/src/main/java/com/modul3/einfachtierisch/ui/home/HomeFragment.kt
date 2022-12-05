@@ -1,5 +1,6 @@
 package com.modul3.einfachtierisch.ui.home
 
+import com.modul3.einfachtierisch.MainViewModel
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -13,7 +14,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.modul3.einfachtierisch.MainActivity
-import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.databinding.FragmentHomeBinding
 
 /**

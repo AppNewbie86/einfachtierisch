@@ -1,5 +1,6 @@
 package com.modul3.einfachtierisch.ui.contact
 
+import com.modul3.einfachtierisch.MainViewModel
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.adapter.contact.ContactAdapter
 import com.modul3.einfachtierisch.databinding.FragmentContactBinding
 

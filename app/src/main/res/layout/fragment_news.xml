@@ -10,7 +10,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F3F1F1"
+        android:background="@drawable/bg_gradation"
         tools:context=".NewsFragment">
 
 
@@ -20,7 +20,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/image_list"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="32dp"

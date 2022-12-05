@@ -1,5 +1,6 @@
 package com.modul3.einfachtierisch.ui.dashboard
 
+import com.modul3.einfachtierisch.MainViewModel
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,9 +13,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import coil.load
-import com.modul3.einfachtierisch.MainViewModel
 import com.modul3.einfachtierisch.R
-import com.modul3.einfachtierisch.adapter.news.NewsAdapter
 import com.modul3.einfachtierisch.databinding.FragmentDashBoardBinding
 
 /**
@@ -79,8 +78,8 @@ class DashBoardFragment : Fragment() {
                 if (it != null) {
                     binding.playerNameText.text = it.name
 
-                    binding.playerImage.load(it.image) {
-                        error(resources.getDrawable(R.drawable.american))
+                    binding.levelUpImage.load(it.image) {
+                        error(resources.getDrawable(R.drawable.addfriend))
                     }
                 }
             }

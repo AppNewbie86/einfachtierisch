@@ -7,9 +7,9 @@
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
     android:clickable="true"
-    app:cardBackgroundColor="#F1F0F0"
+    app:cardBackgroundColor="#C8C6C6"
     app:cardCornerRadius="10dp"
-    app:cardElevation="5dp"
+    app:cardElevation="7dp"
     tools:layout_editor_absoluteX="1dp"
     tools:layout_editor_absoluteY="93dp">
 
@@ -20,7 +20,7 @@
 
         <ImageView
             android:id="@+id/list_image"
-            android:layout_width="347dp"
+            android:layout_width="400dp"
             android:layout_height="277dp"
             android:layout_marginTop="16dp"
             android:adjustViewBounds="true"
@@ -37,8 +37,9 @@
             android:id="@+id/tv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
-            android:fontFamily="@font/almendra"
+            android:fontFamily="@font/caveat_brush"
             android:text="Name"
             android:textColor="#070707"
             android:textStyle="bold"
@@ -49,12 +50,44 @@
             android:id="@+id/tv7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:fontFamily="@font/almendra"
             android:text="TextView"
             android:textColor="#050505"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/list_image"
             app:layout_constraintTop_toBottomOf="@+id/list_image" />
+
+        <ImageView
+            android:id="@+id/heart_not_clicked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/list_image"
+            app:srcCompat="@drawable/heart" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="#D1C9C9"
+            app:layout_constraintBottom_toBottomOf="@+id/heart_not_clicked"
+            app:layout_constraintEnd_toStartOf="@+id/heart_not_clicked"
+            app:layout_constraintTop_toBottomOf="@+id/list_image"
+            app:srcCompat="@drawable/likes" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/heart_not_clicked"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/comments" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

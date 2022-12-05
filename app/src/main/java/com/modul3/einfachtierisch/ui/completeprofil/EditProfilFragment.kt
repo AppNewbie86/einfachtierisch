@@ -1,29 +1,22 @@
 package com.modul3.einfachtierisch.ui.completeprofil
-
+/*
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.modul3.einfachtierisch.MainViewModel
-import com.modul3.einfachtierisch.data.models.Member
 import com.modul3.einfachtierisch.databinding.FragmentEditProfilBinding
-import kotlinx.coroutines.Job
 
 class EditProfilFragment : Fragment() {
 
+    private lateinit var database: DatabaseReference
+
     private lateinit var binding: FragmentEditProfilBinding
-
-    private lateinit var nametext: EditText
-    private lateinit var nameDog: EditText
-    private lateinit var job: EditText
-    private lateinit var erfahrung: EditText
-
-
 
     private val viewModel: MainViewModel by activityViewModels()
 
@@ -32,44 +25,49 @@ class EditProfilFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         binding = FragmentEditProfilBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    /**
-     * Lifecycle Funktion onViewCreated
-     * Hier werden die Elemente eingerichtet und z.B. onClickListener gesetzt
-     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        database = Firebase.database.reference
 
+        binding.buttonSaveDatas.setOnClickListener {
 
+            binding.fieldDogName.text.toString()
+            binding.fieldJob.text.toString()
 
-
-        binding.profildatasaveBtn.setOnClickListener {
-            getValuesAndSave()
+            saveMemberData()
 
         }
-
-        binding.profildatacancelBtn.setOnClickListener {
-            findNavController().navigate(EditProfilFragmentDirections.actionEditProfilFragmentToNavigationDashboard())
-        }
-
-    }
-
-    private fun getValuesAndSave() {
-        val myName = binding.textLineSummaryName.text.toString()
-        val myExpirience = binding.expertisetext.text.toString()
-        val job = binding.yourJobText.text.toString()
-        val newMember = Member(
-
-            name = nametext.toString(),
-            myDogName = nameDog.toString(),
-            expirience = erfahrung.toString(),
-            job = job
-        )
         viewModel.updateMember()
     }
-}
+
+    //saveMember
+
+    private fun saveMemberData() {
+        val etFieldDog = binding.fieldDogName.text.toString()
+        val etFieldJob = binding.fieldJob.text.toString()
+/*
+        //Nullcheck und objekt erstellen
+
+        if (!etFieldDog.isNullOrEmpty() && !etFieldJob.isNullOrEmpty()) {
+            val newMember = Member(
+                myDogName = etFieldDog,
+                job = etFieldJob.toString()
+
+
+
+        )
+         // Aufruf von ViewModel und Punktnotation der Function updateMember
+ */
+    }
+
+ */
+
+
+
+

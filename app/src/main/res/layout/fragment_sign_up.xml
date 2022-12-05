@@ -75,22 +75,22 @@
             app:layout_constraintTop_toBottomOf="@+id/signup_mail" />
 
         <Button
-            android:id="@+id/signup_signup_button"
+            android:id="@+id/signupBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:text="signup"
             app:layout_constraintEnd_toEndOf="@+id/signup_password"
-            app:layout_constraintTop_toBottomOf="@+id/signup_level" />
+            app:layout_constraintTop_toBottomOf="@+id/signup_nickname" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/signup_cancel_button"
+            android:id="@+id/backtohomeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="cancel"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             app:layout_constraintStart_toStartOf="@+id/signup_password"
-            app:layout_constraintTop_toTopOf="@+id/signup_signup_button" />
+            app:layout_constraintTop_toTopOf="@+id/signupBtn" />
 
         <EditText
             android:id="@+id/signup_nickname"
@@ -105,17 +105,5 @@
             app:layout_constraintStart_toStartOf="@+id/signup_password"
             app:layout_constraintTop_toBottomOf="@+id/signup_password" />
 
-        <EditText
-            android:id="@+id/signup_level"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:ems="10"
-            android:hint="level"
-            android:inputType="number"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="@+id/signup_nickname"
-            app:layout_constraintStart_toStartOf="@+id/signup_nickname"
-            app:layout_constraintTop_toBottomOf="@+id/signup_nickname" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

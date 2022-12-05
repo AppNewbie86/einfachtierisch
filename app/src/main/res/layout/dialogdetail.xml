@@ -49,6 +49,21 @@
         app:layout_constraintTop_toBottomOf="@+id/fieldDogName" />
 
 
+    <EditText
+        android:id="@+id/fieldAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Write here your Age please"
+        android:inputType="textMultiLine"
+        android:maxLines="10"
+        android:minHeight="48dp"
+        android:scrollHorizontally="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fieldJob" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonSaveDatas"

@@ -16,10 +16,12 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/chat_toolbar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/black"
+            android:layout_width="413dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:background="#FF5722"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
@@ -40,11 +42,12 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:boxStrokeColor="@color/black"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeColor="#FF9800"
             app:hintTextColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnSend"
@@ -55,7 +58,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/message"
-                android:maxLines="3" />
+                android:maxLines="3"
+                android:textColor="#FF5722"
+                android:textColorHint="#F44336" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <ImageButton
@@ -63,13 +68,14 @@
             style="@style/Widget.AppCompat.ImageButton"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
-            app:tint="?attr/colorOnSecondary"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:adjustViewBounds="true"
             android:scaleType="centerInside"
             android:src="@drawable/ic_send"
             app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="#FF5722" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMessages"

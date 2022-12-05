@@ -59,6 +59,27 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/chatbot" />
 
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_more_horiz_24" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="Report"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/numberOfDogs"
+            app:layout_constraintTop_toTopOf="@+id/numberOfDogs" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
