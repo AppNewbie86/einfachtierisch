@@ -122,7 +122,7 @@ class DashBoardFragment : Fragment() {
 
         binding.editButton.setOnClickListener {
             findNavController()
-                .navigate(DashBoardFragmentDirections.actionNavigationDashboardToEditProfilFragment())
+                .navigate(R.id.editProfilFragment) //kürzere mMethode
         }
 
         /**

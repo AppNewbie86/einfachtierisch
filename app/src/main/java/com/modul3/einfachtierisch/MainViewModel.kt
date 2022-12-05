@@ -197,7 +197,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-
     /**
      * Funktion zum einloggen in die App
      * Übergeben ihm email und password und wenn beides erfolgreich geprüft wurde werden wir eingeloggt
@@ -284,20 +283,17 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
     }
 
-    fun updateMember() {
+    fun updateMember(member: Member) {
 
         db.collection("user")
             .document(currentUser.value!!.uid) // Zugriff auf db Collection --> User dokument und dort in currentUser
 
             .update(
-                "name", member,
-                "level", member,
-
-                "myDogName", member.toString(),
-
-                "job", member
+                "myDogName", member.myDogName,
+                "job", member.job
             )
-            .addOnSuccessListener { getMemberData() }    }
+            .addOnSuccessListener { getMemberData() }
+    }
 
 
 }
