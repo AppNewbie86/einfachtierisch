@@ -1,5 +1,7 @@
 package com.modul3.einfachtierisch.ui.home
 
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import com.modul3.einfachtierisch.MainViewModel
 import android.content.Context
 import android.content.Intent
@@ -8,6 +10,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.BounceInterpolator
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -74,6 +77,8 @@ class HomeFragment : Fragment() {
          */
 
         binding.getStartedBtn.setOnClickListener {
+            scaler()
+
             findNavController()
                 .navigate(HomeFragmentDirections.actionNavigationHomeToLoginFragment())
         }
@@ -83,12 +88,14 @@ class HomeFragment : Fragment() {
          */
 
         binding.registerButton.setOnClickListener {
+            scaler()
             findNavController()
                 .navigate(HomeFragmentDirections.actionNavigationHomeToSignUpFragment())
         }
 
-
-        //Indent auf FaceBook
+        /**
+         * Intent auf Facebook Homepage
+         */
 
         binding.facebookicon.setOnClickListener {
             val url = "https://www.facebook.com/"
@@ -97,7 +104,9 @@ class HomeFragment : Fragment() {
             startActivity(f)
         }
 
-        //Indent auf Instagram
+        /**
+         * Intent auf Instagram Homepage
+         */
 
 
         binding.instagramicon.setOnClickListener {
@@ -108,8 +117,9 @@ class HomeFragment : Fragment() {
         }
 
 
-
-        //Indent auf GitHub
+        /**
+         * Intent auf GitHub Homepage
+         */
 
 
         binding.giticonVector.setOnClickListener {
@@ -120,5 +130,52 @@ class HomeFragment : Fragment() {
         }
 
 
+    }
+
+    /**
+     * scaler Funktion
+     *
+     * hier wird ein neuer ObjectAnimator erstellt der einen Float verändern soll welcher ans
+     * SCALE Attribut gekoppelt ist
+     */
+    private fun scaler() {
+
+        // animator verändert SCALE_Y von Pizza um 4f (4x vergrößert)
+        // innerhalb 1500ms
+        // wird 1x wiedeholt
+        // die Wiederholung läuft Rückwärts
+        // benutzt den OvershootInterpolator
+//        val animator = ObjectAnimator.ofFloat(binding.pizza, View.SCALE_Y, 4f)
+//        animator.duration = 1500
+//        animator.repeatCount = 1
+//        animator.repeatMode = ObjectAnimator.REVERSE
+//        animator.interpolator = OvershootInterpolator()
+//        animator.start()
+
+//        // animator verändert SCALE_X und Scale_Y von Pizza um 10f (10x vergrößert)
+//        // eine Möglichkeit 2 Attibute gliechzeitig zu ändern ist die Änderung innerhalb
+//        // PropertyValuesHolder zu speichern
+//        // innerhalb 3000ms
+//        // wird 1x wiedeholt
+//        // die Wiederholung läuft Rückwärts
+//        // benutzt den DecelerateInterpolator - bremst gegen Ende
+        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 10f)
+        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 10f)
+        val animator = ObjectAnimator.ofPropertyValuesHolder(binding.getStartedBtn, scaleX, scaleY)
+        animator.duration = 1500
+        animator.repeatCount = 1
+        animator.repeatMode = ObjectAnimator.REVERSE
+        animator.interpolator = BounceInterpolator()
+        animator.start()
+
+        // animator verändert SCALE_X von Pizza um 0f (bis 0fach verkleinert)
+        // innerhalb 200ms
+        // wird 1x wiedeholt
+        // die Wiederholung läuft Rückwärts
+        val animatorTwo = ObjectAnimator.ofFloat(binding.getStartedBtn, View.SCALE_X, 0f)
+        animatorTwo.duration = 200
+        animatorTwo.repeatCount = 1
+        animatorTwo.repeatMode = ObjectAnimator.REVERSE
+        animatorTwo.start()
     }
 }

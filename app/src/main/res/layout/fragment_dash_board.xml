@@ -4,201 +4,316 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF7F7">
+    android:background="#F8F6F6">
+
 
     <ImageView
-        android:id="@+id/background_dashboard"
-        android:layout_width="411dp"
-        android:layout_height="731dp"
-        android:alpha=".8"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/backgroundtop"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bg_gradation" />
-
-    <TextView
-        android:id="@+id/title_dashboard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/berkshire_swash"
-        android:text="Einfach tierisch "
-        android:textColor="#DCDCA4"
-        android:textColorHighlight="#009688"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/backgroundtop" />
 
     <ImageView
-        android:id="@+id/LogoutButton"
+        android:id="@+id/commentsbutton"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:clickable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_logout_24"
-        app:tint="#080909" />
-
-    <ImageView
-        android:id="@+id/helpdeskbutton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:clickable="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_dashboard"
-        app:srcCompat="@drawable/ic_baseline_help_outline_24"
-        app:tint="#00BCD4" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/userimage"
-        android:layout_width="202dp"
-        android:layout_height="202dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="200dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#424242">
-
-
-            <ImageView
-                android:id="@+id/image_placeholder_dashboard"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:duplicateParentState="false"
-                android:elevation="35dp"
-                android:foregroundGravity="center|center_horizontal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_account_circle_24" />
-
-            <ImageButton
-                android:id="@+id/upload_image"
-                android:layout_width="48dp"
-                android:layout_height="51dp"
-                android:background="#00000000"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/addfriend" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <ImageView
-        android:id="@+id/verifedShield"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/userimage"
-        app:layout_constraintTop_toBottomOf="@+id/userimage"
-        app:srcCompat="@drawable/verifed" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="91dp"
-        android:layout_height="24dp"
-        app:layout_constraintEnd_toEndOf="@+id/userimage"
-        app:layout_constraintTop_toBottomOf="@+id/userimage">
-
-        <TextView
-            android:id="@+id/texxtverifed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
-            android:layout_marginEnd="19dp"
-            android:layout_marginBottom="5dp"
-            android:text="verified"
-            android:textSize="8sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/player_name_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="Hundefreund86"
-        android:textColor="#DCDCA4"
-        android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="@+id/userimage"
-        app:layout_constraintStart_toStartOf="@+id/userimage"
-        app:layout_constraintTop_toBottomOf="@+id/userimage" />
-
-    <TextView
-        android:id="@+id/mytitleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/chakra_petch_light"
-        android:text="Student as Android Developer"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player_name_text" />
-
-
-    <TextView
-        android:id="@+id/kurzBioText"
-        android:layout_width="328dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="This is my App for my FinalExam as Junior Android Developer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mytitleText" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="300dp"
-        android:layout_height="3dp"
-        android:layout_marginTop="24dp"
-        android:background="#4CC4CA"
-        app:layout_constraintEnd_toEndOf="@+id/kurzBioText"
-        app:layout_constraintStart_toStartOf="@+id/kurzBioText"
-        app:layout_constraintTop_toBottomOf="@+id/kurzBioText" />
-
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="28dp"
-        app:layout_constraintBottom_toBottomOf="@+id/LogoutButton"
-        app:layout_constraintEnd_toStartOf="@+id/LogoutButton"
-        app:layout_constraintTop_toTopOf="@+id/LogoutButton"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_notifications_black_24dp"
-        app:tint="#020202" />
-
-    <ImageView
-        android:id="@+id/dogwikiBtn"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/userimage"
-        app:srcCompat="@drawable/dogprofilneu" />
+        app:layout_constraintTop_toTopOf="@+id/backgroundtop"
+        app:srcCompat="@drawable/comments" />
 
     <ImageView
         android:id="@+id/editButton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/userimage"
-        app:layout_constraintTop_toBottomOf="@+id/dogwikiBtn"
-        app:srcCompat="@drawable/picturedogs" />
+        app:layout_constraintTop_toTopOf="@+id/backgroundtop"
+        app:srcCompat="@drawable/dogprofilbutton" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/privatedatacard"
+        android:layout_width="370dp"
+        android:layout_height="276dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="#FAF8F8"
+        app:cardCornerRadius="33dp"
+        app:cardElevation="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commentsbutton">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView27"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/playerNameText"
+                app:layout_constraintEnd_toEndOf="@+id/playerNameText"
+                app:layout_constraintStart_toStartOf="@+id/playerNameText"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/placeholderimage" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView27"
+                app:layout_constraintEnd_toEndOf="@+id/imageView27"
+                app:layout_constraintStart_toStartOf="@+id/imageView27"
+                app:layout_constraintTop_toTopOf="@+id/imageView27">
+
+                <ImageView
+                    android:id="@+id/imagePlaceholderDashboard"
+                    android:layout_width="87dp"
+                    android:layout_height="95dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/holderimage" />
+
+                <ImageView
+                    android:id="@+id/uploadImage"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:clickable="true"
+                    android:elevation="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_edit_24" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/playerNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="95dp"
+                android:text="Hundefreund89"
+                android:textColor="#090808"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="250dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="24dp"
+                android:clickable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/followerbutton" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Follow"
+                android:textColor="#FAF9F9"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+                app:layout_constraintEnd_toEndOf="@+id/imageButton"
+                app:layout_constraintStart_toStartOf="@+id/imageButton"
+                app:layout_constraintTop_toTopOf="@+id/imageButton" />
+
+            <ImageView
+                android:id="@+id/imageView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageButton"
+                app:layout_constraintTop_toTopOf="@+id/imageButton"
+                app:srcCompat="@drawable/gotochatbtn" />
+
+            <ImageView
+                android:id="@+id/imageView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView25"
+                app:layout_constraintEnd_toEndOf="@+id/imageView25"
+                app:layout_constraintStart_toStartOf="@+id/imageView25"
+                app:layout_constraintTop_toTopOf="@+id/imageView25"
+                app:srcCompat="@drawable/vectorsend" />
+
+            <ImageView
+                android:id="@+id/helpdeskbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:alpha=".5"
+                android:background="#A6AAAA"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_help_outline_24" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/friendpicturetwo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="@+id/friendpictureone"
+        app:layout_constraintEnd_toStartOf="@+id/friendpictureone"
+        app:layout_constraintTop_toTopOf="@+id/friendpictureone"
+        app:srcCompat="@drawable/julien" />
+
+    <ImageView
+        android:id="@+id/friendpictureone"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/privatedatacard"
+        app:srcCompat="@drawable/marianna" />
+
+    <ImageView
+        android:id="@+id/friendpicturethree"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="@+id/friendpicturetwo"
+        app:layout_constraintEnd_toStartOf="@+id/friendpicturetwo"
+        app:layout_constraintTop_toTopOf="@+id/friendpicturetwo"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/samara" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="127dp"
+        android:layout_height="379dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/privatedatacard"
+        app:srcCompat="@drawable/likebar" />
+
+    <TextView
+        android:id="@+id/friendstitleline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Friends"
+        android:textColor="#0C0B0B"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/friendpicturetwo"
+        app:layout_constraintStart_toStartOf="@+id/friendpicturethree" />
+
+    <TextView
+        android:id="@+id/gallerytextline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Gallery"
+        android:textColor="#0B0909"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/friendpicturethree"
+        app:layout_constraintTop_toBottomOf="@+id/friendpicturethree" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="@+id/gallerytextline"
+        app:layout_constraintTop_toBottomOf="@+id/gallerytextline"
+        app:srcCompat="@drawable/pictureone" />
+
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView21"
+        app:layout_constraintEnd_toEndOf="@+id/friendpictureone"
+        app:layout_constraintTop_toTopOf="@+id/imageView21"
+        app:srcCompat="@drawable/picturetwo" />
+
+    <ImageView
+        android:id="@+id/imageView23"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView21"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView21"
+        app:layout_constraintTop_toBottomOf="@+id/imageView21"
+        app:layout_constraintVertical_bias="0.032"
+        app:srcCompat="@drawable/picturethree" />
+
+    <ImageView
+        android:id="@+id/imageView24"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView22"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView22"
+        app:layout_constraintTop_toBottomOf="@+id/imageView22"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/picturefour" />
+
+    <TextView
+        android:id="@+id/LogoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:clickable="true"
+        android:elevation="30dp"
+        android:minHeight="48dp"
+        android:text="Logout"
+        android:textColor="#00BCD4"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/commentsbutton"
+        app:layout_constraintTop_toTopOf="@+id/commentsbutton" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:textColor="#F8F5F5"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/editButton"
+        app:layout_constraintStart_toStartOf="@+id/editButton"
+        app:layout_constraintTop_toBottomOf="@+id/editButton" />
+
+    <ImageView
+        android:id="@+id/dogwikiBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="24dp"
+        android:clickable="true"
+        android:elevation="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editButton"
+        app:layout_constraintEnd_toStartOf="@+id/editButton"
+        app:layout_constraintTop_toTopOf="@+id/editButton"
+        app:srcCompat="@drawable/logbook" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

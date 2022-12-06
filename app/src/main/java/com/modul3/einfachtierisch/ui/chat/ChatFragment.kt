@@ -16,18 +16,30 @@ import androidx.navigation.fragment.findNavController
 import com.modul3.einfachtierisch.adapter.message.MessageAdapter
 import com.modul3.einfachtierisch.databinding.FragmentChatBinding
 
+
+/**
+ * Chatfragment erbt von Fragment
+ */
+
 class ChatFragment : Fragment() {
 
-    // Hier wird das ViewModel, in dem die Logik stattfindet, geholt
+    /**
+     * Hier wird das ViewModel, in dem die Logik stattfindet, geholt
+     */
+
     private val viewModel: MainViewModel by activityViewModels()
 
-    // Das binding für das QuizFragment wird deklariert
+    /**
+     * Das binding für das QuizFragment wird deklariert
+     */
+
     private lateinit var binding: FragmentChatBinding
 
     /**
      * Lifecycle Funktion onCreateView
      * Hier wird das binding initialisiert und das Layout gebaut
      */
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -44,10 +56,16 @@ class ChatFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Das übergebene Argument ("contact Index") wird in eine Variable gespeichert
+        /**
+         *  Das übergebene Argument ("contact Index") wird in eine Variable gespeichert
+         */
+
         val contactIndex = requireArguments().getInt("contactIndex")
 
-        // Über die Funktion aus dem ViewModel wird der Chat initialisiert
+        /**
+         *  Über die Funktion aus dem ViewModel wird der Chat initialisiert
+         */
+
         viewModel.initializeChat(contactIndex)
 
         binding.chatToolbar.title = viewModel.currentContact.name
@@ -55,8 +73,16 @@ class ChatFragment : Fragment() {
             findNavController().navigateUp()
         }
 
+        /**
+         * MessageAdapter wird verknüpft
+         */
+
         val messageAdapter = MessageAdapter()
         binding.rvMessages.adapter = messageAdapter
+
+        /**
+         * Viewmodel überwacht mit dem Observer den chat und aktualisiert sich bei Veränderungen
+         */
 
         viewModel.chat.observe(
             viewLifecycleOwner,
@@ -66,7 +92,10 @@ class ChatFragment : Fragment() {
             }
         )
 
-        // Der btnSend bekommt einen Click Listener
+        /**
+         * Der btnSend bekommt einen Click Listener
+         */
+
         binding.btnSend.setOnClickListener {
             val text = binding.textInput.text.toString()
             if (text == "") {
@@ -74,7 +103,11 @@ class ChatFragment : Fragment() {
             } else {
                 viewModel.sendMessage(text)
                 binding.textInput.setText("")
-                //Dieser Code sorgt dafür, dass die Tastatur wieder eingeklappt wird
+
+                /**
+                 * Dieser Code sorgt dafür, dass die Tastatur wieder eingeklappt wird
+                 */
+
                 val imm: InputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(view.windowToken, 0)
 //                messageAdapter.notifyItemInserted(0)

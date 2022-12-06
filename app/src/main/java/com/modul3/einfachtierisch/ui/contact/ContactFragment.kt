@@ -14,16 +14,23 @@ import com.modul3.einfachtierisch.databinding.FragmentContactBinding
 
 class ContactFragment : Fragment() {
 
-    // Hier wird das ViewModel, in dem die Logik stattfindet, geholt
+    /**
+     * Viewmodel wird verknüpft
+     */
+
     private val viewModel: MainViewModel by activityViewModels()
 
-    // Das binding für das QuizFragment wird deklariert
+    /**
+     * Binding Methode wird verwendet
+     */
+
     private lateinit var binding: FragmentContactBinding
 
     /**
      * Lifecycle Funktion onCreateView
      * Hier wird das binding initialisiert und das Layout gebaut
      */
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -40,10 +47,17 @@ class ContactFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /**
+         * Contactadapter wird angeschlossen
+         */
+
         val contactAdapter = ContactAdapter()
         binding.rvContacts.adapter = contactAdapter
 
-        // Die RecyclerView bekommt den ContactAdapter zugewiesen
+        /**
+         * Recyclerview wird dem adapter zugewiesen
+         */
+
         viewModel.contactList.observe(
             viewLifecycleOwner,
             Observer {

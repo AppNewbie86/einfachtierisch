@@ -53,20 +53,6 @@ class DashBoardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-/*
-val newsAdapter = NewsAdapter()
-binding.gallerieRecycler.adapter = newsAdapter
-
-viewModel.news.observe(
-    viewLifecycleOwner,
-    Observer {
-        // immer wenn neue news kommen recyclerview updaten
-        newsAdapter.submitList(it)
-    }
-)
-
-*/
-
         viewModel.currentUser.observe(
             viewLifecycleOwner,
             Observer {
@@ -117,13 +103,11 @@ viewModel.news.observe(
          */
 
 
-//Hundebellen
+        //Hundebellen
 
         val preview = (R.raw.hundebellen)
         binding.dogwikiBtn.setOnClickListener {
-          //  viewModel.playSong()
-
-
+            //  viewModel.playSong()
             findNavController()
                 .navigate(DashBoardFragmentDirections.actionNavigationDashboardToNewsFragment())
         }
@@ -182,7 +166,7 @@ viewModel.news.observe(
         }
 
  */
-    }
+}
 
 
 

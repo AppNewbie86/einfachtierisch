@@ -19,7 +19,9 @@
         app:cardBackgroundColor="#FF5722"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
-        app:contentPadding="8dp">
+        app:contentPadding="8dp"
+        app:strokeColor="#00BCD4"
+        app:strokeWidth="2dp">
 
         <TextView
             android:id="@+id/tvMessageText"

@@ -1,6 +1,5 @@
 package com.modul3.einfachtierisch.ui.completeprofil
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,12 +18,27 @@ import com.modul3.einfachtierisch.databinding.FragmentEditProfilBinding
 
 class EditProfilFragment : Fragment() {
 
+    /**
+     * Datenbank Reference als später initialisierte Variable
+     */
+
     private lateinit var database: DatabaseReference
+
+    /**
+     * BindingMethode wird verknüpft
+     */
 
     private lateinit var binding: FragmentEditProfilBinding
 
+    /**
+     * ViewModel wird angehängt
+     */
+
     private val viewModel: MainViewModel by activityViewModels()
 
+    /**
+     * Layout wird aufgeblasen und zum erstellen vorbereitet
+     */
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,7 +52,15 @@ class EditProfilFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /**
+         * FirebasedatenBank wird verknüpft
+         */
+
         database = Firebase.database.reference
+
+        /**
+         * Button zum speichern der Daten führt die Funktion aus
+         */
 
         binding.buttonSaveDatas.setOnClickListener {
 
@@ -47,13 +69,17 @@ class EditProfilFragment : Fragment() {
         }
     }
 
-    //saveMember
+    /**
+     * Funktion Save Member
+     */
 
     private fun saveMemberData() {
         val etFieldDog = binding.fieldDogName.text.toString()
         val etFieldJob = binding.fieldJob.text.toString()
 
-        //Nullcheck und objekt erstellen
+        /**
+         * Nullcheck und objekt erstellen
+         */
 
         if (!etFieldDog.isNullOrEmpty() && !etFieldJob.isNullOrEmpty()) {
             val member = Member(
@@ -61,9 +87,10 @@ class EditProfilFragment : Fragment() {
                 job = etFieldJob.toString()
 
 
-            )
+            )// Viewmodel führt die Funktion UpdateMember aus
             viewModel.updateMember(member)
-        }
+        }// Viewmodel überwacht mit dem Observer den Aktuellen User
+        // und wenn Daten gespeichert wurden dann navigiert er zum Dashboard
         viewModel.currentUser.observe(
             viewLifecycleOwner,
             Observer {
