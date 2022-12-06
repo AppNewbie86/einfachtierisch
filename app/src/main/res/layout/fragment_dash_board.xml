@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/background_dashboard"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="411dp"
+        android:layout_height="731dp"
         android:alpha=".8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,7 @@
         android:id="@+id/title_dashboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/berkshire_swash"
         android:text="Einfach tierisch "
@@ -36,10 +36,11 @@
         android:id="@+id/LogoutButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/title_dashboard"
-        app:layout_constraintEnd_toEndOf="@+id/editButton"
-        app:layout_constraintTop_toTopOf="@+id/title_dashboard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_logout_24"
         app:tint="#080909" />
 
@@ -47,9 +48,8 @@
         android:id="@+id/helpdeskbutton"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginTop="8dp"
         android:clickable="true"
-        app:layout_constraintStart_toStartOf="@+id/title_dashboard"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_dashboard"
         app:srcCompat="@drawable/ic_baseline_help_outline_24"
         app:tint="#00BCD4" />
@@ -58,16 +58,27 @@
         android:id="@+id/userimage"
         android:layout_width="202dp"
         android:layout_height="202dp"
-        app:layout_constraintBottom_toBottomOf="@+id/image_placeholder_dashboard"
-        app:layout_constraintEnd_toEndOf="@+id/image_placeholder_dashboard"
-        app:layout_constraintStart_toStartOf="@+id/image_placeholder_dashboard"
-        app:layout_constraintTop_toTopOf="@+id/image_placeholder_dashboard">
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#424242">
 
+
+            <ImageView
+                android:id="@+id/image_placeholder_dashboard"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:duplicateParentState="false"
+                android:elevation="35dp"
+                android:foregroundGravity="center|center_horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_account_circle_24" />
 
             <ImageButton
                 android:id="@+id/upload_image"
@@ -82,34 +93,18 @@
     </androidx.cardview.widget.CardView>
 
     <ImageView
-        android:id="@+id/image_placeholder_dashboard"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="40dp"
-        android:duplicateParentState="false"
-        android:elevation="35dp"
-        android:foregroundGravity="center|center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_dashboard"
-        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
-
-    <ImageView
         android:id="@+id/verifedShield"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/image_placeholder_dashboard"
-        app:layout_constraintTop_toBottomOf="@+id/image_placeholder_dashboard"
+        app:layout_constraintEnd_toEndOf="@+id/userimage"
+        app:layout_constraintTop_toBottomOf="@+id/userimage"
         app:srcCompat="@drawable/verifed" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/verifedShield"
-        app:layout_constraintEnd_toEndOf="@+id/verifedShield"
-        app:layout_constraintStart_toStartOf="@+id/verifedShield"
-        app:layout_constraintTop_toTopOf="@+id/verifedShield">
+        android:layout_width="91dp"
+        android:layout_height="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/userimage"
+        app:layout_constraintTop_toBottomOf="@+id/userimage">
 
         <TextView
             android:id="@+id/texxtverifed"
@@ -130,27 +125,28 @@
         android:id="@+id/player_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="Hundefreund86"
         android:textColor="#DCDCA4"
         android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="@+id/image_placeholder_dashboard"
-        app:layout_constraintStart_toStartOf="@+id/image_placeholder_dashboard"
-        app:layout_constraintTop_toBottomOf="@+id/image_placeholder_dashboard" />
+        app:layout_constraintEnd_toEndOf="@+id/userimage"
+        app:layout_constraintStart_toStartOf="@+id/userimage"
+        app:layout_constraintTop_toBottomOf="@+id/userimage" />
 
     <TextView
         android:id="@+id/mytitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/chakra_petch_light"
         android:text="Student as Android Developer"
         android:textSize="16sp"
         android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="@+id/player_name_text"
-        app:layout_constraintStart_toStartOf="@+id/player_name_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/player_name_text" />
+
 
     <TextView
         android:id="@+id/kurzBioText"
@@ -159,30 +155,29 @@
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="This is my App for my FinalExam as Junior Android Developer"
-        app:layout_constraintEnd_toEndOf="@+id/mytitleText"
-        app:layout_constraintStart_toStartOf="@+id/mytitleText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mytitleText" />
-
 
     <View
         android:id="@+id/divider"
         android:layout_width="300dp"
         android:layout_height="3dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="#4CC4CA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/kurzBioText"
+        app:layout_constraintStart_toStartOf="@+id/kurzBioText"
         app:layout_constraintTop_toBottomOf="@+id/kurzBioText" />
 
     <ImageView
         android:id="@+id/imageView15"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="28dp"
         app:layout_constraintBottom_toBottomOf="@+id/LogoutButton"
         app:layout_constraintEnd_toStartOf="@+id/LogoutButton"
         app:layout_constraintTop_toTopOf="@+id/LogoutButton"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_notifications_black_24dp"
         app:tint="#020202" />
 
@@ -191,9 +186,9 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editButton"
+        app:layout_constraintTop_toTopOf="@+id/userimage"
         app:srcCompat="@drawable/dogprofilneu" />
 
     <ImageView
@@ -201,9 +196,9 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/userimage"
+        app:layout_constraintStart_toEndOf="@+id/userimage"
+        app:layout_constraintTop_toBottomOf="@+id/dogwikiBtn"
         app:srcCompat="@drawable/picturedogs" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
