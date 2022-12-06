@@ -112,7 +112,7 @@ class HomeFragment : Fragment() {
         //Indent auf GitHub
 
 
-        binding.giticon.setOnClickListener {
+        binding.giticonVector.setOnClickListener {
             val url = "https://www.github.com/"
             val g = Intent(Intent.ACTION_VIEW)
             g.data = Uri.parse(url)

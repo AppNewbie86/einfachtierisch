@@ -29,6 +29,10 @@ class SignUpFragment : Fragment() {
     // declaring a null variable for MediaController
     var mediaControls: MediaController? = null
 
+    /**
+     * ViewModel wird verknüpft
+     */
+
     private val viewModel: MainViewModel by activityViewModels()
 
     private lateinit var binding: FragmentSignUpBinding
@@ -43,52 +47,98 @@ class SignUpFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Layout wird vorbereitet zum Erstellen aufgeblasen
+     */
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         simpleVideoView = binding.simpleVideoView
         if (mediaControls == null) {
-            // bei Fragments benutzt man requireContext
-            // creating an object of media controller class
+
+            /**
+             * bei Fragments benutzt man requireContext
+             * creating an object of media controller class
+             */
+
             mediaControls = MediaController(requireContext())
-            // set the anchor view for the video view
+
+            /**
+             *  set the anchor view for the video view
+             */
+
             mediaControls!!.setAnchorView(this.simpleVideoView)
         }
+
         /**
-         * Immer Null Savety beachten nicht einfach null setzen
+         *  set the media controller for video view
          */
 
-        // set the media controller for video view
+
         simpleVideoView!!.setMediaController(mediaControls)
-        // set the absolute path of the video file which is going to be played
+
+        /**
+         * set the absolute path of the video file which is going to be played
+         */
+
         simpleVideoView!!.setVideoURI(
             Uri.parse("android.resource://"
                 + requireContext().packageName + "/" + R.raw.signup_animation))
+
+
         simpleVideoView!!.requestFocus()
-        // starting the video
-        // TODO VideoStart in einen ClickOnLISTENER SETZEN
+
+        /**
+         *  starting the video
+         */
+
         simpleVideoView!!.start()
-        // display a toast message
-        // after the video is completed
+
+
+        /**
+         * display a toast message
+         * after the video is completed
+         */
+
         simpleVideoView!!.setOnCompletionListener {
             Toast.makeText(requireContext(), "Video completed",
                 Toast.LENGTH_LONG).show()
+
         }
-        // display a toast message if any
-        // error occurs while playing the video
+
+        /**
+         * display a toast message if any
+         * error occurs while playing the video
+         */
+
         simpleVideoView!!.setOnErrorListener { mp, what, extra ->
             Toast.makeText(requireContext(), "An Error Occurred " +
                     "While Playing Video !!!", Toast.LENGTH_LONG).show()
             false
         }
 
+        /**
+         * backtohomeButton der zurück Navigiert
+         *
+         */
+
         binding.backtohomeBtn.setOnClickListener {
             findNavController().navigateUp()
         }
 
+        /**
+         * signup Button wird mit SignUp Methode versehen und diese wird bei jedem SignUp
+         * durchgeführt
+         */
+
         binding.signupBtn.setOnClickListener {
             signUp()
         }
+
+        /**
+         * Viewmodel überwacht mit dem Observe den Toast und wirft diesen bei Bedarf
+         */
 
         viewModel.toast.observe(
             viewLifecycleOwner,
@@ -103,6 +153,10 @@ class SignUpFragment : Fragment() {
             }
         )
 
+        /**
+         * Viewmodel überwacht mit dem Observe den currentUser und wirft diesen bei Bedarf
+         */
+
         viewModel.currentUser.observe(
             viewLifecycleOwner,
             Observer {
@@ -113,16 +167,31 @@ class SignUpFragment : Fragment() {
         )
     }
 
+    /**
+     * Funktion für den SignUp Prozess
+     */
+
+
     private fun signUp() {
         val email = binding.signupMail.text.toString()
         val password = binding.signupPassword.text.toString()
         val name = binding.signupNickname.text.toString()
+
+        /**
+         * NullCheck wird durchgeführt
+         * und Objekt erstellt
+         */
+
 
         if (!email.isNullOrEmpty() && !password.isNullOrEmpty()) {
             val newMember = Member(
                 name = name,
 
             )
+
+            /**
+             * viewmodel führt signUp() aus und übergibt email , password
+             */
             viewModel.signUp(email, password, newMember)
         }
     }

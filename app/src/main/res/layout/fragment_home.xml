@@ -38,11 +38,12 @@
         android:id="@+id/greetingtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:fontFamily="@font/almendra"
+        android:fontFamily="@font/asset"
         android:text="Welcome "
-        android:textSize="48sp"
+        android:textColor="#DCDCA4"
+        android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/backgroundimage_gradient" />
 
@@ -51,8 +52,9 @@
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="#67518E"
+        android:backgroundTint="#4CC4CA"
         android:text="Login"
+        android:textSize="24sp"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toTopOf="@+id/registerButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,11 +70,12 @@
         android:layout_height="wrap_content"
         android:text="sign up"
         android:textColor="#F8F4F4"
-        app:layout_constraintBottom_toTopOf="@+id/giticon"
+        app:layout_constraintBottom_toTopOf="@+id/imageView10"
         app:layout_constraintEnd_toEndOf="@+id/getStartedBtn"
         app:layout_constraintStart_toStartOf="@+id/getStartedBtn"
         app:layout_constraintTop_toBottomOf="@+id/text_dashboard"
-        app:strokeColor="#0C0C0C"
+        app:strokeColor="#FDFCFC"
+        app:strokeWidth="3dp"
         tools:ignore="UnknownIdInLayout" />
 
     <ImageView
@@ -88,20 +91,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/giticon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#F8F5F5"
-        android:backgroundTint="#F6F3F3"
-        android:clickable="true"
-        android:contentDescription="@string/githublink"
-        android:src="@drawable/giticon"
-        app:layout_constraintBottom_toBottomOf="@+id/facebookicon"
-        app:layout_constraintEnd_toStartOf="@+id/instagramicon"
-        app:layout_constraintStart_toEndOf="@+id/facebookicon"
-        app:layout_constraintTop_toTopOf="@+id/facebookicon" />
-
-    <ImageView
         android:id="@+id/instagramicon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -109,41 +98,51 @@
         android:clickable="true"
         android:contentDescription="@string/instagramlink"
         android:src="@drawable/instagramicon"
-        app:layout_constraintBottom_toBottomOf="@+id/giticon"
+        app:layout_constraintBottom_toBottomOf="@+id/facebookicon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/giticon" />
+        app:layout_constraintTop_toTopOf="@+id/facebookicon" />
 
     <View
         android:id="@+id/divider"
         android:layout_width="300dp"
         android:layout_height="3dp"
         android:layout_marginTop="16dp"
-        android:background="#BFBDBD"
+        android:background="#4CC4CA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerButton" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="0dp"
-        android:layout_height="250dp"
-        android:src="@drawable/startlogo"
-        app:layout_constraintBottom_toTopOf="@+id/getStartedBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/greetingtext"
-        app:layout_constraintVertical_bias="0.235" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/almendra"
+        android:fontFamily="sans-serif-medium"
         android:text="Hier können Sie uns auch finden "
+        app:layout_constraintBottom_toTopOf="@+id/imageView10"
         app:layout_constraintEnd_toEndOf="@+id/registerButton"
         app:layout_constraintStart_toStartOf="@+id/registerButton"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <ImageView
+        android:id="@+id/giticon_vector"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_marginTop="92dp"
+        android:src="@drawable/logocyan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backgroundimage_gradient" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/giticon"
+        app:layout_constraintBottom_toBottomOf="@+id/instagramicon"
+        app:layout_constraintEnd_toStartOf="@+id/instagramicon"
+        app:layout_constraintStart_toEndOf="@+id/facebookicon"
+        app:layout_constraintTop_toTopOf="@+id/facebookicon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,11 +1,14 @@
 package com.modul3.einfachtierisch.ui.dashboard
 
+import android.media.AudioAttributes
+import android.media.MediaPlayer
 import com.modul3.einfachtierisch.MainViewModel
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.MediaController
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
@@ -27,13 +30,15 @@ class DashBoardFragment : Fragment() {
 
     private lateinit var binding: FragmentDashBoardBinding
 
+
     private val viewModel: MainViewModel by activityViewModels()
 
-    private val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
-        if (uri != null) {
-            viewModel.uploadImage(uri)
+    private val getContent =
+        registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+            if (uri != null) {
+                viewModel.uploadImage(uri)
+            }
         }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,19 +52,20 @@ class DashBoardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
 /*
-        val newsAdapter = NewsAdapter()
-        binding.gallerieRecycler.adapter = newsAdapter
+val newsAdapter = NewsAdapter()
+binding.gallerieRecycler.adapter = newsAdapter
 
-        viewModel.news.observe(
-            viewLifecycleOwner,
-            Observer {
-                // immer wenn neue news kommen recyclerview updaten
-                newsAdapter.submitList(it)
-            }
-        )
+viewModel.news.observe(
+    viewLifecycleOwner,
+    Observer {
+        // immer wenn neue news kommen recyclerview updaten
+        newsAdapter.submitList(it)
+    }
+)
 
- */
+*/
 
         viewModel.currentUser.observe(
             viewLifecycleOwner,
@@ -78,7 +84,7 @@ class DashBoardFragment : Fragment() {
                 if (it != null) {
                     binding.playerNameText.text = it.name
 
-                    binding.levelUpImage.load(it.image) {
+                    binding.imagePlaceholderDashboard.load(it.image) {
                         error(resources.getDrawable(R.drawable.addfriend))
                     }
                 }
@@ -102,7 +108,7 @@ class DashBoardFragment : Fragment() {
          * update Picture
          */
 
-        binding.levelUpImage.setOnClickListener {
+        binding.uploadImage.setOnClickListener {
             getContent.launch("image/*")
         }
 
@@ -110,7 +116,14 @@ class DashBoardFragment : Fragment() {
          * NewsButton
          */
 
-        binding.newsBtn.setOnClickListener {
+
+//Hundebellen
+
+        val preview = (R.raw.hundebellen)
+        binding.dogwikiBtn.setOnClickListener {
+          //  viewModel.playSong()
+
+
             findNavController()
                 .navigate(DashBoardFragmentDirections.actionNavigationDashboardToNewsFragment())
         }
@@ -135,11 +148,42 @@ class DashBoardFragment : Fragment() {
         }
 
         /**
-        * LogoutButton
+         * LogoutButton
          */
 
         binding.LogoutButton.setOnClickListener {
             viewModel.logout()
         }
     }
-}
+
+/*
+    //Musik abspielen
+
+    fun playSong() {
+
+
+        var mediaPlayer = MediaPlayer.create(context, R.raw.hundebellen)
+        mediaPlayer.start() // no need to call prepare(); create() does that for you
+        mediaPlayer.release()
+
+
+        MediaPlayer().apply {
+            setAudioAttributes(
+                AudioAttributes.Builder()
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                    .build()
+            )
+            setDataSource(R.raw.hundebellen)
+            prepare() // might take long! (for buffering, etc)
+            start()
+
+
+        }
+
+ */
+    }
+
+
+
+

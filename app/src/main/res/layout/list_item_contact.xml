@@ -34,27 +34,56 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                tools:text="Name"
-                android:textColor="?attr/colorOnSecondary"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/ivContactPicture"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Name" />
 
             <TextView
                 android:id="@+id/tvContactLastMessage"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:textColor="?attr/colorOnSecondary"
-                android:textSize="14sp"
                 android:alpha="0.7"
                 android:lines="1"
+                android:textColor="@color/white"
+                android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@id/tvContactName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tvContactName"
-                tools:text="Hi there..." />
+                tools:text="Obacht bei der Hundeauswahl...." />
+
+            <TextView
+                android:id="@+id/memberstate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="TOPMEMBER"
+                android:textColor="#FAF8F8"
+                app:layout_constraintStart_toStartOf="@+id/tvContactName"
+                app:layout_constraintTop_toBottomOf="@+id/tvContactName" />
+
+            <ImageView
+                android:id="@+id/starone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/memberstate"
+                app:layout_constraintStart_toEndOf="@+id/memberstate"
+                app:layout_constraintTop_toTopOf="@+id/memberstate"
+                app:srcCompat="@android:drawable/btn_star_big_on" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/starone"
+                app:layout_constraintStart_toEndOf="@+id/starone"
+                app:layout_constraintTop_toTopOf="@+id/starone"
+                app:srcCompat="@android:drawable/btn_star_big_on" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>

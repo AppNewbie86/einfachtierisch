@@ -10,6 +10,8 @@
     app:cardBackgroundColor="#C8C6C6"
     app:cardCornerRadius="10dp"
     app:cardElevation="7dp"
+    app:strokeColor="#ED9108"
+    app:strokeWidth="4dp"
     tools:layout_editor_absoluteX="1dp"
     tools:layout_editor_absoluteY="93dp">
 

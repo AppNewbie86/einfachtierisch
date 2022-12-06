@@ -26,9 +26,10 @@
             android:id="@+id/sign_up_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/almendra"
             android:text="Register"
+            android:textColor="#DCDCA4"
             android:textSize="48sp"
             app:layout_constraintBottom_toTopOf="@+id/simpleVideoView"
             app:layout_constraintEnd_toEndOf="parent"
@@ -79,18 +80,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:backgroundTint="#4CC4CA"
             android:text="signup"
             app:layout_constraintEnd_toEndOf="@+id/signup_password"
             app:layout_constraintTop_toBottomOf="@+id/signup_nickname" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/backtohomeBtn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="cancel"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             app:layout_constraintStart_toStartOf="@+id/signup_password"
-            app:layout_constraintTop_toTopOf="@+id/signupBtn" />
+            app:layout_constraintTop_toTopOf="@+id/signupBtn"
+            app:strokeColor="#FDFCFC"
+            app:strokeWidth="3dp" />
 
         <EditText
             android:id="@+id/signup_nickname"

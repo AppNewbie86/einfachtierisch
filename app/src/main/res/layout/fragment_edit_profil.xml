@@ -6,13 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/backgroundimageeditprofile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg_gradation" />
+
     <TextView
         android:id="@+id/profil_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Profildaten"
-        android:textSize="34sp"
+        android:textColor="#DCDCA4"
+        android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="16dp"
         android:hint="Write here your Dogname please"
         android:maxLines="1"
@@ -31,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/profil_title" />
 
     <EditText
         android:id="@+id/fieldJob"
@@ -49,16 +60,48 @@
         app:layout_constraintTop_toBottomOf="@+id/fieldDogName" />
 
 
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonSaveDatas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="108dp"
-        android:layout_marginBottom="408dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#4CC4CA"
         android:src="@drawable/ic_send"
         android:text="Profildaten speichern"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/bannerimage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/fieldDogName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profil_title"
+        app:srcCompat="@drawable/baxter" />
+
+    <ImageView
+        android:id="@+id/editpicturetwo"
+        android:layout_width="34dp"
+        android:layout_height="36dp"
+        app:layout_constraintEnd_toEndOf="@+id/fieldJob"
+        app:layout_constraintTop_toBottomOf="@+id/fieldDogName"
+        app:srcCompat="@drawable/editprofileicon" />
+
+    <ImageView
+        android:id="@+id/editimageone"
+        android:layout_width="32dp"
+        android:layout_height="38dp"
+        app:layout_constraintEnd_toEndOf="@+id/fieldDogName"
+        app:layout_constraintTop_toTopOf="@+id/fieldDogName"
+        app:srcCompat="@drawable/ellipse_19" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

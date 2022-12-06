@@ -23,9 +23,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
-            android:fontFamily="@font/allerta_stencil"
+            android:fontFamily="sans-serif-medium"
             android:text="HelpDesk"
-            android:textColor="@color/purple_200"
+            android:textColor="#DCDCA4"
             android:textSize="36sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,6 +35,7 @@
             android:layout_width="258dp"
             android:layout_height="262dp"
             android:layout_gravity="center"
+            android:layout_marginTop="8dp"
             android:src="@drawable/help_desk"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,8 +47,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-medium"
             android:text="schreibe uns hier deine Nachricht"
-            android:textColor="@color/purple_500"
+            android:textColor="#DCDCA4"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -93,7 +95,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
                         android:hint="Your email"
-                        android:textColor="#EAE8E8"
+                        android:textColor="#FAF7F7"
+                        android:textColorHint="#FAF8F8"
                         tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
@@ -118,6 +121,7 @@
                         android:layout_marginEnd="16dp"
                         android:hint="Subject"
                         android:textColor="#F6F5F5"
+                        android:textColorHint="#FAF8F8"
                         tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
@@ -141,6 +145,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
                         android:hint="Message/Question"
+                        android:textColorHint="#FBFBFB"
                         tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
@@ -151,7 +156,7 @@
                     android:layout_marginLeft="100dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/round_button"
-                    android:backgroundTint="#FB4208"
+                    android:backgroundTint="#4CC4CA"
                     android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
                     android:textColor="@color/black"
                     app:tint="#F3F1F1"

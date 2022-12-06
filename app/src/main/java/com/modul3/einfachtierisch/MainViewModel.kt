@@ -1,6 +1,8 @@
 package com.modul3.einfachtierisch
 
 import android.app.Application
+import android.media.AudioAttributes
+import android.media.MediaPlayer
 import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
@@ -34,6 +36,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val repository = Repository(DogApi)
 
 
+    /**
+     * speichert die Daten wo geladen werden müsssen
+     */
+
     private val _loading = MutableLiveData<ApiStatus>()
     val loading: LiveData<ApiStatus>
         get() = _loading
@@ -43,6 +49,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     init {
         loadData()
     }
+
+    /**
+     * Funktion zum Laden der Daten
+     */
 
     private fun loadData() {
         viewModelScope.launch {
@@ -104,19 +114,34 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val member: LiveData<Member>
         get() = _member
 
+    /**
+     * Verschachtelte Value zum Speichern der Daten Toast
+     */
+
     private val _toast = MutableLiveData<String?>()
     val toast: LiveData<String?>
         get() = _toast
 
-
-    // Die Liste aus Kontakten wird in einer verschachtelten Variable gespeichert
+    /**
+     *
+     * Die Liste aus Kontakten wird in einer verschachtelten Variable
+     * gespeichert und mit dem Repository verknüpft
+     */
     val contactList: LiveData<List<Contact>> = repository.contactList
 
+    /**
+     * Verschachtelte Value zum Speichern der Daten CurrentContact
+     * Der aktuell ausgewählte Kontakt wird in einer verschachtelten Variable gespeichert
+     */
 
-    // Der aktuell ausgewählte Kontakt wird in einer verschachtelten Variable gespeichert
     private lateinit var _currentContact: Contact
     val currentContact: Contact
         get() = _currentContact
+
+
+    /**
+     * Verschachtelte Value zum Speichern der Daten Chat
+     */
 
     private val _chat = MutableLiveData<MutableList<Message>>(mutableListOf())
     val chat: LiveData<MutableList<Message>>
@@ -144,7 +169,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _chat.value = chat.value
     }
 
-
+    /**
+     * Verschachtelte Value zum Speichern der Daten
+     */
     private val _news = MutableLiveData<List<Dogs>>()
     val news: LiveData<List<Dogs>>
         get() = _news
@@ -182,7 +209,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     /**
-     * hier wird userid, nickname und level in die Firestore Datenbank gespeichert
+     * hier wird UserId, nickname und Level in die Firestore Datenbank gespeichert
      *
      */
 
@@ -198,8 +225,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
 
     /**
-     * Funktion zum einloggen in die App
-     * Übergeben ihm email und password und wenn beides erfolgreich geprüft wurde werden wir eingeloggt
+     * Funktion zum Einloggen in die App
+     * Übergeben ihm Email und Password und wenn beides erfolgreich geprüft wurde werden wir eingeloggt
      */
 
     fun login(email: String, password: String) {
@@ -270,7 +297,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     /**
-     *  hier werden Spielerdaten mittles userid aus dem Firestore geladen
+     *  Hier werden Spielerdaten mittles UserId aus dem Firestore geladen
      */
 
     fun getMemberData() {
@@ -282,6 +309,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 Log.e(TAG, "Error reading document: $it")
             }
     }
+
+    /**
+     *  Hier wird die Funktion dafür verwendet das man im EditProfilFragment
+     *  noch weitere Parameter seinem Profil hinzufügen kann
+     */
+
 
     fun updateMember(member: Member) {
 
@@ -297,3 +330,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
 
 }
+
+
+
+

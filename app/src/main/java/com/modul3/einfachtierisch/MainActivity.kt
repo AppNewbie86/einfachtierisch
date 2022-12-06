@@ -14,7 +14,8 @@ class MainActivity : AppCompatActivity() {
 
 
     /**
-     * Später initialisierte Variable wo wir das ActivityMainBinding aktivieren und das mit der DataBinding Methode
+     * Später initialisierte Variable wo wir das ActivityMainBinding
+     * aktivieren und das mit der DataBinding Methode
      */
 
     private lateinit var binding: ActivityMainBinding
@@ -33,8 +34,7 @@ class MainActivity : AppCompatActivity() {
 
 
         /**
-         *         navController wird dem NavHostFragment zugeordnet
-
+         *  navController wird dem NavHostFragment zugeordnet
          */
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
