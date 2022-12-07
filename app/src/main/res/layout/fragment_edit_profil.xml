@@ -22,7 +22,7 @@
         android:layout_height="69dp"
         android:layout_marginTop="16dp"
         android:text="Profildaten"
-        android:textColor="#050505"
+        android:textColor="#DCDCA4"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

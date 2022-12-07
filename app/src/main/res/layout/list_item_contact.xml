@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
-        android:background="@drawable/bg_gradation"
+        app:cardBackgroundColor="#F3EFEF"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp">
 
@@ -19,7 +19,7 @@
             android:id="@+id/clContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_gradation"
+            android:background="@drawable/backgroundtop"
             android:padding="8dp">
 
             <ImageView
@@ -45,12 +45,12 @@
 
             <TextView
                 android:id="@+id/tvContactLastMessage"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:alpha="0.7"
                 android:lines="1"
-                android:textColor="@color/white"
+                android:textColor="#F44336"
                 android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@id/tvContactName"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -67,25 +67,6 @@
                 app:layout_constraintStart_toStartOf="@+id/tvContactName"
                 app:layout_constraintTop_toBottomOf="@+id/tvContactName" />
 
-            <ImageView
-                android:id="@+id/starone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/memberstate"
-                app:layout_constraintStart_toEndOf="@+id/memberstate"
-                app:layout_constraintTop_toTopOf="@+id/memberstate"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/starone"
-                app:layout_constraintStart_toEndOf="@+id/starone"
-                app:layout_constraintTop_toTopOf="@+id/starone"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>
