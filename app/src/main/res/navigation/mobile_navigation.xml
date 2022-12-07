@@ -58,6 +58,9 @@
         <action
             android:id="@+id/action_contactFragment_to_chatFragment"
             app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_contactFragment_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
     </fragment>
     <fragment
         android:id="@+id/chatFragment"
@@ -72,7 +75,11 @@
         android:id="@+id/editProfilFragment"
         android:name="com.modul3.einfachtierisch.ui.completeprofil.EditProfilFragment"
         android:label="fragment_edit_profil"
-        tools:layout="@layout/fragment_edit_profil" />
+        tools:layout="@layout/fragment_edit_profil" >
+        <action
+            android:id="@+id/action_editProfilFragment_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_news"
         android:name="com.modul3.einfachtierisch.ui.news.NewsFragment"
@@ -98,6 +105,10 @@
         android:id="@+id/helpDeskFragment"
         android:name="com.modul3.einfachtierisch.ui.helpDesk.HelpDeskFragment"
         android:label="fragment_help_desk"
-        tools:layout="@layout/fragment_help_desk" />
+        tools:layout="@layout/fragment_help_desk" >
+        <action
+            android:id="@+id/action_helpDeskFragment_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
 
 </navigation>

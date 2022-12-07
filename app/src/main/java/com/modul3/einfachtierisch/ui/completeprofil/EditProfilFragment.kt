@@ -53,6 +53,17 @@ class EditProfilFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         /**
+         * Navigation zum DashBoard
+         */
+
+        binding.profileeditarrowbackbtn.setOnClickListener {
+
+          findNavController()
+              .navigate(EditProfilFragmentDirections.actionEditProfilFragmentToNavigationDashboard())
+
+        }
+
+        /**
          * FirebasedatenBank wird verknüpft
          */
 

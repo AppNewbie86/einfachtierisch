@@ -30,6 +30,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/bungee"
             android:text="TextView"
+            android:textColor="#F8F8FA"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,6 +42,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/bungee"
             android:text="TextView"
+            android:textColor="#F5F6F8"
             app:layout_constraintStart_toStartOf="@+id/numberOfDogs"
             app:layout_constraintTop_toBottomOf="@+id/numberOfDogs" />
 
@@ -53,6 +55,7 @@
             android:scrollbars="vertical"
 
             android:text="TextView"
+            android:textColor="#0C0C0E"
             app:layout_constraintStart_toStartOf="@+id/nameOfDogs"
             app:layout_constraintTop_toBottomOf="@+id/nameOfDogs" />
 
@@ -65,7 +68,8 @@
             android:clickable="true"
             android:tint="#F8F5F5"
             android:tooltipText="Schnuppertage vereinbaren"
-            app:backgroundTint="#C128DC"
+            app:backgroundTint="#825DDA"
+            app:elevation="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:rippleColor="#F4F2F2"
@@ -77,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:tint="#F8F5F5"
+            android:tint="#151515"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_more_horiz_24" />
@@ -88,7 +92,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="casual"
             android:text="Report"
-            android:textColor="#FAF9F9"
+            android:textColor="#040303"
             android:textSize="24sp"
             app:layout_constraintEnd_toStartOf="@+id/imageView3"
             app:layout_constraintStart_toEndOf="@+id/numberOfDogs"

@@ -9,12 +9,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#EFEDED">
 
         <ImageView
             android:id="@+id/background2"
-            android:layout_width="1394dp"
-            android:layout_height="1813dp"
+            android:layout_width="1803dp"
+            android:layout_height="2186dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.12"
@@ -80,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:backgroundTint="#4CC4CA"
+            android:backgroundTint="#4866D1"
             android:text="signup"
             app:layout_constraintEnd_toEndOf="@+id/signup_password"
             app:layout_constraintTop_toBottomOf="@+id/signup_nickname" />
