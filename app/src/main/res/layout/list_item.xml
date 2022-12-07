@@ -7,11 +7,11 @@
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
     android:clickable="true"
-    app:cardBackgroundColor="#C8C6C6"
+    app:cardBackgroundColor="#F1EFEF"
     app:cardCornerRadius="10dp"
     app:cardElevation="7dp"
-    app:strokeColor="#ED9108"
-    app:strokeWidth="4dp"
+    app:strokeColor="#673AB7"
+    app:strokeWidth="2dp"
     tools:layout_editor_absoluteX="1dp"
     tools:layout_editor_absoluteY="93dp">
 
@@ -40,13 +40,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
             android:fontFamily="@font/caveat_brush"
             android:text="Name"
             android:textColor="#070707"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/list_image"
-            app:layout_constraintTop_toBottomOf="@+id/list_image" />
+            app:layout_constraintTop_toBottomOf="@+id/tv7" />
 
         <TextView
             android:id="@+id/tv7"
@@ -62,8 +61,8 @@
 
         <ImageView
             android:id="@+id/heart_not_clicked"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginEnd="8dp"
             android:clickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -72,17 +71,19 @@
             app:srcCompat="@drawable/heart" />
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/maxlikes"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:background="#D1C9C9"
+            android:layout_marginEnd="8dp"
+            android:background="#ECE9E9"
+            android:backgroundTint="#F1EFEF"
             app:layout_constraintBottom_toBottomOf="@+id/heart_not_clicked"
             app:layout_constraintEnd_toStartOf="@+id/heart_not_clicked"
             app:layout_constraintTop_toBottomOf="@+id/list_image"
             app:srcCompat="@drawable/likes" />
 
         <ImageView
-            android:id="@+id/imageView9"
+            android:id="@+id/comments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -90,6 +91,14 @@
             app:layout_constraintBottom_toTopOf="@+id/heart_not_clicked"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/comments" />
+
+        <ImageView
+            android:id="@+id/bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/list_image"
+            app:srcCompat="@drawable/bookmark" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

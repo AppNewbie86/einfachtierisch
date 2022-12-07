@@ -21,7 +21,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/backgroundtop"
         app:srcCompat="@drawable/comments" />
@@ -30,7 +30,7 @@
         android:id="@+id/editButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/backgroundtop"
@@ -161,6 +161,17 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_baseline_help_outline_24" />
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="290dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Ich möchte neue Leute kennenlernen die auch Hunde haben "
+                android:textColor="#070505"
+                app:layout_constraintStart_toStartOf="@+id/imageButton"
+                app:layout_constraintTop_toBottomOf="@+id/imageView27" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -195,9 +206,9 @@
 
     <ImageView
         android:id="@+id/imageView20"
-        android:layout_width="127dp"
-        android:layout_height="379dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="121dp"
+        android:layout_height="393dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/privatedatacard"
@@ -205,9 +216,11 @@
 
     <TextView
         android:id="@+id/friendstitleline"
-        android:layout_width="wrap_content"
+        android:layout_width="241dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:background="#E6E5E5"
+        android:paddingStart="5dp"
         android:text="Friends"
         android:textColor="#0C0B0B"
         android:textSize="20sp"
@@ -217,9 +230,11 @@
 
     <TextView
         android:id="@+id/gallerytextline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="241dp"
+        android:layout_height="33dp"
         android:layout_marginTop="8dp"
+        android:background="#DAD8D8"
+        android:paddingStart="5dp"
         android:text="Gallery"
         android:textColor="#0B0909"
         android:textSize="20sp"
@@ -264,9 +279,9 @@
 
     <ImageView
         android:id="@+id/imageView24"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_width="124dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="6dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -274,7 +289,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imageView22"
         app:layout_constraintTop_toBottomOf="@+id/imageView22"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.016"
         app:srcCompat="@drawable/picturefour" />
 
     <TextView

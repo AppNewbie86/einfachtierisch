@@ -16,7 +16,7 @@
         android:clickable="true"
         android:focusable="true"
         android:minHeight="48dp"
-        app:cardBackgroundColor="#FF5722"
+        app:cardBackgroundColor="#A19C27B0"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
         app:contentPadding="8dp"

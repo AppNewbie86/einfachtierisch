@@ -9,6 +9,7 @@ plugins {
 }
 
 
+
 android {
     namespace 'com.modul3.einfachtierisch'
     compileSdk 33

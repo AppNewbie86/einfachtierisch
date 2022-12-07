@@ -10,7 +10,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_gradation"
+        android:background="#F4F2F2"
         tools:context=".NewsFragment">
 
 

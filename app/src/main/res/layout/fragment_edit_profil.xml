@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
     <ImageView
         android:id="@+id/backgroundimageeditprofile"
@@ -13,25 +13,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bg_gradation" />
+        app:layout_constraintTop_toBottomOf="@+id/bannerimage"
+        app:srcCompat="@drawable/backgroundtop" />
 
     <TextView
         android:id="@+id/profil_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="273dp"
+        android:layout_height="69dp"
         android:layout_marginTop="16dp"
         android:text="Profildaten"
-        android:textColor="#DCDCA4"
+        android:textColor="#050505"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/fieldDogName"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="180dp"
@@ -39,6 +38,7 @@
         android:hint="Write here your Dogname please"
         android:maxLines="1"
         android:minHeight="48dp"
+        android:textColorHint="#020101"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
 
     <EditText
         android:id="@+id/fieldJob"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -55,6 +55,7 @@
         android:maxLines="10"
         android:minHeight="48dp"
         android:scrollHorizontally="false"
+        android:textColorHint="#090707"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fieldDogName" />
@@ -92,6 +93,8 @@
         android:id="@+id/editpicturetwo"
         android:layout_width="34dp"
         android:layout_height="36dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fieldJob"
         app:layout_constraintEnd_toEndOf="@+id/fieldJob"
         app:layout_constraintTop_toBottomOf="@+id/fieldDogName"
         app:srcCompat="@drawable/editprofileicon" />
@@ -100,6 +103,8 @@
         android:id="@+id/editimageone"
         android:layout_width="32dp"
         android:layout_height="38dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fieldDogName"
         app:layout_constraintEnd_toEndOf="@+id/fieldDogName"
         app:layout_constraintTop_toTopOf="@+id/fieldDogName"
         app:srcCompat="@drawable/ellipse_19" />
@@ -108,12 +113,26 @@
         android:id="@+id/imageView2"
         android:layout_width="55dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/profil_title"
         app:layout_constraintEnd_toStartOf="@+id/profil_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/profil_title"
         app:srcCompat="@drawable/dogshield" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="316dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="45dp"
+        android:text="Damit hilfst du uns das wir unsere Filter besser auf dich anpassen können und damit können wir dir gezielter Beiträge anderer Hundebesitzer oder Beiträge zeigen "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSaveDatas"
+        app:layout_constraintEnd_toEndOf="@+id/fieldJob"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/fieldJob"
+        app:layout_constraintTop_toBottomOf="@+id/fieldJob" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

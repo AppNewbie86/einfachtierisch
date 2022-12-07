@@ -9,7 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#D6D6D6">
 
         <ImageView
             android:id="@+id/background3"
@@ -20,7 +21,7 @@
             app:layout_constraintHorizontal_bias="0.12"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/bg_gradation" />
+            app:srcCompat="@drawable/backgroundtop" />
 
         <TextView
             android:id="@+id/title_text"
@@ -29,7 +30,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/almendra"
             android:text="Login"
-            android:textColor="#DCDCA4"
+            android:textColor="#040403"
             android:textSize="48sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -62,6 +63,7 @@
             android:hint="email"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
+            android:textColorHint="#0C0C0C"
             app:layout_constraintEnd_toEndOf="@+id/title_text"
             app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="@+id/title_text"
@@ -77,6 +79,7 @@
             android:hint="password"
             android:inputType="textPassword"
             android:minHeight="48dp"
+            android:textColorHint="#070707"
             app:layout_constraintEnd_toEndOf="@+id/login_email_edit"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/login_email_edit"

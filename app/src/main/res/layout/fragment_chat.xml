@@ -18,7 +18,7 @@
             android:id="@+id/chat_toolbar"
             android:layout_width="413dp"
             android:layout_height="70dp"
-            android:background="#F8E36D49"
+            android:background="@drawable/backgroundtop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +64,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textInputLayout"
-            app:tint="#00BCD4" />
+            app:tint="@color/purple_500" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMessages"

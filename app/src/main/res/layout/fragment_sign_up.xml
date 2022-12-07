@@ -13,14 +13,14 @@
 
         <ImageView
             android:id="@+id/background2"
-            android:layout_width="1000dp"
-            android:layout_height="1000dp"
+            android:layout_width="1394dp"
+            android:layout_height="1813dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.12"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/bg_gradation" />
+            app:srcCompat="@drawable/backgroundtop" />
 
         <TextView
             android:id="@+id/sign_up_title"
