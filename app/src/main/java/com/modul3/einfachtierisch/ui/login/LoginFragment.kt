@@ -85,6 +85,11 @@ class LoginFragment : Fragment() {
             false
         }
 
+        binding.loginarrowback.setOnClickListener {
+            findNavController()
+                .navigate(LoginFragmentDirections.actionLoginFragmentToNavigationHome())
+        }
+
 
         binding.loginSignupButton.setOnClickListener {
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToSignUpFragment())

@@ -147,5 +147,16 @@
             app:layout_constraintEnd_toEndOf="@+id/footer_subtext_footer"
             app:layout_constraintStart_toStartOf="@+id/footer_subtext_footer"
             app:layout_constraintTop_toBottomOf="@+id/footer_subtext_footer" />
+
+        <ImageView
+            android:id="@+id/loginarrowback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:tint="#3F51B5"
+            app:layout_constraintBottom_toBottomOf="@+id/title_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/title_text"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

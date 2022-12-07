@@ -110,5 +110,16 @@
             app:layout_constraintStart_toStartOf="@+id/signup_password"
             app:layout_constraintTop_toBottomOf="@+id/signup_password" />
 
+        <ImageView
+            android:id="@+id/backtohomebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            app:layout_constraintBottom_toTopOf="@+id/simpleVideoView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/sign_up_title"
+            app:layout_constraintVertical_bias="0.343"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

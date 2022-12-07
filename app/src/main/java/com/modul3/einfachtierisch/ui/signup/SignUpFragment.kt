@@ -123,7 +123,7 @@ class SignUpFragment : Fragment() {
          *
          */
 
-        binding.backtohomeBtn.setOnClickListener {
+        binding.backtohomebutton.setOnClickListener {
             findNavController().navigateUp()
         }
 
