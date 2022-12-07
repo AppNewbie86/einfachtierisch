@@ -20,4 +20,3 @@ you can log in and register in the app, after that you get to a
 dashboard where the rest of the navigation 
 takes over You can add a new request where other users can see and comment on it!
 
-[imagetwo](https://user-images.githubusercontent.com/101304191/206225014-85497ca3-74f8-4de8-8253-e982c675d236.png)
