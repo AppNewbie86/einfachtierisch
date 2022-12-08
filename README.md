@@ -12,12 +12,10 @@ Hallo liebe Leser und Leserinnen
 Dieses Projekt ist meine Abschlussprüfung zum Android Junior Developer im Syntax Institut und das Thema war mein persönlicher Herzenswunsch, 
 da ich 
 
-1. 
-Selber einen Hund besitze und weiss wie wichtig manchmal Unterstützung ist sei es drum um welche Art und Weiße,
+1. Selber einen Hund besitze und weiss wie wichtig manchmal Unterstützung ist sei es drum um welche Art und Weiße,
 es sich dabei handelt.
 
-2. 
-Und zweitens wollte ich eine Kostengünstige Variante schaffen was sich jeder Leisten kann und keinen vor einen Finanziellen Engpass stellt.  
+2. Und zweitens wollte ich eine Kostengünstige Variante schaffen was sich jeder Leisten kann und keinen vor einen Finanziellen Engpass stellt.  
 
 
 Deshalb wollte ich eine Social Media App entwicklen bei der sich gezielt die Zielgruppe auf Hundeliebhaber und Hundehalter erstmal beschränken soll.
