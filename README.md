@@ -30,7 +30,9 @@ Sie können sich in der App anmelden und registrieren, danach gelangen Sie zu ei
 
 Zur Registrierung
 
-Hier könnt ihr euch in aller Ruhe registrieren und alles was ihr dazu braucht ist eine Emailaddresse und ein Passwort mit dazugehörigem Nickname
+Hier könnt ihr euch in aller Ruhe registrieren.
+und alles was ihr dazu braucht ist eine Emailaddresse 
+und ein Passwort mit dazugehörigem Nickname
 
 
 ![Bildschirm­foto 2022-12-07 um 12 36 56](https://user-images.githubusercontent.com/101304191/206327385-c2e4e0e8-4661-470c-8047-5d4f14a57115.png)
