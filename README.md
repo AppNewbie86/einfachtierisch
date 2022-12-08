@@ -60,7 +60,8 @@ Fragments
 - Nav_Graphen
 
 
-![Adapter](https://user-images.githubusercontent.com/101304191/206408205-bb668117-e94f-4a93-b683-1b7a58cb5630.png)
+
+![Adapter](https://user-images.githubusercontent.com/101304191/206408981-bca687c8-ffd4-4079-b1b0-82301ce0b12c.png)
 
 - für die HundeAPI ein DogAdapter 
 - und der MessageAdapter 
@@ -85,8 +86,8 @@ MessageAdapter
 Dem User ist es möglich seine zuletzt erhaltene Nachricht im 
 ContactFragment zusehen.
 
+![Meine API](https://user-images.githubusercontent.com/101304191/206409112-15592bfa-21f5-49fa-a317-dadaed1943dd.png)
 
-![Meine API](https://user-images.githubusercontent.com/101304191/206407125-d227f5a0-f68a-4e91-b55b-ec27f77dee10.png)
 
 ermöglicht es uns das wir die HundeBilder und die Informationen zur Verfügung gestellt bekommen 
 
