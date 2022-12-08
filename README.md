@@ -21,7 +21,8 @@ es sich dabei handelt.
 Deshalb wollte ich eine Social Media App entwicklen bei der sich gezielt die Zielgruppe auf Hundeliebhaber und Hundehalter erstmal beschränken soll.
 Man soll in Kontakt treten können und das miteinander schreiben möglich machen, wo man Treffen vereinbaren kann oder auch andere Sachen und Informationen austauschen kann, was den Hund und den Hundbesitzer betrifft. Natürlich eine Funktion für die Hundepatenschaft, bei der Sie diesen Hund und seine Familie nur dann unterstützen können, wenn die Situation dies erfordert ist in Planung.
 
-Implementierte Funktionen
+![Meine Implementierten Aufgaben](https://user-images.githubusercontent.com/101304191/206407980-1f677234-bb6b-47f0-bcba-d970c96d14b1.png)
+
 
 Als Intent
 
@@ -58,14 +59,14 @@ Fragments
 - NavHostFragment
 - Nav_Graphen
 
-![Adapter](https://user-images.githubusercontent.com/101304191/206406865-c31d6dd5-6d9b-4749-879e-28d4f7f9d837.png)
 
+![Adapter](https://user-images.githubusercontent.com/101304191/206408205-bb668117-e94f-4a93-b683-1b7a58cb5630.png)
 
 - für die HundeAPI ein DogAdapter 
 - und der MessageAdapter 
 - sowie eine ContactAdapter
 
-![MainViewModel](https://user-images.githubusercontent.com/101304191/206406927-6c0f86ca-e743-4752-bd9b-9d3500e17fe2.png)
+![MainViewModel](https://user-images.githubusercontent.com/101304191/206408083-e875ea72-eb15-4b33-89b0-762ec1dc199b.png)
 
 
 
