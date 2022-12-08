@@ -24,8 +24,9 @@ Danach kann man sein Profil vervollständigen wo auch wieder Daten in den Fireba
 
 Anschliessend kan man sich alle Hunderassen anschauen und sich informieren (Daten kommen aus einer API
 
-Sie können sich in der App anmelden und registrieren, danach gelangen Sie zu einem Dashboard, wo der Rest der Navigation übernommen wird. Sie können eine neue Anfrage hinzufügen, wo andere Benutzer sie sehen und kommentieren können!![Bildschirm­foto 2022-12-07 um 20 39 28]
-(https://user-images.githubusercontent.com/101304191/206327312-979757ec-b3e5-4b5a-9ef9-b02971c908ec.png)
+Sie können sich in der App anmelden und registrieren, danach gelangen Sie zu einem Dashboard, wo der Rest der Navigation übernommen wird. Sie können eine neue Anfrage hinzufügen, wo andere Benutzer sie sehen und kommentieren können!!
+
+![Bildschirm­foto 2022-12-07 um 20 39 28]
 ![Bildschirm­foto 2022-12-07 um 12 36 56](https://user-images.githubusercontent.com/101304191/206327385-c2e4e0e8-4661-470c-8047-5d4f14a57115.png)
 ![Bildschirm­foto 2022-12-07 um 12 39 23](https://user-images.githubusercontent.com/101304191/206327409-86e164d4-7db7-4c2e-8c8f-a0b9fe803a2e.png)
 ![Bildschirm­foto 2022-12-07 um 12 36 10](https://user-images.githubusercontent.com/101304191/206327498-7fb503fb-b395-4151-95ab-1536c705a95f.png)
