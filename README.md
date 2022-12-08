@@ -61,11 +61,28 @@ Fragments
 
 
 
+
+
 ![Adapter](https://user-images.githubusercontent.com/101304191/206408981-bca687c8-ffd4-4079-b1b0-82301ce0b12c.png)
 
-- für die HundeAPI ein DogAdapter 
-- und der MessageAdapter 
-- sowie eine ContactAdapter
+![Dogadapter](https://user-images.githubusercontent.com/101304191/206412334-16f6a461-f914-4e7c-b15c-82a5118c3688.png)
+
+![MessageAdapter](https://user-images.githubusercontent.com/101304191/206412570-0c299b12-793f-4909-b426-207179cb198f.png)
+
+![ContactAdapter](https://user-images.githubusercontent.com/101304191/206412160-4ed5c6fa-b2d3-47ab-b834-2b21025b7c92.png)
+
+Hat eine innere Klasse den sogenannten ItemViewHolder
+
+- und der ViewHolder umfasst die View und stellt den Listeneintrag dar
+
+override fun onCreateViewHolder(){}
+
+Blasen wir das Layout auf und bereiten es zum Erstellen bereit
+
+ override fun onBindViewHolder(){}
+ Findet dann der RecyclerProzess statt also der Recyclerview erhält die Daten vom ItemViewHolder
+ 
+ Anschließend sagen wir dem ContactAdapter wie lang die Liste ist
 
 ![MainViewModel](https://user-images.githubusercontent.com/101304191/206408083-e875ea72-eb15-4b33-89b0-762ec1dc199b.png)
 
