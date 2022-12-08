@@ -26,10 +26,16 @@ Anschliessend kan man sich alle Hunderassen anschauen und sich informieren (Date
 
 Sie können sich in der App anmelden und registrieren, danach gelangen Sie zu einem Dashboard, wo der Rest der Navigation übernommen wird. Sie können eine neue Anfrage hinzufügen, wo andere Benutzer sie sehen und kommentieren können!!
 
+![Bildschirm­foto 2022-12-07 um 12 36 32](https://user-images.githubusercontent.com/101304191/206327505-f66bc0e4-53d5-4ae7-bbcf-e46e3e05015e.png)
+
+Zur Registrierung
+
+Hier könnt ihr euch in aller Ruhe registrieren und alles was ihr dazu braucht ist eine Emailaddresse und ein Passwort mit dazugehörigem Nickname
+
+
 ![Bildschirm­foto 2022-12-07 um 12 36 56](https://user-images.githubusercontent.com/101304191/206327385-c2e4e0e8-4661-470c-8047-5d4f14a57115.png)
 ![Bildschirm­foto 2022-12-07 um 12 39 23](https://user-images.githubusercontent.com/101304191/206327409-86e164d4-7db7-4c2e-8c8f-a0b9fe803a2e.png)
 ![Bildschirm­foto 2022-12-07 um 12 36 10](https://user-images.githubusercontent.com/101304191/206327498-7fb503fb-b395-4151-95ab-1536c705a95f.png)
-![Bildschirm­foto 2022-12-07 um 12 36 32](https://user-images.githubusercontent.com/101304191/206327505-f66bc0e4-53d5-4ae7-bbcf-e46e3e05015e.png)
 
 Verwendet wurden MVVM Architecture
 
