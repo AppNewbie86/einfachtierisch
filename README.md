@@ -73,7 +73,7 @@ Fragments
 
 - Wo alle LiveDatas gespeichert werden und alle Möglichen Funktionen für die App liegen.
 
-Das Repository
+![Repository](https://user-images.githubusercontent.com/101304191/206409685-fd4b810f-1b29-44cd-9c67-ca9ff46c252e.png)
 
 - verwaltet momentan noch Hardgecodete Texte die in einer RecyclerView angezeigt werden sollen 
 - aber dies wird erst nach Abschluss des Moduls passieren
@@ -89,14 +89,17 @@ ContactFragment zusehen.
 ![Meine API](https://user-images.githubusercontent.com/101304191/206409112-15592bfa-21f5-49fa-a317-dadaed1943dd.png)
 
 
-ermöglicht es uns das wir die HundeBilder und die Informationen zur Verfügung gestellt bekommen 
+ermöglicht es uns das wir die HundeBilder und die Informationen zur Verfügung gestellt bekommen wie Beispielsweiße...
 
+- HundehaarLänge
+- Haarfarbe
+- Gesinnung des Hundes etc etc.....
 
 
 Ansonsten wünsche ich euch noch viel Freude mit dem Anschauen meines Repos 
 und bis dahin wünsche ich euch alles gute und vielleicht bis bald.
 
-Über einen Commit freue ich mich jeder
+Über einen Commit freue ich mich jederzeit, natürlich dürft ihr auch Tipps und Ratschläge dalassen.
 
 
 
