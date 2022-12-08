@@ -1,13 +1,18 @@
+![Cover](https://user-images.githubusercontent.com/101304191/206330668-9b093515-5285-4955-8331-95bac419d53b.png)
+
+
+
 # einfachtierisch
 Final ExamProjekt
-DogCround
-Community for Dogfriends
+
 
 AbschlussprüfungProjekt Einfach tierisch .....
 
 Hallo liebe Leser und Leserinnen
 
-Dieses Projekt ist meine Abschlussprüfung zum Android Junior Developer im Syntax Institut und das Thema war mein persönlicher Herzenswunsch, da ich erstens selber einen Hund besitze und weiss wie wichtig manchmal Unterstützung ist sei es drum um welche Art und Weiße es sich dabei handelt. Deshalb wollte ich eine Social Media App entwicklen bei der Hundeliebhaber und Hundehalter in Kontakt treten und miteinander schreiben, Treffen vereinbaren oder alles andere, was den Hund und den Hund betrifft Natürlich eine Funktion für die Hundepatenschaft, bei der Sie diesen Hund und seine Familie nur dann unterstützen können, wenn die Situation dies erfordert
+Dieses Projekt ist meine Abschlussprüfung zum Android Junior Developer im Syntax Institut und das Thema war mein persönlicher Herzenswunsch, 
+da ich erstens selber einen Hund besitze und weiss wie wichtig manchmal Unterstützung ist sei es drum um welche Art und Weiße,
+es sich dabei handelt. Deshalb wollte ich eine Social Media App entwicklen bei der sich Hundeliebhaber und Hundehalter in Kontakt treten können und miteinander schreiben, sich Treffen vereinbaren können und oder alles andere, was den Hund und den Hundbesitzer betrifft besprechen. Natürlich eine Funktion für die Hundepatenschaft, bei der Sie diesen Hund und seine Familie nur dann unterstützen können, wenn die Situation dies erfordert in Planung.
 
 Implementierte Funktionen
 
