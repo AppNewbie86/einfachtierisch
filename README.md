@@ -3,15 +3,25 @@
 ![Cover](https://user-images.githubusercontent.com/101304191/206330668-9b093515-5285-4955-8331-95bac419d53b.png)
 
 # einfachtierisch
-Final ExamProjekt
+Final Android Developer Projekt
 
-AbschlussprüfungProjekt Einfach tierisch .....
+Abschlussprüfungs Projekt Einfach tierisch .....
 
 Hallo liebe Leser und Leserinnen
 
 Dieses Projekt ist meine Abschlussprüfung zum Android Junior Developer im Syntax Institut und das Thema war mein persönlicher Herzenswunsch, 
-da ich erstens selber einen Hund besitze und weiss wie wichtig manchmal Unterstützung ist sei es drum um welche Art und Weiße,
-es sich dabei handelt. Deshalb wollte ich eine Social Media App entwicklen bei der sich Hundeliebhaber und Hundehalter in Kontakt treten können und miteinander schreiben, sich Treffen vereinbaren können und oder alles andere, was den Hund und den Hundbesitzer betrifft besprechen. Natürlich eine Funktion für die Hundepatenschaft, bei der Sie diesen Hund und seine Familie nur dann unterstützen können, wenn die Situation dies erfordert in Planung.
+da ich 
+
+1. 
+Selber einen Hund besitze und weiss wie wichtig manchmal Unterstützung ist sei es drum um welche Art und Weiße,
+es sich dabei handelt.
+
+2. 
+Und zweitens wollte ich eine Kostengünstige Variante schaffen was sich jeder Leisten kann und keinen vor einen Finanziellen Engpass stellt.  
+
+
+Deshalb wollte ich eine Social Media App entwicklen bei der sich gezielt die Zielgruppe auf Hundeliebhaber und Hundehalter erstmal beschränken soll.
+Man soll in Kontakt treten können und das miteinander schreiben möglich machen, wo man Treffen vereinbaren kann oder auch andere Sachen und Informationen austauschen kann, was den Hund und den Hundbesitzer betrifft. Natürlich eine Funktion für die Hundepatenschaft, bei der Sie diesen Hund und seine Familie nur dann unterstützen können, wenn die Situation dies erfordert ist in Planung.
 
 Implementierte Funktionen
 
@@ -50,13 +60,16 @@ Fragments
 - NavHostFragment
 - Nav_Graphen
 
-Adapter 
+![Adapter](https://user-images.githubusercontent.com/101304191/206406865-c31d6dd5-6d9b-4749-879e-28d4f7f9d837.png)
+
 
 - für die HundeAPI ein DogAdapter 
 - und der MessageAdapter 
 - sowie eine ContactAdapter
 
-MainViewModel
+![MainViewModel](https://user-images.githubusercontent.com/101304191/206406927-6c0f86ca-e743-4752-bd9b-9d3500e17fe2.png)
+
+
 
 - Wo alle LiveDatas gespeichert werden und alle Möglichen Funktionen für die App liegen.
 
@@ -74,9 +87,16 @@ Dem User ist es möglich seine zuletzt erhaltene Nachricht im
 ContactFragment zusehen.
 
 
+![Meine API](https://user-images.githubusercontent.com/101304191/206407125-d227f5a0-f68a-4e91-b55b-ec27f77dee10.png)
+
+ermöglicht es uns das wir die HundeBilder und die Informationen zur Verfügung gestellt bekommen 
+
+
 
 Ansonsten wünsche ich euch noch viel Freude mit dem Anschauen meines Repos 
 und bis dahin wünsche ich euch alles gute und vielleicht bis bald.
+
+Über einen Commit freue ich mich jeder
 
 
 
