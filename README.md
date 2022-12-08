@@ -1,3 +1,6 @@
+![Android Junior Developer](https://user-images.githubusercontent.com/101304191/206424892-de83ef28-aa46-4c64-b7ab-bd68ea381a94.png)
+
+
 ![Deckblatt](https://user-images.githubusercontent.com/101304191/206337335-7056df32-d962-47ee-97cc-db34e4479bf5.png)
 
 ![Cover](https://user-images.githubusercontent.com/101304191/206330668-9b093515-5285-4955-8331-95bac419d53b.png)
