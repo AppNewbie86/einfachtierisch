@@ -3,20 +3,30 @@ Final ExamProjekt
 DogCround
 Community for Dogfriends
 
-Hello dear readers
+AbschlussprüfungProjekt Einfach tierisch .....
 
-This project is my final exam as an Android Junior Developer and the topic was my personal heart's 
-desire to develop an app where dog lovers and dog owners can get in contact and write to each other, arrange meetings or everything else 
-that concerns the dog and of course a feature for dog sponsorship where you can only support that dog and his family if a situation may require it
+Hallo liebe Leser und Leserinnen
 
-Implemented Features
+Dieses Projekt ist meine Abschlussprüfung zum Android Junior Developer im Syntax Institut und das Thema war mein persönlicher Herzenswunsch, da ich erstens selber einen Hund besitze und weiss wie wichtig manchmal Unterstützung ist sei es drum um welche Art und Weiße es sich dabei handelt. Deshalb wollte ich eine Social Media App entwicklen bei der Hundeliebhaber und Hundehalter in Kontakt treten und miteinander schreiben, Treffen vereinbaren oder alles andere, was den Hund und den Hund betrifft Natürlich eine Funktion für die Hundepatenschaft, bei der Sie diesen Hund und seine Familie nur dann unterstützen können, wenn die Situation dies erfordert
+
+Implementierte Funktionen
+
+Als Intent
 
 Facebook
-Instagram
+Instagram 
 Github
 
+Sie können sich in der App authentifiezieren und anmelden <-- die Memberdaten werden in Firebase gespeichert
+Nach erfolgreichen Login wird man automatisch zum DashFragment navigiert
 
-you can log in and register in the app, after that you get to a 
-dashboard where the rest of the navigation 
-takes over You can add a new request where other users can see and comment on it!
+Danach kann man sein Profil vervollständigen wo auch wieder Daten in den Firebase Storage gelangen
 
+Anschliessend kan man sich alle Hunderassen anschauen und sich informieren (Daten kommen aus einer API
+
+Sie können sich in der App anmelden und registrieren, danach gelangen Sie zu einem Dashboard, wo der Rest der Navigation übernommen wird. Sie können eine neue Anfrage hinzufügen, wo andere Benutzer sie sehen und kommentieren können!![Bildschirm­foto 2022-12-07 um 20 39 28]
+(https://user-images.githubusercontent.com/101304191/206327312-979757ec-b3e5-4b5a-9ef9-b02971c908ec.png)
+![Bildschirm­foto 2022-12-07 um 12 36 56](https://user-images.githubusercontent.com/101304191/206327385-c2e4e0e8-4661-470c-8047-5d4f14a57115.png)
+![Bildschirm­foto 2022-12-07 um 12 39 23](https://user-images.githubusercontent.com/101304191/206327409-86e164d4-7db7-4c2e-8c8f-a0b9fe803a2e.png)
+![Bildschirm­foto 2022-12-07 um 12 36 10](https://user-images.githubusercontent.com/101304191/206327498-7fb503fb-b395-4151-95ab-1536c705a95f.png)
+![Bildschirm­foto 2022-12-07 um 12 36 32](https://user-images.githubusercontent.com/101304191/206327505-f66bc0e4-53d5-4ae7-bbcf-e46e3e05015e.png)
