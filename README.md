@@ -17,7 +17,7 @@ Facebook
 Instagram 
 Github
 
-Sie können sich in der App authentifiezieren und anmelden <-- die Memberdaten werden in Firebase gespeichert
+Sie können sich in der App authentifiezieren und anmelden (die Memberdaten werden in Firebase gespeichert)
 Nach erfolgreichen Login wird man automatisch zum DashFragment navigiert
 
 Danach kann man sein Profil vervollständigen wo auch wieder Daten in den Firebase Storage gelangen
@@ -31,3 +31,41 @@ Sie können sich in der App anmelden und registrieren, danach gelangen Sie zu ei
 ![Bildschirm­foto 2022-12-07 um 12 39 23](https://user-images.githubusercontent.com/101304191/206327409-86e164d4-7db7-4c2e-8c8f-a0b9fe803a2e.png)
 ![Bildschirm­foto 2022-12-07 um 12 36 10](https://user-images.githubusercontent.com/101304191/206327498-7fb503fb-b395-4151-95ab-1536c705a95f.png)
 ![Bildschirm­foto 2022-12-07 um 12 36 32](https://user-images.githubusercontent.com/101304191/206327505-f66bc0e4-53d5-4ae7-bbcf-e46e3e05015e.png)
+
+Verwendet wurden MVVM Architecture
+
+Fragments
+
+- NavHostFragment
+- Nav_Graphen
+
+Adapter 
+
+- für die HundeAPI ein DogAdapter 
+- und der MessageAdapter 
+- sowie eine ContactAdapter
+
+MainViewModel
+
+- Wo alle LiveDatas gespeichert werden und alle Möglichen Funktionen für die App liegen.
+
+Das Repository
+
+- verwaltet momentan noch Hardgecodete Texte die in einer RecyclerView angezeigt werden sollen 
+- aber dies wird erst nach Abschluss des Moduls passieren
+
+HelpDeskFragment soll dem HilfeRequest entsprechen wenn irgendwelche Userfragen 
+an den Support gehen aber dieser ist noch nicht fertig implementiert
+
+MessageAdapter 
+
+Dem User ist es möglich seine zuletzt erhaltene Nachricht im 
+ContactFragment zusehen.
+
+
+
+Ansonsten wünsche ich euch noch viel Freude mit dem Anschauen meines Repos 
+und bis dahin wünsche ich euch alles gute und vielleicht bis bald.
+
+
+
