@@ -57,16 +57,25 @@ class ContactAdapter() : RecyclerView.Adapter<ContactAdapter.ItemViewHolder>() {
         // Der aktuelle Kontakt wird aus dem Dataset geholt
         val contact = dataset[position]
 
-        // Das Profilbild und der Profilname werden gesetzt
+        /**
+         * Das Profilbild und der Profilname werden gesetzt
+         */
+
         holder.ivPicture.setImageResource(contact.imageResId)
         holder.tvName.text = contact.name
 
-        // Falls Nachrichten in der Liste des Kontakts existieren wird die neuste Nachricht angezeigt
+        /**
+         * Falls Nachrichten in der Liste des Kontakts existieren wird die neuste Nachricht angezeigt
+         */
+
         if (contact.chatHistory.size > 0) {
             holder.tvLastMessage.text = contact.chatHistory[0].message
         }
 
-        // Das komplette ConstraintLayout bekommt einen Click Listener, in dem zum ChatFragment navigiert wird
+        /**
+         * Das komplette ConstraintLayout bekommt einen Click Listener, in dem zum ChatFragment navigiert wird
+         */
+
         holder.clContact.setOnClickListener {
             holder.itemView.findNavController().navigate(
                 ContactFragmentDirections.actionContactFragmentToChatFragment(position)

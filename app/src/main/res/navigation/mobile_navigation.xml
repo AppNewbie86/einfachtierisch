@@ -32,6 +32,9 @@
         <action
             android:id="@+id/action_loginFragment_to_navigation_home"
             app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -41,6 +44,9 @@
         <action
             android:id="@+id/action_signUpFragment_to_navigation_home"
             app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_signUpFragment_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
     </fragment>
     <fragment
         android:id="@+id/navigation_dashboard"

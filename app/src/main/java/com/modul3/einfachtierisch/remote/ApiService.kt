@@ -16,6 +16,14 @@ import retrofit2.http.Query
  * Und haben gesagt wie ein Objekt aussehen soll
  */
 
+/**
+ * Vorgehensweiße beim Implementieren von Moshi
+ * 1. Abhängigkeiten einfügen --> Gradle
+ * 1.1 Denken Sie daran, Gson-Abhängigkeiten zu entfernen, wenn Sie es nur für die Nachrüstung verwenden.
+ * 2.0 Moshi Converter Factory zur Nachrüstung hinzufügen
+ * 3.0 Aktualisieren Sie Ihre Netzwerkdatenklassen
+ */
+
 const val BASE_URL = "https://public.syntax-institut.de/apps/batch2/AndreLuft/"
 
 private val moshi = Builder()
@@ -23,14 +31,14 @@ private val moshi = Builder()
     .build()
 
 private val retrofit = Retrofit.Builder()
-    .addConverterFactory(MoshiConverterFactory.create(moshi))
+    .addConverterFactory(MoshiConverterFactory.create(moshi))       //Das Wichtigste hier ist, Moshis Konverterfabrik zu Ihrer Retrofit-Instanz hinzuzufügen
     .baseUrl(BASE_URL)
     .build()
 
 interface ApiService {
 
     @GET("data.json")
-    suspend fun getDogs(): List<Dogs>
+    suspend fun getDogs(): List<Dogs>                               //wird hinter dem Bildschirm kompiliert
 
 
 }

@@ -46,60 +46,12 @@ class Repository(private val api: DogApi) {
             Contact("Administrator", R.drawable.square, mutableListOf()),
             Contact("alterHase89", R.drawable.american, mutableListOf()),
 
-        )
+            )
     }
+}
 
 
 
-
-
-fun loadHotStuff(): List<HotStuff> {
-
-    return listOf(
-        HotStuff(
-            1,
-            "Die Top Social Media Party des Jahres !!!",
-            R.drawable.imageone,
-            "Deutschland",
-            "23.12.2022",
-            "auchtung achtung!\nNur begrenzte Plätze buchbar," +
-                    "jetzt schnell Plätze sichern solange der Vorrat reicht"
-        ),
-        HotStuff(
-            1,
-            "Eine kleine und doch jedes jahr mehr Achtung geschenkt wird ist unsere DogSpezialChristmasParty",
-            R.drawable.imagetwo,
-            "Deutschland",
-            "19.12.2022",
-            "extra mit KinderProgramm\nund vielem mehr"
-        ),
-
-        HotStuff(
-            1,
-            "Die Top 10 gefährlichsten Tiere Deutschlands!",
-            R.drawable.imagethree,
-            "Deutschland",
-            "23.06.2022",
-            "auchtung achtung!\nDie fressen dich"
-        ),
-        HotStuff(
-            1,
-            "Die Top 10 gefährlichsten Tiere Deutschlands!",
-            R.drawable.imagefour,
-            "Deutschland",
-            "23.06.2022",
-            "auchtung achtung!\nDie fressen dich"
-        ),
-        HotStuff(
-            1,
-            "Die Top 10 gefährlichsten Tiere Deutschlands!",
-            R.drawable.imagefive,
-            "Deutschland",
-            "23.06.2022",
-            "auchtung achtung!\nDie fressen dich"
-        ),
-    )
-}}
 
 
 
