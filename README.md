@@ -21,7 +21,7 @@ es sich dabei handelt.
 Deshalb wollte ich eine Social Media App entwicklen bei der sich gezielt die Zielgruppe auf Hundeliebhaber und Hundehalter erstmal beschränken soll.
 Man soll in Kontakt treten können und das miteinander schreiben möglich machen, wo man Treffen vereinbaren kann oder auch andere Sachen und Informationen austauschen kann, was den Hund und den Hundbesitzer betrifft. Natürlich eine Funktion für die Hundepatenschaft, bei der Sie diesen Hund und seine Familie nur dann unterstützen können, wenn die Situation dies erfordert ist in Planung.
 
-![Meine Implementierten Aufgaben](https://user-images.githubusercontent.com/101304191/206407980-1f677234-bb6b-47f0-bcba-d970c96d14b1.png)
+![Meine Implementierten Aufgaben](https://user-images.githubusercontent.com/101304191/206410541-b4bb93d6-b384-46a2-b6e7-9284ea24ba4b.png)
 
 
 Als Intent
